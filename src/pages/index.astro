@@ -4,49 +4,52 @@ import Illustration from '../components/Illustration.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<!-- Navigation -->
-	<section class="h-[64px] relative z-10 text-sm">
-		<div class="container px-4 flex flex-row justify-between items-center h-full">
-			<div>
-				<span>Luka Ivanović © 2024</span>
-			</div>
-
-			<div class="flex flex-row justify-between w-[560px]">
-				<span>LinkedIn</span>
-				<span>Twitter</span>
-				<span>hi@ivanovicluka.co</span>
-			</div>
-		</div>
-	</section>
 	<!-- Hero -->
-	<section class="h-[calc(100vh-64px)] pb-[64px] overflow-hidden">
-		<div class="container px-4 h-full flex flex-row ">
-			<div class="flex flex-col gap-4 justify-end h-full w-1/2 z-10">
-				<h1>Software designer at weweb<br />working on allowing anyone<br /> to build web applications </h1>
+	<section id="hero" class="h-[100vh] max-h-[1200px] pb-[48px] pt-[20px] overflow-hidden  antialiased">
+		<div class="container px-8 h-full flex flex-row ">
+			<div class="flex flex-col gap-4 justify-between h-full w-1/2 z-10 text-sm">
+				<div class="container flex flex-row justify-start items-start gap-6">
+					
+						
+						<a href="mailto:hi@ivanovicluka.co">hi@ivanovicluka.co</a>
+						<a href="https://www.linkedin.com/in/lukaivanovic0/">LinkedIn</a>
+						<a href="https://x.com/lukaivnvc">Twitter</a>
+					
+				</div>
+
+				<div>
+					<span class="text-md">Luka Ivanović © 2024</span>
+				<h1 class="mb-10 mt-4">Software designer working on allowing <br/> everyone the freedom to build applications <br/>fast and simple @ weweb.</h1>
+				<span class="text-sm text-neutral-400">Worked with</span>
+				<div class="flex flex-row gap-4 pb-2 pt-2">
+					<img class="h-[32px]"  src="../../public/logo-1.svg" alt="">
+					<img class="h-[32px]"  src="../../public/logo-2.svg" alt="">
+					<img class="h-[32px]"  src="../../public/logo-3.svg" alt="">
+				</div>
 			</div>
-			<div class="flex flex-col gap-4 justify-end h-full w-1/2 relative">
+			</div>
+			<div class="flex flex-col gap-4 justify-end h-full w-1/2 relative ">
 				<Illustration />
 			</div>
 		</div>
 	</section>
+	<section class="h-[120vh]"></section>
 	<!-- wwEditor -->
 	<section class=" pt-[240px]">
 		<div class="container px-4 flex flex-row items-center">
-			<div class="h-[1px] w-[8px] bg-neutral-200"></div>
-			<div class=" w-[32px] h-[32px] bg-black border border-4 border-white outline outline-1 outline-black z-10">
-				
+			<div class="h-[1px]  flex-grow bg-neutral-200"></div>
+			<div class=" w-[32px] h-[32px] bg-black border border-4 border-white outline outline-1 outline-black z-10 flex items-center justify-center">
+				<img class="w-[24px]  h-[24px]" src="../../public/numeral-one.svg" alt="">
 			</div>
 			
-			<div class="h-[1px] flex-grow bg-neutral-200"></div>
+			<div class="h-[1px]  flex-grow bg-neutral-200"></div>
 		</div>
 		<div class="container px-4 flex flex-row justify-between pt-[64px] pb-[120px]">
 			<div class="w-1/2">
 				<h2>WeWeb Editor</h2>
 			</div>
 			<div class="w-[560px]">
-				<p>The editor features many complex and intertwining systems such as components, workflows and more. We take web best practices and present them in an elevated and clear interface. As a result, editor can export clean and modern code.
-
-					Visit website</p>
+				<p>The editor features many complex and intertwining systems such as components, workflows and more. We take web best practices and present them in an elevated and clear interface. As a result, editor can export clean and modern code. <br><br> <a href="https://weweb.io">Visit website</a></p>
 			</div>
 		</div>
 		<div class="container grid grid-cols-2 gap-[16px]">
@@ -109,18 +112,22 @@ import Illustration from '../components/Illustration.astro';
 	body {
 		font-family: 'TWK Lausanne', sans-serif;
 		font-size: 16px;
-		font-weight: 350;
+		font-weight: 400;
+		font-aliasing: antialiased;
+		color: #F0E6DD;
+		background-color: #000;
+		transition: background-color 0.5s ease;
 	}
 
 	.container {
-		max-width: 1464px;
+		max-width: 1720px;
 		margin: 0 auto;
 	}
 
 	h1 {
-		font-size: 50px;
-		line-height: 58px;
-		font-weight: 350;
+		font-size: 32px;
+		line-height: 42px;
+		font-weight: 450;
 	}
 
 	h2 {
@@ -132,5 +139,49 @@ import Illustration from '../components/Illustration.astro';
 	p {
 		font-size: 17px;
 		line-height: 30px;
+		font-weight: 350;
+	}
+
+	a {
+		color: white;
+		
+
+		&:hover {
+			color: #F0E6DD;
+			
+		}
 	}
 </style>
+
+<script>
+	function updateBackgroundColor() {
+		const hero = document.getElementById('hero');
+		const scrollPosition = window.scrollY;
+		const heroHeight = hero.offsetHeight;
+		
+		// Only start the transition when the hero is out of view
+		if (scrollPosition > heroHeight) {
+			const transitionHeight = window.innerHeight / 3; // Use half of viewport height for transition
+			const transitionProgress = Math.min((scrollPosition - heroHeight) / transitionHeight, 1);
+			
+			const r = Math.round(transitionProgress * 255);
+			const g = Math.round(transitionProgress * 255);
+			const b = Math.round(transitionProgress * 255);
+			
+			document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+			
+			if (transitionProgress >= 0.5) {
+				document.body.style.color = '#000';
+			} else {
+				document.body.style.color = '#F0E6DD';
+			}
+		} else {
+			// Reset to initial state when hero is in view
+			document.body.style.backgroundColor = '#000';
+			document.body.style.color = '#F0E6DD';
+		}
+	}
+
+	window.addEventListener('scroll', updateBackgroundColor);
+	updateBackgroundColor(); // Initial call to set the correct color on page load
+</script>
