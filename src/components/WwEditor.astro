@@ -39,9 +39,9 @@ import numeral from "../svg/numeral-one.svg?raw";
 
   <!-- Editor Image -->
   <div class="container px-4">
-    <div class="px-10 py-20 border border-neutral-500 overflow-hidden bg-black">
+    <div class="px-10 py-20 overflow-hidden bg-neutral-400">
       <Image
-        class="border-2 border-neutral-700 rounded-lg drop-s"
+        class="rounded-md overflow-hidden drop-shadow-2xl"
         src={wwEditorMain}
         alt=""
       />
@@ -60,7 +60,17 @@ import numeral from "../svg/numeral-one.svg?raw";
               simply write JavaScript.</span
             >
           </div>
-          <div class="w-full h-[640px] border border-neutral-300 bg-black">
+          <div
+            class="relative w-full h-[720px] border border-neutral-300 bg-neutral-400 overflow-hidden"
+          >
+            <Image
+              src={wwEditorWorkflowOne}
+              alt=""
+              quality={100}
+              width="2048"
+              height="1472"
+              class="border-4 border-neutral-800 rounded-md overflow-hidden drop-shadow-2xl absolute top-8 left-8"
+            />
           </div>
         </div>
       </div>
