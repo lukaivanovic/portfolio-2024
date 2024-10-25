@@ -31,18 +31,18 @@ const { title } = Astro.props;
 
   :root {
     --color-bg: #ffffff;
-    --color-text: #000000;
     --color-primary: #000000;
-    --color-secondary: #f0e6dd;
+    --color-secondary: #000;
     --color-border: #e5e5e5;
+    --color-accent: #000;
   }
 
   .dark-mode {
-    --color-bg: black;
-    --color-text: #f0e6dd;
+    --color-bg: #262626;
     --color-primary: #ffffff;
-    --color-secondary: #2a2a2a;
-    --color-border: #333333;
+    --color-secondary: #dbdbdb;
+    --color-border: #3b3b3b;
+    --color-accent: #ea7d01;
   }
 
   body {
@@ -79,6 +79,7 @@ const { title } = Astro.props;
     font-size: 17px;
     line-height: 30px;
     font-weight: 350;
+    color: var(--color-secondary);
   }
 
   a {
