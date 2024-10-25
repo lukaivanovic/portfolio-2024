@@ -2,33 +2,35 @@
 import { Image } from "astro:assets";
 import wwEditorMain from "../images/test2.jpg";
 import wwEditorWorkflowOne from "../images/ww-editor-workflow-01.jpg";
-import numeralOne from "../svg/numeral-one.svg?raw";
+import numeral from "../svg/numeral-one.svg?raw";
 ---
 
 <section class="py-[240px]">
   <!-- Project Number -->
-  <div class="max-w-[1752px] mx-auto px-4 flex flex-row items-center">
-    <div class="h-[1px] w-[16px] bg-neutral-200"></div>
-    <div
-      class="w-[32px] h-[32px] bg-black border-4 border-white outline outline-1 outline-black z-10 flex items-center justify-center"
-    >
-      <Fragment set:html={numeralOne} />
-    </div>
 
-    <div class="h-[1px] flex-grow bg-neutral-200"></div>
+  <div class="max-w-[1752px] mx-auto px-8 flex flex-row items-center">
+    <div class="h-[1px] w-[16px] bg-[var(--color-border)]"></div>
+    <div
+      class="text-[var(--color-bg)] w-[32px] h-[32px] bg-[var(--color-primary)] border-4 border-[var(--color-bg)] outline outline-1 outline-[var(--color-border)] z-10 flex items-center justify-center"
+    >
+      <Fragment set:html={numeral} />
+    </div>
+    <div class="h-[1px] flex-grow bg-[var(--color-border)]"></div>
   </div>
 
-  <!-- Project Details -->
   <div class="container px-8 flex flex-row pt-[96px] pb-[120px]">
     <div>
-      <h1 class="w-[440px]">WeWeb Editor</h1>
+      <h1 class="w-[420px] text-[var(--color-primary)]">WeWeb Editor</h1>
+      <p class="text-monospace text-xs text-[var(--color-tertiary)] mt-3">
+        2022 - PRESENT
+      </p>
     </div>
-    <div class="w-[560px]">
+    <div class="w-[560px] text-[var(--color-secondary)] pt-3">
       <p>
-        The editor features many complex and intertwining systems such as
-        components, workflows and more. We take web best practices and present
-        them in an elevated and clear interface. As a result, editor can export
-        clean and modern code.
+        <span class="ml-1">The</span> editor features many complex and intertwining
+        systems such as components, workflows and more. We take web best practices
+        and present them in an elevated and clear interface. As a result, editor
+        can export clean and modern code.
       </p>
     </div>
   </div>

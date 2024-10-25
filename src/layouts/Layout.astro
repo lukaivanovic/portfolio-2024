@@ -41,6 +41,7 @@ const { title } = Astro.props;
     --color-bg: #262626;
     --color-primary: #ffffff;
     --color-secondary: #dbdbdb;
+    --color-tertiary: #a9a9a9;
     --color-border: #3b3b3b;
     --color-accent: #ea7d01;
   }
@@ -87,5 +88,18 @@ const { title } = Astro.props;
     &:hover {
       color: var(--color-primary);
     }
+  }
+
+  .text-monospace {
+    font-family: "Menlo", monospace;
+    font-weight: 400;
+  }
+
+  * {
+    transition:
+      background-color 0.5s ease,
+      border-color 0.5s ease,
+      outline-color 0.5s ease,
+      stroke 0.5s ease;
   }
 </style>
