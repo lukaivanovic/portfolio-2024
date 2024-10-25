@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import wwEditorMain from "../images/test2.jpg";
 import wwEditorWorkflowOne from "../images/ww-editor-workflow-01.jpg";
+import wwEditorDesignSystem from "../images/ww-editor-design-system.png";
 import numeral from "../svg/numeral-one.svg?raw";
 ---
 
@@ -88,7 +89,17 @@ import numeral from "../svg/numeral-one.svg?raw";
               simply write JavaScript.</span
             >
           </div>
-          <div class="w-full h-[640px] border border-neutral-300 bg-black">
+          <div
+            class="relative w-full h-[720px] border border-neutral-300 bg-[#1a1a1a] overflow-hidden"
+          >
+            <Image
+              src={wwEditorDesignSystem}
+              alt=""
+              quality={100}
+              width="2048"
+              height="1472"
+              class="h-full w-auto"
+            />
           </div>
         </div>
       </div>
