@@ -22,8 +22,10 @@ import logo3 from "../svg/logo-3.svg?raw";
     id="hero"
     class="h-[calc(100dvh-56px)] max-h-[920px] pb-[24px] overflow-hidden relative"
   >
-    <div class="container h-full flex flex-col-reverse xl:flex-row gap-4">
-      <div class="flex flex-col gap-4 justify-end h-full w-full lg:w-1/2 z-10">
+    <div
+      class="container h-full flex flex-col-reverse justify-stretch xl:flex-row gap-4"
+    >
+      <div class="flex flex-col gap-4 justify-end w-full xl:w-1/2 z-10">
         <div>
           <span class="text-md text-neutral-700">Luka Ivanović © 2024</span>
           <h1 class="mb-10 mt-4 max-w-[610px]">
@@ -35,20 +37,20 @@ import logo3 from "../svg/logo-3.svg?raw";
           </h1>
           <span class="text-neutral-700">Worked with</span>
           <div class="flex flex-row gap-4 pb-2 pt-2">
-            <div class="h-[23px] md:h-[32px]">
+            <div class="h-[26px] md:h-[32px]">
               <Fragment set:html={logo1} />
             </div>
-            <div class="h-[28px] md:h-[32px]">
+            <div class="h-[26px] md:h-[32px]">
               <Fragment set:html={logo2} />
             </div>
-            <div class="h-[28px] md:h-[32px]">
+            <div class="h-[26px] md:h-[32px]">
               <Fragment set:html={logo3} />
             </div>
           </div>
         </div>
       </div>
       <div
-        class="flex flex-col gap-4 justify-end h-full w-full lg:w-1/2 border border-neutral-300"
+        class="flex flex-col gap-4 justify-end w-full flex-grow xl:w-1/2 border border-neutral-300"
       >
         <!-- <IllustrationThreeJs /> -->
         <!-- <Illustration /> -->
