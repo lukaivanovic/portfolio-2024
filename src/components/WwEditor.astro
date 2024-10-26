@@ -4,43 +4,21 @@ import wwEditorMain from "../images/test2.jpg";
 import wwEditorWorkflowOne from "../images/ww-editor-workflow-01.jpg";
 import wwEditorDesignSystem from "../images/ww-editor-design-system.png";
 import numeral from "../svg/numeral-one.svg?raw";
+import ProjectHeader from "./ProjectHeader.astro";
 ---
 
 <section class="py-[240px]">
-  <!-- Project Number -->
-  <div class="container flex flex-row items-center">
-    <div class="h-[1px] w-[16px] bg-[var(--color-border)]"></div>
-    <div
-      class="text-[var(--color-bg)] w-[32px] h-[32px] bg-[var(--color-primary)] border-4 border-[var(--color-bg)] outline outline-1 outline-[var(--color-border)] z-10 flex items-center justify-center"
-    >
-      <Fragment set:html={numeral} />
-    </div>
-    <div class="h-[1px] flex-grow bg-[var(--color-border)]"></div>
-  </div>
-
-  <div class="container flex flex-col lg:flex-row pt-[96px] pb-[120px]">
-    <div class="flex flex-col-reverse lg:flex-col gap-4">
-      <h1 class="w-full lg:w-[420px] text-[var(--color-primary)]">
-        WeWeb Editor
-      </h1>
-      <p class="text-monospace text-xs text-[var(--color-tertiary)]">
-        2022 - PRESENT
-      </p>
-    </div>
-    <div class="w-full max-w-[560px] text-[var(--color-secondary)] pt-3">
-      <p>
-        The editor features many complex and intertwining systems such as
-        components, workflows and more. We take web best practices and present
-        them in an elevated and clear interface. As a result, editor can export
-        clean and modern code.
-      </p>
-    </div>
-  </div>
+  <ProjectHeader
+    name="WeWeb Editor"
+    duration="2022 - PRESENT"
+    description="The editor features many complex and intertwining systems such as components, workflows and more. We take web best practices and present them in an elevated and clear interface. As a result, editor can export clean and modern code."
+    numeralSvg={numeral}
+  />
 
   <!-- Project Images -->
 
   <!-- Editor Image -->
-  <div class="container px-4">
+  <div class="container -wide">
     <div class="p-4 lg:px-10 lg:py-20 overflow-hidden bg-neutral-400">
       <Image
         class="rounded-md overflow-hidden drop-shadow-2xl"

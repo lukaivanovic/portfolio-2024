@@ -3,43 +3,16 @@ import { Image } from "astro:assets";
 import wwComponentsBlueprint from "../images/ww-components-02.jpg";
 import wwComponentsPreview from "../images/ww-components-01.jpg";
 import numeral from "../svg/numeral-two.svg?raw";
+import ProjectHeader from "./ProjectHeader.astro";
 ---
 
 <section class="pt-[120px]">
-  <div class="max-w-[1752px] mx-auto px-4 flex flex-row items-center">
-    <div class="h-[1px] w-[16px] bg-[var(--color-border)]"></div>
-    <div
-      class="text-[var(--color-bg)] w-[32px] h-[32px] bg-[var(--color-primary)] border-4 border-[var(--color-bg)] outline outline-1 outline-[var(--color-border)] z-10 flex items-center justify-center"
-    >
-      <Fragment set:html={numeral} />
-    </div>
-    <div class="h-[1px] flex-grow bg-[var(--color-border)]"></div>
-  </div>
-
-  <div class="container px-8 flex flex-col lg:flex-row pt-[96px] pb-[120px]">
-    <div>
-      <h1 class="w-full max-w-[420px] text-[var(--color-primary)]">
-        WeWeb Components
-      </h1>
-      <p class="text-monospace text-xs text-[var(--color-tertiary)] mt-3">
-        2022 - PRESENT
-      </p>
-    </div>
-    <div class="w-full max-w-[560px] text-[var(--color-secondary)] pt-3">
-      <p>
-        Offering basic UI components is essential for any app builder to compete
-        with the vast number of libraries available in standard coding
-        approaches. However, a common limitation among most app builders is the
-        lack of deep customizability.
-        <br />
-        <br />
-
-        Inspired by the power of Radix and the aesthetics of Shadcn libraries in
-        the coding world, we set out to revamp our element toolkit, focusing on
-        full customizability, functionality and accessibility.
-      </p>
-    </div>
-  </div>
+  <ProjectHeader
+    name="WeWeb Components"
+    duration="2022 - PRESENT"
+    description="Offering basic UI components is essential for any app builder to compete with the vast number of libraries available in standard coding approaches. However, a common limitation among most app builders is the lack of deep customizability. <br /> <br /> Inspired by the power of Radix and the aesthetics of Shadcn libraries in the coding world, we set out to revamp our element toolkit, focusing on full customizability, functionality and accessibility."
+    numeralSvg={numeral}
+  />
 
   <div class="container px-4 grid grid-cols-5 gap-[16px]">
     <div class="col-span-5 lg:col-span-3">
