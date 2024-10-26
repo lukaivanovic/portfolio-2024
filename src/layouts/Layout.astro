@@ -33,6 +33,7 @@ const { title } = Astro.props;
     --color-bg: #ffffff;
     --color-primary: #000000;
     --color-secondary: #000;
+    --color-tertiary: #666666;
     --color-border: #e5e5e5;
     --color-accent: #000;
   }
@@ -61,7 +62,11 @@ const { title } = Astro.props;
   .container {
     max-width: 1720px;
     margin: 0 auto;
-    // padding: 0 16px;
+
+    &.-basic {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
   }
 
   h1 {

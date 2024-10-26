@@ -10,36 +10,29 @@ import logo3 from "../svg/logo-3.svg?raw";
 ---
 
 <Layout title="Welcome to Astro.">
+  <section>
+    <div
+      class="container -basic h-[60px] flex flex-row items-center gap-6 text-sm"
+    >
+      <a href="mailto:hi@ivanovicluka.co">hi@ivanovicluka.co</a>
+      <a href="https://www.linkedin.com/in/lukaivanovic0/">LinkedIn</a>
+      <a href="https://x.com/lukaivnvc">Twitter</a>
+    </div>
+  </section>
   <!-- Hero -->
   <section
     id="hero"
-    class="h-[100vh] max-h-[1050px] pb-[24px] pt-[20px] overflow-hidden relative"
+    class="h-[calc(100vh-60px)] max-h-[1050px] pb-[24px] pt-[20px] overflow-hidden relative"
   >
-    <div
-      class="container
-    px-8
-    h-full
-    flex
-    flex-col
-    flex-col-reverse
-    xl:flex-row"
-    >
+    <div class="container -basic h-full flex flex-col-reverse xl:flex-row">
       <div
-        class="flex flex-col gap-4 justify-between h-full w-1/2 z-10 text-sm"
+        class="flex flex-col gap-4 justify-end h-full w-full lg:w-1/2 z-10 text-sm"
       >
-        <div class="container flex flex-row justify-start items-start gap-6">
-          <a href="mailto:hi@ivanovicluka.co">hi@ivanovicluka.co</a>
-          <a href="https://www.linkedin.com/in/lukaivanovic0/">LinkedIn</a>
-          <a href="https://x.com/lukaivnvc">Twitter</a>
-        </div>
-
         <div>
           <span class="text-md text-neutral-700">Luka Ivanović © 2024</span>
-          <h1 class="mb-10 mt-4">
-            Software designer working on allowing <br /> everyone the freedom to
-            build applications <br />fast and simple @ <a
-              href="https://weweb.io">weweb</a
-            >.
+          <h1 class="mb-10 mt-4 max-w-[640px]">
+            Software designer working on allowing everyone the freedom to build
+            applications fast and simple @ <a href="https://weweb.io">weweb</a>.
           </h1>
           <span class="text-sm text-neutral-700">Worked with</span>
           <div class="flex flex-row gap-4 pb-2 pt-2">
@@ -49,7 +42,7 @@ import logo3 from "../svg/logo-3.svg?raw";
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-4 justify-end h-full w-1/2">
+      <div class="flex flex-col gap-4 justify-end h-full w-full lg:w-1/2">
         <IllustrationThreeJs />
         <!-- <Illustration /> -->
       </div>
