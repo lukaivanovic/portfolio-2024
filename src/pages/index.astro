@@ -11,7 +11,7 @@ import logo3 from "../svg/logo-3.svg?raw";
 
 <Layout title="Welcome to Astro.">
   <section>
-    <div class="container h-[60px] flex flex-row items-center gap-6">
+    <div class="container h-[46px] flex flex-row items-center gap-6">
       <a href="mailto:hi@ivanovicluka.co">hi@ivanovicluka.co</a>
       <a href="https://www.linkedin.com/in/lukaivanovic0/">LinkedIn</a>
       <a href="https://x.com/lukaivnvc">Twitter</a>
@@ -20,24 +20,30 @@ import logo3 from "../svg/logo-3.svg?raw";
   <!-- Hero -->
   <section
     id="hero"
-    class="h-[calc(100dvh-60px)] max-h-[920px] pb-[24px] pt-[20px] overflow-hidden relative"
+    class="h-[calc(100dvh-56px)] max-h-[920px] pb-[24px] overflow-hidden relative"
   >
     <div class="container h-full flex flex-col-reverse xl:flex-row gap-4">
       <div class="flex flex-col gap-4 justify-end h-full w-full lg:w-1/2 z-10">
         <div>
           <span class="text-md text-neutral-700">Luka Ivanović © 2024</span>
-          <h1 class="mb-10 mt-4 max-w-[660px]">
-            Software designer working on enabling anyone to build web
-            applications at <a
+          <h1 class="mb-10 mt-4 max-w-[610px]">
+            Software designer working on enabling anyone to turn their ideas
+            into applications at <a
               class="underline text-neutral-700"
               href="https://weweb.io">weweb</a
             >
           </h1>
           <span class="text-neutral-700">Worked with</span>
           <div class="flex flex-row gap-4 pb-2 pt-2">
-            <Fragment set:html={logo1} />
-            <Fragment set:html={logo2} />
-            <Fragment set:html={logo3} />
+            <div class="h-[23px] md:h-[32px]">
+              <Fragment set:html={logo1} />
+            </div>
+            <div class="h-[28px] md:h-[32px]">
+              <Fragment set:html={logo2} />
+            </div>
+            <div class="h-[28px] md:h-[32px]">
+              <Fragment set:html={logo3} />
+            </div>
           </div>
         </div>
       </div>
