@@ -47,8 +47,8 @@
       <!-- Lines -->
       <g>
         {
-          Array.from({ length: 12 }).map((_, index) => (
-            <g transform={`rotate(${index * 15}, 150, 150)`}>
+          Array.from({ length: 9 }).map((_, index) => (
+            <g transform={`rotate(${index * 20}, 150, 150)`}>
               <line
                 x1="50%"
                 y1="0"
@@ -58,15 +58,19 @@
                 stroke-width="1"
                 vector-effect="non-scaling-stroke"
               />
-              <polygon
-                points="150,111 149.5,112 150.5,112"
-                style="fill:#ABABAB;stroke-width:1 vector-effect:non-scaling-stroke"
-              />
+              {index % 2 === 0 && (
+                <polygon
+                  points="150,111 149.5,112 150.5,112"
+                  style="fill:#ABABAB;stroke-width:1 vector-effect:non-scaling-stroke"
+                />
+              )}
 
-              <polygon
-                points="150,189 149.5,188 150.5,188"
-                style="fill:#ABABAB;stroke-width:1 vector-effect:non-scaling-stroke"
-              />
+              {index % 2 !== 0 && (
+                <polygon
+                  points="150,189 149.5,188 150.5,188"
+                  style="fill:#ABABAB;stroke-width:1 vector-effect:non-scaling-stroke"
+                />
+              )}
             </g>
           ))
         }

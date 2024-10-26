@@ -20,10 +20,10 @@ import logo3 from "../svg/logo-3.svg?raw";
   <!-- Hero -->
   <section
     id="hero"
-    class="h-[calc(100dvh-56px)] max-h-[920px] pb-[24px] overflow-hidden relative"
+    class="lg:h-[calc(100dvh-56px)] max-h-[920px] pb-[24px] overflow-hidden relative"
   >
     <div
-      class="container h-full flex flex-col-reverse justify-stretch xl:flex-row gap-4"
+      class="container h-full flex flex-col-reverse justify-stretch xl:flex-row gap-12 lg:gap-4"
     >
       <div class="flex flex-col gap-4 justify-end w-full xl:w-1/2 z-10">
         <div>
@@ -48,11 +48,9 @@ import logo3 from "../svg/logo-3.svg?raw";
           </div>
         </div>
       </div>
-      <div
-        class="flex flex-col gap-4 justify-end w-full flex-grow xl:w-1/2 border border-neutral-300"
-      >
+      <div class="w-full flex-grow xl:w-1/2 h-[400px] lg:h-full relative">
         <!-- <IllustrationThreeJs /> -->
-        <!-- <Illustration /> -->
+        <Illustration />
       </div>
     </div>
   </section>
