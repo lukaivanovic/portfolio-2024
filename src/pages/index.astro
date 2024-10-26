@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Illustration from "../components/Illustration.astro";
+import IllustrationThreeJs from "../components/IllustrationThreeJs.astro";
 import WwComponents from "../components/WwComponents.astro";
 import WwEditor from "../components/WwEditor.astro";
 import logo1 from "../svg/logo-1.svg?raw";
@@ -14,7 +15,15 @@ import logo3 from "../svg/logo-3.svg?raw";
     id="hero"
     class="h-[100vh] max-h-[1050px] pb-[24px] pt-[20px] overflow-hidden relative"
   >
-    <div class="container px-8 h-full flex flex-row">
+    <div
+      class="container
+    px-8
+    h-full
+    flex
+    flex-col
+    flex-col-reverse
+    xl:flex-row"
+    >
       <div
         class="flex flex-col gap-4 justify-between h-full w-1/2 z-10 text-sm"
       >
@@ -40,8 +49,9 @@ import logo3 from "../svg/logo-3.svg?raw";
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-4 justify-end h-full w-1/2 relative">
-        <Illustration />
+      <div class="flex flex-col gap-4 justify-end h-full w-1/2">
+        <IllustrationThreeJs />
+        <!-- <Illustration /> -->
       </div>
       <div
         class="absolute bottom-0 left-0 right-0 h-[300px] w-full bg-gradient-to-t from-white"
@@ -57,9 +67,11 @@ import logo3 from "../svg/logo-3.svg?raw";
 
     <section>
       <div
-        class="container h-[500px] flex flex-col justify-end items-center py-4"
+        class="container h-[500px] flex flex-col justify-end items-center py-8"
       >
-        <span class="text-[var(--color-primary)]">Luka Ivanović © 2024</span>
+        <span class="text-[var(--color-secondary)] text-sm"
+          >Luka Ivanović © 2024</span
+        >
       </div>
     </section>
   </div>
