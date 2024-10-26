@@ -17,9 +17,11 @@ import ProjectHeader from "./ProjectHeader.astro";
 
   <!-- Editor Image -->
   <div class="container -wide">
-    <div class="p-4 lg:px-10 lg:py-20 overflow-hidden bg-neutral-400">
+    <div
+      class="p-4 lg:px-10 lg:py-20 overflow-hidden bg-neutral-400 flex justify-center items-center min-h-[80vh]"
+    >
       <Image
-        class="rounded-md overflow-hidden drop-shadow-2xl"
+        class="rounded-md overflow-hidden drop-shadow-2xl max-w-[1580px] w-full"
         src={wwEditorMain}
         alt=""
       />
@@ -31,12 +33,13 @@ import ProjectHeader from "./ProjectHeader.astro";
     <div class="w-full flex flex-col">
       <div class="max-w-[1094px] w-full">
         <div class="max-w-[560px] flex flex-col justify-between pb-8">
-          <h3 class="text-lg mb-2">Workflow Editor</h3>
-          <span class="text-md text-neutral-700"
-            >What functions are in code, workflows are in weweb. Use pre-made
-            actions like navigating to a page, changing a variable value or
-            simply write JavaScript.</span
+          <span class="mb-2 text-[var(--color-secondary)]">Workflow Editor</span
           >
+          <p>
+            What functions are in code, workflows are in weweb. Use pre-made
+            actions like navigating to a page, changing a variable value or
+            simply write JavaScript.
+          </p>
         </div>
 
         <Image
@@ -57,11 +60,11 @@ import ProjectHeader from "./ProjectHeader.astro";
       <div class="max-w-[1094px] w-full">
         <div class="max-w-[560px] flex flex-col justify-between pb-8">
           <h3 class="text-lg mb-2">Design System</h3>
-          <span class="text-md text-neutral-700"
-            >What functions are in code, workflows are in weweb. Use pre-made
+          <p>
+            What functions are in code, workflows are in weweb. Use pre-made
             actions like navigating to a page, changing a variable value or
-            simply write JavaScript.</span
-          >
+            simply write JavaScript.
+          </p>
         </div>
 
         <Image
