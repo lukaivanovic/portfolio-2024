@@ -15,8 +15,6 @@ import ProjectHeader from "./ProjectHeader.astro";
     numeralSvg={numeral}
   />
 
-  <!-- Project Images -->
-
   <!-- Editor Image -->
   <div class="container -wide">
     <div class="p-4 lg:px-10 lg:py-20 overflow-hidden bg-neutral-400">
@@ -26,61 +24,55 @@ import ProjectHeader from "./ProjectHeader.astro";
         alt=""
       />
     </div>
+  </div>
 
-    <!-- Workflow Editor -->
-
-    <div class="container pb-[80px] pt-[160px]">
-      <div class="w-full flex flex-col">
-        <div class="max-w-[1094px] w-full">
-          <div class="max-w-[560px] flex flex-col justify-between pb-8">
-            <h3 class="text-lg mb-2">Workflow Editor</h3>
-            <span class="text-md text-neutral-700"
-              >What functions are in code, workflows are in weweb. Use pre-made
-              actions like navigating to a page, changing a variable value or
-              simply write JavaScript.</span
-            >
-          </div>
-          <div
-            class="relative w-full h-auto md:h-[720px] border border-neutral-300 bg-neutral-400 overflow-hidden"
+  <!-- Workflow Editor -->
+  <div class="container -wide pb-[80px] pt-[160px]">
+    <div class="w-full flex flex-col">
+      <div class="max-w-[1094px] w-full">
+        <div class="max-w-[560px] flex flex-col justify-between pb-8">
+          <h3 class="text-lg mb-2">Workflow Editor</h3>
+          <span class="text-md text-neutral-700"
+            >What functions are in code, workflows are in weweb. Use pre-made
+            actions like navigating to a page, changing a variable value or
+            simply write JavaScript.</span
           >
-            <Image
-              src={wwEditorWorkflowOne}
-              alt=""
-              quality={100}
-              width="2048"
-              height="1472"
-              class="w-full h-full object-cover object-left-top"
-            />
-          </div>
         </div>
+      
+          <Image
+            src={wwEditorWorkflowOne}
+            alt=""
+            quality={100}
+            width="2048"
+            height="1472"
+            class="w-full h-auto object-cover object-left-top bg-black"
+          />
+       
       </div>
     </div>
+  </div>
 
-    <!-- Design system -->
-    <div class="container pt-[80px]">
-      <div class="w-full flex flex-col items-end">
-        <div class="max-w-[1094px] w-full">
-          <div class="max-w-[560px] flex flex-col justify-between pb-8">
-            <h3 class="text-lg mb-2">Design System</h3>
-            <span class="text-md text-neutral-700"
-              >What functions are in code, workflows are in weweb. Use pre-made
-              actions like navigating to a page, changing a variable value or
-              simply write JavaScript.</span
-            >
-          </div>
-          <div
-            class="relative w-full h-[720px] border border-neutral-300 bg-[#1a1a1a] overflow-hidden"
+  <!-- Design system -->
+  <div class="container -wide pt-[80px]">
+    <div class="w-full flex flex-col items-end">
+      <div class="max-w-[1094px] w-full">
+        <div class="max-w-[560px] flex flex-col justify-between pb-8">
+          <h3 class="text-lg mb-2">Design System</h3>
+          <span class="text-md text-neutral-700"
+            >What functions are in code, workflows are in weweb. Use pre-made
+            actions like navigating to a page, changing a variable value or
+            simply write JavaScript.</span
           >
-            <Image
-              src={wwEditorDesignSystem}
-              alt=""
-              quality={100}
-              width="2048"
-              height="1472"
-              class="w-full h-full object-cover object-left-top"
-            />
-          </div>
         </div>
+
+        <Image
+          src={wwEditorDesignSystem}
+          alt=""
+          quality={100}
+          width="2048"
+          height="1472"
+          class="w-full h-auto object-cover object-left-top bg-black"
+        />
       </div>
     </div>
   </div>
