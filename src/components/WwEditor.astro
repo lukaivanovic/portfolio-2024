@@ -34,32 +34,32 @@ import ProjectHeader from "./ProjectHeader.astro";
     <div class="container -wide mt-[240px]">
       <div class="w-full flex flex-col">
         <div>
-          <div class="grid grid-cols-8 gap-4 w-full">
+          <div class="grid grid-cols-1 lg:grid-cols-8 gap-4 w-full">
             <Image
               src={wwEditorWorkflow}
               alt=""
               quality={100}
-              class="col-span-5 bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
+              class="col-span-1 lg:col-span-5 bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
             />
 
             <Image
               src={wwEditorFormula}
               alt=""
               quality={100}
-              class="col-span-3 bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
+              class="col-span-1 lg:col-span-3 bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
             />
           </div>
 
-          <div class="grid grid-cols-8 gap-6 w-full mt-4">
+          <div class="grid grid-cols-1 lg:grid-cols-8 gap-6 w-full mt-4">
             <div
-              class="max-w-[640px] col-span-5 text-md text-[var(--color-secondary)]"
+              class="max-w-[640px] col-span-1 lg:col-span-5 text-md text-[var(--color-secondary)]"
             >
               Use pre-made actions like navigating to a page, changing a
               variable or simply write JavaScript
             </div>
 
             <div
-              class="max-w-[560px] col-span-3 text-md text-[var(--color-secondary)]"
+              class="max-w-[560px] col-span-1 lg:col-span-3 text-md text-[var(--color-secondary)]"
             >
               Bind anything like a style property to other values or variables
             </div>
