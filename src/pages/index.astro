@@ -10,11 +10,15 @@ import logo3 from "../svg/logo-3.svg?raw";
 ---
 
 <Layout title="Welcome to Astro.">
-  <section class="absolute top-0 left-0 w-full">
-    <div class="container h-[46px] flex flex-row items-center gap-6">
-      <a href="mailto:hi@ivanovicluka.co">hi@ivanovicluka.co</a>
-      <a href="https://www.linkedin.com/in/lukaivanovic0/">LinkedIn</a>
-      <a href="https://x.com/lukaivnvc">Twitter</a>
+  <section class="lg:absolute lg:top-0 lg:left-0 w-full z-20">
+    <div class="container flex flex-col gap-6 mt-4 text-md">
+      <span>Luka Ivanović © 2024</span>
+
+      <div class="flex flex-col gap-1">
+        <a href="mailto:hi@ivanovicluka.co">Email</a>
+        <a href="https://www.linkedin.com/in/lukaivanovic0/">LinkedIn</a>
+        <a href="https://x.com/lukaivnvc">Twitter</a>
+      </div>
     </div>
   </section>
   <!-- Hero -->
@@ -27,12 +31,11 @@ import logo3 from "../svg/logo-3.svg?raw";
     >
       <div class="flex flex-col gap-4 justify-end w-full xl:w-1/2 z-10">
         <div>
-          <span class="text-md text-neutral-700">Luka Ivanović © 2024</span>
           <h1 class="mb-10 mt-4 max-w-[610px]">
             Software designer working at <a
               class="text-neutral-600 italic"
               href="https://weweb.io">weweb</a
-            > on enabling anyone to turn their ideas into applications.
+            > on enabling anyone to turn their ideas into modern web applications.
           </h1>
           <span class="text-neutral-700">Worked with</span>
           <div class="flex flex-row gap-4 pb-2 pt-2">
