@@ -73,7 +73,7 @@ import logo3 from "../svg/logo-3.svg?raw";
   </div>
 
   <script>
-    const darkModeTrigger = document.getElementById("dark-mode-trigger");
+    const darkModeTriggers = document.querySelectorAll(".dark-mode-section");
     const body = document.body;
 
     const observer = new IntersectionObserver(
@@ -89,8 +89,8 @@ import logo3 from "../svg/logo-3.svg?raw";
       { threshold: 0.1 }
     );
 
-    if (darkModeTrigger) {
-      observer.observe(darkModeTrigger);
-    }
+    darkModeTriggers.forEach((trigger) => {
+      observer.observe(trigger);
+    });
   </script>
 </Layout>
