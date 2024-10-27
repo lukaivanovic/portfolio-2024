@@ -72,7 +72,7 @@ import ProjectHeader from "./ProjectHeader.astro";
     <div class="container -wide mt-16 lg:mt-[120px]">
       <div class="w-full flex flex-col">
         <div>
-          <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 w-full">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full">
             <Image
               src={designSystem1}
               alt=""
@@ -89,7 +89,7 @@ import ProjectHeader from "./ProjectHeader.astro";
               src={designSystem5}
               alt=""
               quality={100}
-              class="lg:col-span-2 lg:row-span-2 bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
+              class="row-start-3 col-span-2 lg:row-span-2 lg:row-start-1 bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
             />
             <Image
               src={designSystem3}
@@ -105,7 +105,9 @@ import ProjectHeader from "./ProjectHeader.astro";
             />
           </div>
 
-          <div class="text-md text-[var(--color-secondary)] mt-4 max-w-[50%]">
+          <div
+            class="text-md text-[var(--color-secondary)] mt-4 lg:max-w-[50%]"
+          >
             Design system sports a neutral and compact look for maximum
             functionality
           </div>
