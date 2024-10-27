@@ -48,11 +48,9 @@ import ProjectHeader from "./ProjectHeader.astro";
               quality={100}
               class="col-span-1 lg:col-span-3 bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
             />
-          </div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-8 gap-6 w-full mt-4">
             <div
-              class="max-w-[640px] col-span-1 lg:col-span-5 text-md text-[var(--color-secondary)]"
+              class="max-w-[640px] col-span-1 lg:col-span-5 text-md text-[var(--color-secondary)] row-start-2"
             >
               Use pre-made actions like navigating to a page, changing a
               variable or simply write JavaScript
@@ -64,6 +62,8 @@ import ProjectHeader from "./ProjectHeader.astro";
               Bind anything like a style property to other values or variables
             </div>
           </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-8 gap-6 w-full mt-4"></div>
         </div>
       </div>
     </div>
@@ -71,7 +71,7 @@ import ProjectHeader from "./ProjectHeader.astro";
     <div class="container -wide mt-[240px]">
       <div class="w-full flex flex-col">
         <div>
-          <div class="grid grid-cols-4 gap-4 w-full">
+          <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 w-full">
             <Image
               src={designSystem1}
               alt=""
@@ -88,9 +88,8 @@ import ProjectHeader from "./ProjectHeader.astro";
               src={designSystem5}
               alt=""
               quality={100}
-              class="col-span-2 row-span-2 bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
+              class="lg:col-span-2 lg:row-span-2 bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
             />
-
             <Image
               src={designSystem3}
               alt=""
