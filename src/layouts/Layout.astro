@@ -22,8 +22,8 @@ const { title } = Astro.props;
 </html>
 <style is:global lang="scss">
   @font-face {
-    font-family: "TWK Lausanne";
-    src: url("/fonts/TWKLausanne.woff2") format("woff2");
+    font-family: "TWK Lausanne - 450";
+    src: url("/fonts/TWKLausanne-450.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -48,10 +48,8 @@ const { title } = Astro.props;
   }
 
   body {
-    font-family: "TWK Lausanne", sans-serif;
+    font-family: "TWK Lausanne - 450", sans-serif;
     font-size: 14px;
-    font-weight: 450;
-    font-aliasing: antialiased;
     transition:
       background-color 0.5s ease,
       color 0.5s ease;
@@ -75,7 +73,6 @@ const { title } = Astro.props;
   h1 {
     font-size: 32px;
     line-height: 42px;
-    font-weight: 500;
   }
 
   h2 {
