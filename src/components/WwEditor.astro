@@ -26,9 +26,9 @@ import ProjectHeader from "./ProjectHeader.astro";
   <!-- Editor Image -->
   <div class="container -wide">
     <div
-      class="bg-[var(--shot-bg)] rounded-md flex justify-center items-center py-12 px-6"
+      class="bg-[var(--main-shot-bg)] rounded-md flex justify-center items-center py-12 px-6"
     >
-      <div class="relative">
+      <div class="relative max-w-[1640px]">
         <Image
           class="drop-shadow-lg w-full opacity-[var(--editor-dark-mode-opacity)] rounded-md overflow-hidden"
           src={wwEditorMainDarkMode}
@@ -131,11 +131,13 @@ import ProjectHeader from "./ProjectHeader.astro";
 
 <style is:global>
   :root {
-    --shot-bg: #274076;
+    --main-shot-bg: #274076;
+    --shot-bg: #f4f4f4;
     --editor-light-mode-opacity: 1;
   }
 
   .dark-mode {
+    --main-shot-bg: #1d1f21;
     --shot-bg: #1d1f21;
     --editor-light-mode-opacity: 0;
   }
