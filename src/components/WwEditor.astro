@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import wwEditorMain from "../images/test2.jpg";
+import wwEditorMainDarkMode from "../images/test2.jpg";
+import wwEditorMainLightMode from "../images/test2-light.jpg";
 import wwEditorWorkflow from "../images/workflow.png";
 import wwEditorFormula from "../images/formula.png";
 import wwEditorDesignSystem from "../images/ww-editor-design-system.png";
@@ -19,16 +20,27 @@ import ProjectHeader from "./ProjectHeader.astro";
     duration="2022 - PRESENT"
     description="The editor features many complex and intertwining systems such as components, workflows and more. We take web best practices and present them in an elevated and clear interface. As a result, editor can export clean and modern code."
     numeralSvg={numeral}
-    accentColor="#654C3A"
+    accentColor="#274076"
   />
 
   <!-- Editor Image -->
   <div class="container -wide">
-    <Image
-      class="drop-shadow-lg w-full border border-neutral-700"
-      src={wwEditorMain}
-      alt=""
-    />
+    <div
+      class="bg-[var(--shot-bg)] rounded-md flex justify-center items-center py-12 px-6"
+    >
+      <div class="relative">
+        <Image
+          class="drop-shadow-lg w-full opacity-[var(--editor-dark-mode-opacity)] rounded-md overflow-hidden"
+          src={wwEditorMainDarkMode}
+          alt=""
+        />
+        <Image
+          class="drop-shadow-lg w-full absolute top-0 left-0 opacity-[var(--editor-light-mode-opacity)] transition-opacity duration-500 rounded-md overflow-hidden"
+          src={wwEditorMainLightMode}
+          alt=""
+        />
+      </div>
+    </div>
   </div>
 
   <div class="dark-mode-section">
@@ -40,14 +52,14 @@ import ProjectHeader from "./ProjectHeader.astro";
               src={wwEditorWorkflow}
               alt=""
               quality={100}
-              class="col-span-1 lg:col-span-5 bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
+              class="col-span-1 lg:col-span-5 bg-[var(--shot-bg)] rounded-md overflow-hidden"
             />
 
             <Image
               src={wwEditorFormula}
               alt=""
               quality={100}
-              class="col-span-1 lg:col-span-3 bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
+              class="col-span-1 lg:col-span-3 bg-[var(--shot-bg)] rounded-md overflow-hidden"
             />
 
             <div
@@ -77,31 +89,31 @@ import ProjectHeader from "./ProjectHeader.astro";
               src={designSystem1}
               alt=""
               quality={100}
-              class="bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
+              class="bg-[var(--shot-bg)] rounded-md overflow-hidden"
             />
             <Image
               src={designSystem2}
               alt=""
               quality={100}
-              class="bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
+              class="bg-[var(--shot-bg)] rounded-md overflow-hidden"
             />
             <Image
               src={designSystem5}
               alt=""
               quality={100}
-              class="row-start-3 col-span-2 lg:row-span-2 lg:row-start-1 bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
+              class="row-start-3 col-span-2 lg:row-span-2 lg:row-start-1 bg-[var(--shot-bg)] rounded-md overflow-hidden"
             />
             <Image
               src={designSystem3}
               alt=""
               quality={100}
-              class="bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
+              class="bg-[var(--shot-bg)] rounded-md overflow-hidden"
             />
             <Image
               src={designSystem4}
               alt=""
               quality={100}
-              class="bg-neutral-900 rounded-sm border border-neutral-700 overflow-hidden"
+              class="bg-[var(--shot-bg)] rounded-md overflow-hidden"
             />
           </div>
 
@@ -116,3 +128,15 @@ import ProjectHeader from "./ProjectHeader.astro";
     </div>
   </div>
 </section>
+
+<style is:global>
+  :root {
+    --shot-bg: #274076;
+    --editor-light-mode-opacity: 1;
+  }
+
+  .dark-mode {
+    --shot-bg: #1d1f21;
+    --editor-light-mode-opacity: 0;
+  }
+</style>
