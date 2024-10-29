@@ -4,12 +4,12 @@ import wwEditorMainDarkMode from "../images/test2.jpg";
 import wwEditorMainLightMode from "../images/test2-light.jpg";
 import wwEditorWorkflow from "../images/workflow.png";
 import wwEditorFormula from "../images/formula.png";
-import wwEditorDesignSystem from "../images/ww-editor-design-system.png";
+import wwEditorAddPanel from "../images/add-panel.png";
+import wwEditorStyling from "../images/styling.png";
+import wwEditorApps from "../images/apps.png";
 import designSystem1 from "../images/ds-01.png";
-import designSystem2 from "../images/ds-02.png";
 import designSystem3 from "../images/ds-03.png";
 import designSystem4 from "../images/ds-04.png";
-import designSystem5 from "../images/ds-05.png";
 import numeral from "../svg/numeral-one.svg?raw";
 import ProjectHeader from "./ProjectHeader.astro";
 ---
@@ -26,11 +26,11 @@ import ProjectHeader from "./ProjectHeader.astro";
   <!-- Editor Image -->
   <div class="container -wide">
     <div
-      class="bg-[var(--main-shot-bg)] rounded-md flex justify-center items-center py-12 px-6"
+      class="rounded-md flex justify-center items-center py-6 px-6 border border-[var(--color-border)] bg-[var(--main-shot-bg)]"
     >
       <div class="relative max-w-[1640px]">
         <Image
-          class="drop-shadow-lg w-full opacity-[var(--editor-dark-mode-opacity)] rounded-md overflow-hidden"
+          class="drop-shadow-sm w-full opacity-[var(--editor-dark-mode-opacity)] rounded-md overflow-hidden outline outline-2 outline-[var(--color-border)]"
           src={wwEditorMainDarkMode}
           alt=""
         />
@@ -47,32 +47,67 @@ import ProjectHeader from "./ProjectHeader.astro";
     <div class="container -wide mt-16 lg:mt-[120px]">
       <div class="w-full flex flex-col">
         <div>
-          <div class="grid grid-cols-1 lg:grid-cols-8 gap-4 w-full">
-            <Image
-              src={wwEditorWorkflow}
-              alt=""
-              quality={100}
-              class="col-span-1 lg:col-span-5 bg-[var(--shot-bg)] rounded-md overflow-hidden"
-            />
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
+            <div class="col-span-1">
+              <Image
+                src={wwEditorAddPanel}
+                alt=""
+                quality={100}
+                class="rounded-md overflow-hidden border border-[var(--color-border)]"
+              />
 
-            <Image
-              src={wwEditorFormula}
-              alt=""
-              quality={100}
-              class="col-span-1 lg:col-span-3 bg-[var(--shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top"
-            />
-
-            <div
-              class="max-w-[640px] col-span-1 lg:col-span-5 text-md text-[var(--color-secondary)] row-start-2 mb-[64px] lg:mb-0"
-            >
-              Use pre-made actions like navigating to a page, changing a
-              variable or simply write JavaScript.
+              <p class="text-[var(--color-secondary)] text-sm mt-4">
+                Use pre-made actions like navigating to a page, changing a
+                variable or simply write JavaScript.
+              </p>
             </div>
 
-            <div
-              class="max-w-[560px] col-span-1 lg:col-span-3 text-md text-[var(--color-secondary)]"
-            >
-              Bind anything to other application values or variables.
+            <div class="col-span-1 lg:col-span-2">
+              <Image
+                src={wwEditorStyling}
+                alt=""
+                quality={100}
+                class="rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+              />
+              <p class="text-[var(--color-secondary)] text-sm mt-4">
+                Bind anything to other application values or variables.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-8 gap-6 w-full mt-4"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container -wide mt-16 lg:mt-[120px]">
+      <div class="w-full flex flex-col">
+        <div>
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
+            <div class="col-span-1">
+              <Image
+                src={wwEditorFormula}
+                alt=""
+                quality={100}
+                class="rounded-md overflow-hidden border border-[var(--color-border)]"
+              />
+
+              <p class="text-[var(--color-secondary)] text-sm mt-4">
+                Use pre-made actions like navigating to a page, changing a
+                variable or simply write JavaScript.
+              </p>
+            </div>
+
+            <div class="col-span-1 lg:col-span-2">
+              <Image
+                src={wwEditorWorkflow}
+                alt=""
+                quality={100}
+                class="rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+              />
+              <p class="text-[var(--color-secondary)] text-sm mt-4">
+                Bind anything to other application values or variables.
+              </p>
             </div>
           </div>
 
@@ -91,18 +126,7 @@ import ProjectHeader from "./ProjectHeader.astro";
               quality={100}
               class="bg-[var(--shot-bg)] rounded-md overflow-hidden"
             />
-            <Image
-              src={designSystem2}
-              alt=""
-              quality={100}
-              class="bg-[var(--shot-bg)] rounded-md overflow-hidden"
-            />
-            <Image
-              src={designSystem5}
-              alt=""
-              quality={100}
-              class="row-start-3 col-span-2 lg:row-span-2 lg:row-start-1 bg-[var(--shot-bg)] rounded-md overflow-hidden"
-            />
+
             <Image
               src={designSystem3}
               alt=""
@@ -127,17 +151,26 @@ import ProjectHeader from "./ProjectHeader.astro";
       </div>
     </div>
   </div>
+
+  <div class="container px-4 grid grid-cols-1 gap-[16px] pt-[80vh]">
+    <Image
+      class="bg-neutral-200 border border-neutral-300"
+      src={wwEditorApps}
+      alt=""
+      quality={"max"}
+    />
+  </div>
 </section>
 
 <style is:global>
   :root {
-    --main-shot-bg: #313f5d;
+    --main-shot-bg: #e7e6e6;
     --shot-bg: #f4f4f4;
     --editor-light-mode-opacity: 1;
   }
 
   .dark-mode {
-    --main-shot-bg: #1d1f21;
+    --main-shot-bg: transparent;
     --shot-bg: #1d1f21;
     --editor-light-mode-opacity: 0;
   }
