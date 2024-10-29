@@ -1,17 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import wwEditorMainDarkMode from "../images/test2.jpg";
-import wwEditorMainLightMode from "../images/test2-light.jpg";
+import wwEditorMainLightMode from "../images/test2-light2.jpg";
 import wwEditorWorkflow from "../images/workflow.png";
 import wwEditorFormula from "../images/formula.png";
 import wwEditorAddPanel from "../images/add-panel.png";
 import wwEditorStyling from "../images/styling.png";
-import wwEditorApps from "../images/apps.png";
-import designSystem1 from "../images/ds-01.png";
-import designSystem3 from "../images/ds-03.png";
-import designSystem4 from "../images/ds-04.png";
 import numeral from "../svg/numeral-one.svg?raw";
 import ProjectHeader from "./ProjectHeader.astro";
+import Testimonial from "./Testimonial.astro";
 ---
 
 <section class="py-[240px]">
@@ -44,6 +41,27 @@ import ProjectHeader from "./ProjectHeader.astro";
   </div>
 
   <div class="dark-mode-section">
+    <div
+      class="container mt-16 lg:mt-[120px] flex flex-row justify-center items-center"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <Testimonial
+          comment="For me, it's because it feels a lot like Figma, but with auto-layout always on"
+          handle="stevedesignerd"
+        />
+
+        <Testimonial
+          comment="I started using WeWeb recently and it's on a league of its own"
+          handle="pascowebdesigns"
+        />
+
+        <Testimonial
+          comment="Definitely try @weweb_io for FE if you like Webflow"
+          handle="andystrb"
+        />
+      </div>
+    </div>
+
     <div class="container -wide mt-16 lg:mt-[120px]">
       <div class="w-full flex flex-col">
         <div>
@@ -53,12 +71,11 @@ import ProjectHeader from "./ProjectHeader.astro";
                 src={wwEditorAddPanel}
                 alt=""
                 quality={100}
-                class="rounded-md overflow-hidden border border-[var(--color-border)]"
+                class="bg-[var(--shot-bg)] rounded-md overflow-hidden border border-[var(--color-border)]"
               />
 
-              <p class="text-[var(--color-secondary)] text-sm mt-4">
-                Use pre-made actions like navigating to a page, changing a
-                variable or simply write JavaScript.
+              <p class="text-[var(--color-tertiary)] text-sm mt-4">
+                Select from a wide range of pre-made elements.
               </p>
             </div>
 
@@ -67,10 +84,10 @@ import ProjectHeader from "./ProjectHeader.astro";
                 src={wwEditorStyling}
                 alt=""
                 quality={100}
-                class="rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+                class="bg-[var(--shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
               />
-              <p class="text-[var(--color-secondary)] text-sm mt-4">
-                Bind anything to other application values or variables.
+              <p class="text-[var(--color-tertiary)] text-sm mt-4">
+                Reuse components, styles, typography, color and more.
               </p>
             </div>
           </div>
@@ -89,12 +106,11 @@ import ProjectHeader from "./ProjectHeader.astro";
                 src={wwEditorFormula}
                 alt=""
                 quality={100}
-                class="rounded-md overflow-hidden border border-[var(--color-border)]"
+                class="bg-[var(--shot-bg)] rounded-md overflow-hidden border border-[var(--color-border)]"
               />
 
-              <p class="text-[var(--color-secondary)] text-sm mt-4">
-                Use pre-made actions like navigating to a page, changing a
-                variable or simply write JavaScript.
+              <p class="text-[var(--color-tertiary)] text-sm mt-4">
+                Bind anything to other application values or variables.
               </p>
             </div>
 
@@ -103,10 +119,11 @@ import ProjectHeader from "./ProjectHeader.astro";
                 src={wwEditorWorkflow}
                 alt=""
                 quality={100}
-                class="rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+                class="bg-[var(--shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
               />
-              <p class="text-[var(--color-secondary)] text-sm mt-4">
-                Bind anything to other application values or variables.
+              <p class="text-[var(--color-tertiary)] text-sm mt-4">
+                Use pre-made actions like navigating to a page, changing a
+                variable or simply write JavaScript.
               </p>
             </div>
           </div>
@@ -115,63 +132,19 @@ import ProjectHeader from "./ProjectHeader.astro";
         </div>
       </div>
     </div>
-
-    <div class="container -wide mt-16 lg:mt-[120px]">
-      <div class="w-full flex flex-col">
-        <div>
-          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-            <Image
-              src={designSystem1}
-              alt=""
-              quality={100}
-              class="bg-[var(--shot-bg)] rounded-md overflow-hidden"
-            />
-
-            <Image
-              src={designSystem3}
-              alt=""
-              quality={100}
-              class="bg-[var(--shot-bg)] rounded-md overflow-hidden"
-            />
-            <Image
-              src={designSystem4}
-              alt=""
-              quality={100}
-              class="bg-[var(--shot-bg)] rounded-md overflow-hidden"
-            />
-          </div>
-
-          <div
-            class="text-md text-[var(--color-secondary)] mt-4 lg:max-w-[50%]"
-          >
-            Design system sports a neutral and compact look for maximum
-            functionality.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container px-4 grid grid-cols-1 gap-[16px] pt-[80vh]">
-    <Image
-      class="bg-neutral-200 border border-neutral-300"
-      src={wwEditorApps}
-      alt=""
-      quality={"max"}
-    />
   </div>
 </section>
 
 <style is:global>
   :root {
     --main-shot-bg: #e7e6e6;
-    --shot-bg: #f4f4f4;
+    --shot-bg: #171717;
     --editor-light-mode-opacity: 1;
   }
 
   .dark-mode {
     --main-shot-bg: transparent;
-    --shot-bg: #1d1f21;
+    --shot-bg: #171717;
     --editor-light-mode-opacity: 0;
   }
 </style>

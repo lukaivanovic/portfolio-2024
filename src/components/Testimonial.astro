@@ -1,0 +1,17 @@
+---
+interface Props {
+  comment: string;
+  handle: string;
+}
+
+const { comment, handle } = Astro.props;
+---
+
+<div
+  class="bg-[var(--color-bg)] flex flex-col justify-between p-6 border border-[var(--color-border)] rounded-md text-center max-w-[360px]"
+>
+  <span class="mb-2 text-[var(--color-secondary)] text-sm">
+    {comment}
+  </span>
+  <span class="text-[var(--color-tertiary)] text-sm">@{handle}</span>
+</div>
