@@ -125,8 +125,55 @@ import Testimonial from "./Testimonial.astro";
                 class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
               />
             </div>
+
+            <div class="col-span-1">
+              <Image
+                src={wwEditorFormula}
+                alt=""
+                quality={100}
+                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+              />
+            </div>
+
+            <div class="col-span-1 grid grid-cols-2 gap-4">
+              <Testimonial
+                comment="For me, it's because it feels a lot like Figma, but with auto-layout always on"
+                handle="stevedesignerd"
+              />
+
+              <Testimonial
+                comment="I started using WeWeb recently and it's on a league of its own"
+                handle="pascowebdesigns"
+              />
+
+              <Testimonial
+                comment="Definitely try @weweb_io for FE if you like Webflow"
+                handle="andystrb"
+              />
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div
+      class="container mt-16 lg:mt-[120px] flex flex-row justify-center items-center"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <Testimonial
+          comment="For me, it's because it feels a lot like Figma, but with auto-layout always on"
+          handle="stevedesignerd"
+        />
+
+        <Testimonial
+          comment="I started using WeWeb recently and it's on a league of its own"
+          handle="pascowebdesigns"
+        />
+
+        <Testimonial
+          comment="Definitely try @weweb_io for FE if you like Webflow"
+          handle="andystrb"
+        />
       </div>
     </div>
   </div>
