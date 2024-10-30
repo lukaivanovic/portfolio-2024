@@ -21,7 +21,7 @@ import Testimonial from "./Testimonial.astro";
   />
 
   <!-- Editor Image -->
-  <div class="container -wide">
+  <div class="container">
     <div
       class="rounded-md flex justify-center items-center py-6 px-6 border border-[var(--color-border)] bg-[var(--main-shot-bg)]"
     >
@@ -40,7 +40,7 @@ import Testimonial from "./Testimonial.astro";
     </div>
   </div>
 
-  <div class="dark-mode-section">
+  <div>
     <div class="container -wide mt-16 lg:mt-[24px] hidden">
       <div class="w-full flex flex-col">
         <div>
@@ -104,36 +104,25 @@ import Testimonial from "./Testimonial.astro";
       </div>
     </div>
 
-    <div class="container -wide mt-16 lg:mt-[24px]">
+    <div class="container mt-16 lg:mt-[24px]">
       <div class="w-full flex flex-col">
         <div>
-          <div
-            class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-6 w-full"
-          >
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
             <div class="col-span-1">
               <Image
                 src={wwEditorAddPanel}
                 alt=""
                 quality={100}
-                class="bg-[#1E1E1E] rounded-md overflow-hidden border border-[var(--color-border)]"
-              />
-            </div>
-
-            <div class="col-span-2 row-span-2">
-              <Image
-                src={wwEditorWorkflow}
-                alt=""
-                quality={100}
-                class="bg-[#1E1E1E] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden border border-[var(--color-border)]"
               />
             </div>
 
             <div class="col-span-1">
               <Image
-                src={wwEditorFormula}
+                src={wwEditorWorkflow}
                 alt=""
                 quality={100}
-                class="bg-[#1E1E1E] rounded-md overflow-hidden border border-[var(--color-border)]"
+                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
               />
             </div>
           </div>
@@ -146,7 +135,7 @@ import Testimonial from "./Testimonial.astro";
 <style is:global>
   :root {
     --main-shot-bg: #e7e6e6;
-    --shot-bg: #171717;
+    --shot-bg: #cbcbcb;
     --editor-light-mode-opacity: 1;
   }
 
