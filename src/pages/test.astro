@@ -11,17 +11,19 @@ import logo3 from "../svg/logo-3.svg?raw";
 
 <Layout title="Welcome to Astro.">
   <section class="lg:absolute lg:top-0 lg:left-0 w-full z-20">
-    <div class="container flex flex-col mt-4 text-sm">
+    <div class="container flex flex-row justify-between mt-4 text-sm">
       <span class="uppercase mb-2">Luka Ivanovic © 2024</span>
-      <a href="mailto:hi@ivanovicluka.co">hi@ivanovicluka.co</a>
-      <a href="https://www.linkedin.com/in/lukaivanovic0/">LinkedIn</a>
-      <a href="https://x.com/lukaivnvc">Twitter</a>
+      <div class="flex flex-row gap-4 text-light">
+        <a href="mailto:hi@ivanovicluka.co">hi@ivanovicluka.co</a>
+        <a href="https://www.linkedin.com/in/lukaivanovic0/">LinkedIn</a>
+        <a href="https://x.com/lukaivnvc">Twitter</a>
+      </div>
     </div>
   </section>
   <!-- Hero -->
   <section
     id="hero"
-    class="lg:h-[100dvh] lg:max-h-[800px] pb-[24px] lg:pt-[16px] pt-[40px] overflow-hidden relative"
+    class="lg:h-[100dvh] lg:max-h-[900px] pb-[24px] lg:pt-[16px] pt-[40px] overflow-hidden relative"
   >
     <div
       class="container h-full flex flex-col-reverse justify-stretch xl:flex-row gap-12 lg:gap-4"
@@ -32,6 +34,7 @@ import logo3 from "../svg/logo-3.svg?raw";
             Software designer working at <a href="https://weweb.io">WeWeb</a> on
             enabling anyone to build applications through a visual interface.
           </h1>
+
           <span class="text-neutral-700">Worked with</span>
           <div class="flex flex-row gap-4 pb-2 pt-2">
             <div class="h-[26px] md:h-[32px]">
