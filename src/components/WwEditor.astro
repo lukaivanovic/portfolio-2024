@@ -55,7 +55,7 @@ import Testimonial from "./Testimonial.astro";
                 src={wwEditorAddPanel}
                 alt=""
                 quality={100}
-                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden border"
+                class="bg-[var(--main-shot-bg)] overflow-hidden border border-neutral-300"
               />
             </div>
 
@@ -64,7 +64,7 @@ import Testimonial from "./Testimonial.astro";
                 src={wwEditorWorkflow}
                 alt=""
                 quality={100}
-                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top"
+                class="bg-[var(--main-shot-bg)] overflow-hidden lg:aspect-auto object-cover object-top border border-neutral-300"
               />
             </div>
 
@@ -73,7 +73,7 @@ import Testimonial from "./Testimonial.astro";
                 src={wwEditorFormula}
                 alt=""
                 quality={100}
-                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+                class="bg-[var(--main-shot-bg)] overflow-hidden lg:aspect-auto object-cover object-top border border-neutral-300"
               />
             </div>
 
@@ -82,46 +82,8 @@ import Testimonial from "./Testimonial.astro";
                 src={wwEditorDeploy}
                 alt=""
                 quality={100}
-                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+                class="bg-[var(--main-shot-bg)] overflow-hidden object-cover object-top border border-neutral-300"
               />
-            </div>
-
-            <div class="col-span-1">
-              <Image
-                src={wwEditorPricingOne}
-                alt=""
-                quality={100}
-                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
-              />
-            </div>
-
-            <div class="col-span-1">
-              <div>
-                <p class="text-xs uppercase text-[var(--color-tertiary)]">
-                  Project scope
-                </p>
-                <p>
-                  My responsibilites include all design and product startegy
-                  work including development prototyping.
-                </p>
-              </div>
-
-              <div class="flex flex-row gap-0">
-                <Testimonial
-                  comment="It feels a lot like Figma, but with auto-layout always on."
-                  handle="stevedesignerd"
-                />
-
-                <Testimonial
-                  comment="I started using WeWeb recently and it's on a league of its own."
-                  handle="andystrb"
-                />
-
-                <Testimonial
-                  comment="Definitely try @weweb_io for frontend if you like Webflow"
-                  handle="RLooplabs"
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -129,8 +91,39 @@ import Testimonial from "./Testimonial.astro";
     </div>
 
     <div
-      class="max-w-[1024px] mx-auto px-4 gap-4 py-20 bg-[var(--color-bg)] flex flex-row"
+      class="max-w-[500px] mx-auto px-4 gap-4 py-20 bg-[var(--color-bg)] flex flex-col"
     >
+      <div>
+        <p class="text-xs uppercase text-[var(--color-secondary)] mb-4">
+          Project scope
+        </p>
+        <p>
+          Working as the only designer, my resposibilities included all design
+          and most product strategy affairs. Beyond that, I was also involved in
+          marketing and social side and creating functioning prototypes of many
+          features with code.
+        </p>
+      </div>
+
+      <div class="flex flex-col gap-4">
+        <p class="text-xs uppercase text-[var(--color-secondary)]">
+          What users say
+        </p>
+        <Testimonial
+          comment="It feels a lot like Figma, but with auto-layout always on."
+          handle="stevedesignerd"
+        />
+
+        <Testimonial
+          comment="I started using WeWeb recently and it's on a league of its own."
+          handle="andystrb"
+        />
+
+        <Testimonial
+          comment="Definitely try @weweb_io for frontend if you like Webflow"
+          handle="RLooplabs"
+        />
+      </div>
     </div>
 
     <div class="container mt-16 lg:mt-[24px] hidden">
