@@ -4,7 +4,9 @@ import wwEditorMainDarkMode from "../images/test2.jpg";
 import wwEditorMainLightMode from "../images/test2-light2.jpg";
 import wwEditorWorkflow from "../images/workflow.png";
 import wwEditorFormula from "../images/formula.png";
+import wwEditorBranching from "../images/branching.png";
 import wwEditorAddPanel from "../images/add-panel.png";
+import wwEditorDeploy from "../images/deploy.png";
 import wwEditorStyling from "../images/styling.png";
 import numeral from "../svg/numeral-one.svg?raw";
 import ProjectHeader from "./ProjectHeader.astro";
@@ -30,80 +32,19 @@ import Testimonial from "./Testimonial.astro";
           class="drop-shadow-sm w-full opacity-[var(--editor-dark-mode-opacity)] rounded-md overflow-hidden outline outline-2 outline-[var(--color-border)]"
           src={wwEditorMainDarkMode}
           alt=""
+          quality={"max"}
         />
         <Image
           class="drop-shadow-lg w-full absolute top-0 left-0 opacity-[var(--editor-light-mode-opacity)] transition-opacity duration-500 rounded-md overflow-hidden"
           src={wwEditorMainLightMode}
           alt=""
+          quality={"max"}
         />
       </div>
     </div>
   </div>
 
   <div>
-    <div class="container -wide mt-16 lg:mt-[24px] hidden">
-      <div class="w-full flex flex-col">
-        <div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
-            <div class="col-span-1">
-              <Image
-                src={wwEditorAddPanel}
-                alt=""
-                quality={100}
-                class="bg-[#35454E] rounded-md overflow-hidden border border-[var(--color-border)]"
-              />
-            </div>
-
-            <div class="col-span-1">
-              <Image
-                src={wwEditorStyling}
-                alt=""
-                quality={100}
-                class="bg-[#262626] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
-              />
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-8 gap-6 w-full mt-4"></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="container -wide mt-16 lg:mt-[24px] hidden">
-      <div class="w-full flex flex-col">
-        <div>
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
-            <div class="col-span-1">
-              <Image
-                src={wwEditorAddPanel}
-                alt=""
-                quality={100}
-                class="bg-[#1E1E1E] rounded-md overflow-hidden border border-[var(--color-border)]"
-              />
-            </div>
-
-            <div class="col-span-1">
-              <Image
-                src={wwEditorFormula}
-                alt=""
-                quality={100}
-                class="bg-[#1E1E1E] rounded-md overflow-hidden border border-[var(--color-border)]"
-              />
-            </div>
-
-            <div class="col-span-1">
-              <Image
-                src={wwEditorWorkflow}
-                alt=""
-                quality={100}
-                class="bg-[#1E1E1E] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="container mt-16 lg:mt-[24px]">
       <div class="w-full flex flex-col">
         <div>
@@ -113,7 +54,7 @@ import Testimonial from "./Testimonial.astro";
                 src={wwEditorAddPanel}
                 alt=""
                 quality={100}
-                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden border border-[var(--color-border)]"
+                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden border"
               />
             </div>
 
@@ -122,7 +63,7 @@ import Testimonial from "./Testimonial.astro";
                 src={wwEditorWorkflow}
                 alt=""
                 quality={100}
-                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top"
               />
             </div>
 
@@ -135,19 +76,42 @@ import Testimonial from "./Testimonial.astro";
               />
             </div>
 
-            <div class="col-span-1 grid grid-cols-2 gap-4">
+            <div class="col-span-1">
+              <Image
+                src={wwEditorDeploy}
+                alt=""
+                quality={100}
+                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+              />
+            </div>
+
+            <div
+              class="col-span-1 p-8 border border-[var(--color-border)] rounded-md bg-[var(--color-bg)]"
+            >
+              <p class="text-xs uppercase text-[var(--color-tertiary)]">
+                Scope
+              </p>
+              <p>
+                My responsibilites include all design and product startegy work
+                including development prototyping.
+              </p>
+            </div>
+
+            <div
+              class="col-span-1 border border-[var(--color-border)] rounded-md bg-[var(--color-bg)] overflow-hidden flex flex-row gap-0"
+            >
               <Testimonial
-                comment="For me, it's because it feels a lot like Figma, but with auto-layout always on"
+                comment="It feels a lot like Figma, but with auto-layout always on."
                 handle="stevedesignerd"
               />
 
               <Testimonial
-                comment="I started using WeWeb recently and it's on a league of its own"
+                comment="I started using WeWeb recently and it's on a league of its own."
                 handle="pascowebdesigns"
               />
 
               <Testimonial
-                comment="Definitely try @weweb_io for FE if you like Webflow"
+                comment="Definitely try @weweb_io for frontend if you like Webflow"
                 handle="andystrb"
               />
             </div>
@@ -157,23 +121,51 @@ import Testimonial from "./Testimonial.astro";
     </div>
 
     <div
-      class="container mt-16 lg:mt-[120px] flex flex-row justify-center items-center"
+      class="max-w-[1024px] mx-auto px-4 gap-4 py-20 bg-[var(--color-bg)] flex flex-row"
     >
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <Testimonial
-          comment="For me, it's because it feels a lot like Figma, but with auto-layout always on"
-          handle="stevedesignerd"
-        />
+    </div>
 
-        <Testimonial
-          comment="I started using WeWeb recently and it's on a league of its own"
-          handle="pascowebdesigns"
-        />
+    <div class="container mt-16 lg:mt-[24px] hidden">
+      <div class="w-full flex flex-col">
+        <div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+            <div class="col-span-1">
+              <Image
+                src={wwEditorFormula}
+                alt=""
+                quality={100}
+                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+              />
+            </div>
 
-        <Testimonial
-          comment="Definitely try @weweb_io for FE if you like Webflow"
-          handle="andystrb"
-        />
+            <div class="col-span-1">
+              <Image
+                src={wwEditorDeploy}
+                alt=""
+                quality={100}
+                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+              />
+            </div>
+
+            <div class="col-span-1">
+              <Image
+                src={wwEditorBranching}
+                alt=""
+                quality={100}
+                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+              />
+            </div>
+
+            <div class="col-span-1">
+              <Image
+                src={wwEditorAddPanel}
+                alt=""
+                quality={100}
+                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden border border-[var(--color-border)]"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -181,7 +173,7 @@ import Testimonial from "./Testimonial.astro";
 
 <style is:global>
   :root {
-    --main-shot-bg: #e7e6e6;
+    --main-shot-bg: #cccccc;
     --shot-bg: #cbcbcb;
     --editor-light-mode-opacity: 1;
   }
