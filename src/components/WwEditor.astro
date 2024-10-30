@@ -41,7 +41,7 @@ import Testimonial from "./Testimonial.astro";
   </div>
 
   <div class="dark-mode-section">
-    <div class="container -wide mt-16 lg:mt-[24px]">
+    <div class="container -wide mt-16 lg:mt-[24px] hidden">
       <div class="w-full flex flex-col">
         <div>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
@@ -50,7 +50,7 @@ import Testimonial from "./Testimonial.astro";
                 src={wwEditorAddPanel}
                 alt=""
                 quality={100}
-                class="bg-[var(--shot-bg)] rounded-md overflow-hidden border border-[var(--color-border)]"
+                class="bg-[#35454E] rounded-md overflow-hidden border border-[var(--color-border)]"
               />
             </div>
 
@@ -59,7 +59,7 @@ import Testimonial from "./Testimonial.astro";
                 src={wwEditorStyling}
                 alt=""
                 quality={100}
-                class="bg-[var(--shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+                class="bg-[#262626] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
               />
             </div>
           </div>
@@ -69,16 +69,25 @@ import Testimonial from "./Testimonial.astro";
       </div>
     </div>
 
-    <div class="container -wide mt-16 lg:mt-[24px]">
+    <div class="container -wide mt-16 lg:mt-[24px] hidden">
       <div class="w-full flex flex-col">
         <div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
+            <div class="col-span-1">
+              <Image
+                src={wwEditorAddPanel}
+                alt=""
+                quality={100}
+                class="bg-[#1E1E1E] rounded-md overflow-hidden border border-[var(--color-border)]"
+              />
+            </div>
+
             <div class="col-span-1">
               <Image
                 src={wwEditorFormula}
                 alt=""
                 quality={100}
-                class="bg-[var(--shot-bg)] rounded-md overflow-hidden border border-[var(--color-border)]"
+                class="bg-[#1E1E1E] rounded-md overflow-hidden border border-[var(--color-border)]"
               />
             </div>
 
@@ -87,12 +96,47 @@ import Testimonial from "./Testimonial.astro";
                 src={wwEditorWorkflow}
                 alt=""
                 quality={100}
-                class="bg-[var(--shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+                class="bg-[#1E1E1E] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
               />
             </div>
           </div>
+        </div>
+      </div>
+    </div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-8 gap-6 w-full mt-4"></div>
+    <div class="container -wide mt-16 lg:mt-[24px]">
+      <div class="w-full flex flex-col">
+        <div>
+          <div
+            class="grid grid-cols-1 lg:grid-cols-3 lg:grid-rows-2 gap-6 w-full"
+          >
+            <div class="col-span-1">
+              <Image
+                src={wwEditorAddPanel}
+                alt=""
+                quality={100}
+                class="bg-[#1E1E1E] rounded-md overflow-hidden border border-[var(--color-border)]"
+              />
+            </div>
+
+            <div class="col-span-2 row-span-2">
+              <Image
+                src={wwEditorWorkflow}
+                alt=""
+                quality={100}
+                class="bg-[#1E1E1E] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+              />
+            </div>
+
+            <div class="col-span-1">
+              <Image
+                src={wwEditorFormula}
+                alt=""
+                quality={100}
+                class="bg-[#1E1E1E] rounded-md overflow-hidden border border-[var(--color-border)]"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -108,7 +152,7 @@ import Testimonial from "./Testimonial.astro";
 
   .dark-mode {
     --main-shot-bg: transparent;
-    --shot-bg: #171717;
+    --shot-bg: #343434;
     --editor-light-mode-opacity: 0;
   }
 </style>
