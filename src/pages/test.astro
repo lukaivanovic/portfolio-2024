@@ -10,7 +10,7 @@ import logo3 from "../svg/logo-3.svg?raw";
 ---
 
 <Layout title="Welcome to Astro.">
-  <section class="lg:absolute lg:top-0 lg:left-0 w-full z-20">
+  <section class="lg:top-0 lg:left-0 w-full z-20">
     <div class="container flex flex-row justify-between mt-4 text-sm">
       <span class="uppercase mb-2">Luka Ivanovic © 2024</span>
       <div class="flex flex-row gap-4 text-light">
@@ -23,18 +23,15 @@ import logo3 from "../svg/logo-3.svg?raw";
   <!-- Hero -->
   <section
     id="hero"
-    class="lg:h-[100dvh] lg:max-h-[900px] pb-[24px] lg:pt-[16px] pt-[40px] overflow-hidden relative"
+    class="pb-[24px] lg:pt-[16px] pt-[40px] overflow-hidden relative"
   >
-    <div
-      class="container h-full flex flex-col-reverse justify-stretch xl:flex-row gap-12 lg:gap-4"
-    >
-      <div class="flex flex-col gap-4 justify-end w-full xl:w-1/2 z-10">
-        <div>
-          <h1 class="mb-10 mt-4 max-w-[800px]">
-            Software designer working at <a href="https://weweb.io">WeWeb</a> on
-            enabling anyone to build applications through a visual interface.
-          </h1>
-
+    <div class="container h-full flex flex-col gap-12 lg:gap-4">
+      <div class="flex flex-row gap-4 justify-between items-end z-10 mt-12">
+        <h1 class="mt-4 max-w-[700px]">
+          Software designer working at <a href="https://weweb.io">WeWeb</a> on enabling
+          anyone to build applications through a visual interface.
+        </h1>
+        <div class="flex flex-col items-end mb-1">
           <span class="text-neutral-700">Worked with</span>
           <div class="flex flex-row gap-4 pb-2 pt-2">
             <div class="h-[26px] md:h-[32px]">
@@ -49,7 +46,9 @@ import logo3 from "../svg/logo-3.svg?raw";
           </div>
         </div>
       </div>
-      <div class="flex-grow w-full h-[400px] lg:w-1/2 lg:h-full relative">
+      <div
+        class="relative h-[300px] overflow-hidden border border-neutral-200 mt-12"
+      >
         <Illustration />
       </div>
     </div>
