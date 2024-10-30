@@ -16,12 +16,29 @@ import ProjectHeader from "./ProjectHeader.astro";
     accentColor="#274076"
   />
 
-  <div class="container px-4 grid grid-cols-1 gap-[16px]">
-    <Image
-      class="bg-[#F7F7F7] border border-neutral-200"
-      src={wwComponents2}
-      alt=""
-      quality={"max"}
-    />
+  <div class="container mt-16 lg:mt-[24px]">
+    <div class="w-full flex flex-col">
+      <div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+          <div class="col-span-1">
+            <Image
+              src={wwComponents1}
+              alt=""
+              quality={100}
+              class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto border border-neutral-300"
+            />
+          </div>
+
+          <div class="col-span-1">
+            <Image
+              src={wwComponents2}
+              alt=""
+              quality={100}
+              class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-neutral-300"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
