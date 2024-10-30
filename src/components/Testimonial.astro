@@ -1,11 +1,19 @@
 ---
 import { Image } from "astro:assets";
-import image2 from "../images/add-panel.png";
+import twitterSteve from "../images/twitter-steve.jpg";
+import twitterRobert from "../images/twitter-robert.jpg";
+import twitterAndy from "../images/twitter-andy.jpeg";
 
 interface Props {
   comment: string;
   handle: string;
 }
+
+const twitterImages = {
+  stevedesignerd: twitterSteve,
+  andystrb: twitterAndy,
+  RLooplabs: twitterRobert,
+};
 
 const { comment, handle } = Astro.props;
 ---
@@ -13,8 +21,14 @@ const { comment, handle } = Astro.props;
 <div
   class="bg-[var(--color-bg)] flex flex-col justify-center p-6 border-r border-[var(--color-border)]"
 >
+  <Image
+    src={twitterImages[handle]}
+    alt=""
+    class="w-6 h-6 rounded-full outline outline-1 outline-[var(--color-border)] outline-offset-2"
+  />
   <span class="mb-2 text-[var(--color-secondary)] text-sm">
     {comment}
   </span>
+
   <span class="text-[var(--color-tertiary)] text-sm">@{handle}</span>
 </div>

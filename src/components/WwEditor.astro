@@ -7,7 +7,8 @@ import wwEditorFormula from "../images/formula.png";
 import wwEditorBranching from "../images/branching.png";
 import wwEditorAddPanel from "../images/add-panel.png";
 import wwEditorDeploy from "../images/deploy.png";
-import wwEditorStyling from "../images/styling.png";
+import wwEditorPricingOne from "../images/visual-01.png";
+import wwEditorPricingTwo from "../images/visual-02.png";
 import numeral from "../svg/numeral-one.svg?raw";
 import ProjectHeader from "./ProjectHeader.astro";
 import Testimonial from "./Testimonial.astro";
@@ -85,35 +86,42 @@ import Testimonial from "./Testimonial.astro";
               />
             </div>
 
-            <div
-              class="col-span-1 p-8 border border-[var(--color-border)] rounded-md bg-[var(--color-bg)]"
-            >
-              <p class="text-xs uppercase text-[var(--color-tertiary)]">
-                Scope
-              </p>
-              <p>
-                My responsibilites include all design and product startegy work
-                including development prototyping.
-              </p>
+            <div class="col-span-1">
+              <Image
+                src={wwEditorPricingOne}
+                alt=""
+                quality={100}
+                class="bg-[var(--main-shot-bg)] rounded-md overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
+              />
             </div>
 
-            <div
-              class="col-span-1 border border-[var(--color-border)] rounded-md bg-[var(--color-bg)] overflow-hidden flex flex-row gap-0"
-            >
-              <Testimonial
-                comment="It feels a lot like Figma, but with auto-layout always on."
-                handle="stevedesignerd"
-              />
+            <div class="col-span-1">
+              <div>
+                <p class="text-xs uppercase text-[var(--color-tertiary)]">
+                  Project scope
+                </p>
+                <p>
+                  My responsibilites include all design and product startegy
+                  work including development prototyping.
+                </p>
+              </div>
 
-              <Testimonial
-                comment="I started using WeWeb recently and it's on a league of its own."
-                handle="pascowebdesigns"
-              />
+              <div class="flex flex-row gap-0">
+                <Testimonial
+                  comment="It feels a lot like Figma, but with auto-layout always on."
+                  handle="stevedesignerd"
+                />
 
-              <Testimonial
-                comment="Definitely try @weweb_io for frontend if you like Webflow"
-                handle="andystrb"
-              />
+                <Testimonial
+                  comment="I started using WeWeb recently and it's on a league of its own."
+                  handle="andystrb"
+                />
+
+                <Testimonial
+                  comment="Definitely try @weweb_io for frontend if you like Webflow"
+                  handle="RLooplabs"
+                />
+              </div>
             </div>
           </div>
         </div>
