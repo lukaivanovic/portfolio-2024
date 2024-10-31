@@ -19,18 +19,16 @@ const { comment, handle } = Astro.props;
 ---
 
 <div
-  class="bg-[var(--color-bg)] flex flex-col justify-between px-4 py-4 border border-[var(--color-border)] rounded-md drop-shadow-sm"
+  class="bg-[var(--color-bg)] flex flex-col justify-between px-4 py-8 border border-[var(--color-border)] rounded-md drop-shadow-sm text-center items-center max-w-[320px] gap-3"
 >
-  <p class="mb-2 text-[var(--color-primary)]">
+  <Image
+    src={twitterImages[handle]}
+    alt=""
+    class="w-8 h-8 rounded-full outline outline-1 outline-[var(--color-border)] outline-offset-2"
+  />
+  <div class="text-[var(--color-primary)] text-md">
     {comment}
-  </p>
-
-  <div class="flex flex-row gap-2 items-center">
-    <Image
-      src={twitterImages[handle]}
-      alt=""
-      class="w-6 h-6 rounded-full outline outline-1 outline-[var(--color-border)] outline-offset-2"
-    />
-    <span class="text-[var(--color-tertiary)] text-sm">@{handle}</span>
   </div>
+
+  <span class="text-[var(--color-tertiary)]">@{handle}</span>
 </div>

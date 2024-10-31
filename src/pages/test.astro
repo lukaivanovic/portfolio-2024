@@ -11,11 +11,11 @@ import logo3 from "../svg/logo-3.svg?raw";
 
 <Layout title="Welcome to Astro.">
   <section
-    class="lg:absolute lg:top-0 lg:left-0 w-full z-20 bg-gradient-to-b from-white"
+    class="lg:absolute lg:top-0 lg:left-0 w-full z-[999] bg-gradient-to-b from-white via-white uppercase text-xs h-[110px]"
   >
-    <div class="container flex flex-row justify-between mt-4 text-sm">
+    <div class="container flex flex-row justify-between mt-4">
       <span class="mb-2 uppercase">Luka Ivanovic © 2024</span>
-      <div class="flex flex-row gap-6 text-light">
+      <div class="flex flex-row gap-24 text-light">
         <a href="https://www.linkedin.com/in/lukaivanovic0/">LinkedIn</a>
         <a href="https://x.com/lukaivnvc">Twitter</a>
         <a href="mailto:hi@ivanovicluka.co">hi@ivanovicluka.co</a>
@@ -25,13 +25,13 @@ import logo3 from "../svg/logo-3.svg?raw";
   <!-- Hero -->
   <section
     id="hero"
-    class="lg:h-[80dvh] lg:max-h-[860px] pb-[24px] lg:pt-[16px] pt-[56px] overflow-hidden relative"
+    class="lg:h-[95dvh] lg:max-h-[920px] pb-[24px] lg:pt-[16px] pt-[56px] overflow-hidden relative"
   >
     <div
       class="container h-full flex flex-col-reverse justify-stretch xl:flex-row gap-12 lg:gap-4"
     >
       <div class="flex flex-col justify-end w-full xl:w-1/2 z-10">
-        <h1 class="mb-6 mt-4 max-w-[560px]">
+        <h1 class="mb-6 mt-4 max-w-[600px]">
           Software designer working at <a href="https://weweb.io">WeWeb</a> on enabling
           anyone to build applications through a visual interface.
         </h1>
@@ -57,10 +57,9 @@ import logo3 from "../svg/logo-3.svg?raw";
 
   <WwEditor />
 
-  <WwComponents />
-
   <div class="dark-mode-section">
-    <div class="mt-[60vh]"></div>
+    <WwComponents />
+
     <WwAi />
 
     <section>

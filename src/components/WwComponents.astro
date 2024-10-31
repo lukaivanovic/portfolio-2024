@@ -7,16 +7,17 @@ import numeral from "../svg/numeral-two.svg?raw";
 import ProjectHeader from "./ProjectHeader.astro";
 ---
 
-<section class="pt-[120px]">
+<section class="py-[200px]">
   <ProjectHeader
     name="WeWeb Components"
     duration="Fall 2024 - Coming soon"
-    description="Offering basic UI components is essential for any app builder to compete with the vast number of libraries available in standard coding approaches. However, a common limitation among most app builders is the lack of deep customizability. <br /> <br /> Inspired by the power of Radix and the aesthetics of Shadcn libraries in the coding world, we set out to revamp our element toolkit, focusing on full customizability, functionality and accessibility."
+    description="Offering basic components is essential for an app builder to compete with the vast number of libraries available in coding world. However, most of these components lack deep customizability."
+    description2="Inspired by the power of Radix and the aesthetics of Shadcn libraries in the coding world, we set out to revamp our element toolkit, focusing on full customizability, functionality and accessibility."
     numeralSvg={numeral}
     accentColor="#274076"
   />
 
-  <div class="container mt-16 lg:mt-[24px]">
+  <div class="container">
     <div class="w-full flex flex-col">
       <div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
@@ -25,7 +26,7 @@ import ProjectHeader from "./ProjectHeader.astro";
               src={wwComponents1}
               alt=""
               quality={100}
-              class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto border border-neutral-300"
+              class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto border border-[var(--color-border)]"
             />
           </div>
 
@@ -34,7 +35,7 @@ import ProjectHeader from "./ProjectHeader.astro";
               src={wwComponents2}
               alt=""
               quality={100}
-              class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-neutral-300"
+              class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
             />
           </div>
         </div>
