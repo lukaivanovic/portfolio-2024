@@ -45,67 +45,65 @@ import Testimonial from "./Testimonial.astro";
   </div>
 
   <div class="container mt-16 lg:mt-[24px]">
-    <div class="w-full flex flex-col">
-      <div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
-          <div class="col-span-1">
-            <Image
-              src={wwEditorAddPanel}
-              alt=""
-              quality={100}
-              class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto border border-neutral-300"
+    <div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+        <div class="col-span-1">
+          <Image
+            src={wwEditorAddPanel}
+            alt=""
+            quality={100}
+            class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto border border-neutral-300"
+          />
+        </div>
+
+        <div class="col-span-1">
+          <Image
+            src={wwEditorWorkflow}
+            alt=""
+            quality={100}
+            class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-neutral-300"
+          />
+        </div>
+
+        <div class="col-span-1">
+          <Image
+            src={wwEditorFormula}
+            alt=""
+            quality={100}
+            class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-neutral-300"
+          />
+        </div>
+
+        <div class="col-span-1">
+          <Image
+            src={wwEditorDeploy}
+            alt=""
+            quality={100}
+            class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-neutral-300"
+          />
+        </div>
+
+        <div
+          class="mx-auto px-4 gap-8 py-12 flex flex-col items-center lg:col-span-2"
+        >
+          <p class="text-xs uppercase text-[var(--color-secondary)]">
+            What some of the users said
+          </p>
+          <div class="flex flex-col lg:flex-row gap-4">
+            <Testimonial
+              comment="It feels a lot like Figma, but with auto-layout always on."
+              handle="stevedesignerd"
             />
-          </div>
 
-          <div class="col-span-1">
-            <Image
-              src={wwEditorWorkflow}
-              alt=""
-              quality={100}
-              class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-neutral-300"
+            <Testimonial
+              comment="I started using WeWeb recently and it's on a league of its own."
+              handle="andystrb"
             />
-          </div>
 
-          <div class="col-span-1">
-            <Image
-              src={wwEditorFormula}
-              alt=""
-              quality={100}
-              class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-neutral-300"
+            <Testimonial
+              comment="Definitely try WeWeb for frontend if you like Webflow."
+              handle="RLooplabs"
             />
-          </div>
-
-          <div class="col-span-1">
-            <Image
-              src={wwEditorDeploy}
-              alt=""
-              quality={100}
-              class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-neutral-300"
-            />
-          </div>
-
-          <div
-            class="mx-auto px-4 gap-8 py-12 flex flex-col items-center col-span-2"
-          >
-            <p class="text-xs uppercase text-[var(--color-secondary)]">
-              What some of the users said
-            </p>
-            <div class="flex gap-4">
-              <Testimonial
-                comment="It feels a lot like Figma, but with auto-layout always on."
-                handle="stevedesignerd"
-              />
-
-              <Testimonial
-                comment="I started using WeWeb recently and it's on a league of its own."
-                handle="andystrb"
-              />
-
-              <Testimonial
-                comment="Definitely try WeWeb for frontend if you like Webflow."
-                handle="RLooplabs"
-              />
-            </div>
           </div>
         </div>
       </div>
