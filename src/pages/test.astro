@@ -7,6 +7,7 @@ import WwAi from "../components/WwAi.astro";
 import logo1 from "../svg/logo-1.svg?raw";
 import logo2 from "../svg/logo-2.svg?raw";
 import logo3 from "../svg/logo-3.svg?raw";
+import circle from "../svg/circle2.svg?raw";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -62,11 +63,18 @@ import logo3 from "../svg/logo-3.svg?raw";
 
     <WwAi />
 
-    <section>
+    <section class="overflow-hidden">
       <div
-        class="container h-[500px] flex flex-col justify-end items-center py-8"
+        class="container h-[500px] flex flex-col justify-end items-center py-8 relative"
       >
-        <span class="text-[var(--color-secondary)]">Luka Ivanović © 2024</span>
+        <div
+          class="absolute bottom-0 left-[50%] translate-y-[50%] translate-x-[-50%] lg:w-[400px] lg:h-[400px] w-[200px] h-[200px]"
+        >
+          <Fragment set:html={circle} />
+        </div>
+        <span class="text-[var(--color-secondary)] z-40"
+          >Luka Ivanović © 2024</span
+        >
       </div>
     </section>
   </div>
