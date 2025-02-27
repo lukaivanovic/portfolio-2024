@@ -1,0 +1,46 @@
+.ww {
+  --ww-border-radius-00: 2px;
+  --ww-border-radius-01: 4px;
+  --ww-border-radius-02: 8px;
+  --ww-border-radius-03: 12px;
+  --ww-border-radius-04: 16px;
+  --ww-border-radius-round: 50%;
+}
+
+.ww {
+  --ww-spacing-00: 0.125rem;
+  --ww-spacing-01: 0.25rem;
+  --ww-spacing-02: 0.5rem;
+  --ww-spacing-03: 0.75rem;
+  --ww-spacing-04: 1rem;
+  --ww-spacing-05: 1.5rem;
+  --ww-spacing-06: 2rem;
+  --ww-spacing-07: 3rem;
+  --ww-spacing-08: 4rem;
+  --ww-spacing-09: 6rem;
+}
+
+.ww-border-radius-00,
+.rounded-00 {
+  border-radius: var(--ww-border-radius-00);
+}
+.ww-border-radius-01,
+.rounded-01 {
+  border-radius: var(--ww-border-radius-01);
+}
+.ww-border-radius-02,
+.rounded-02 {
+  border-radius: var(--ww-border-radius-02);
+}
+.ww-border-radius-03,
+.rounded-03 {
+  border-radius: var(--ww-border-radius-03);
+}
+.ww-border-radius-04,
+.rounded-04 {
+  border-radius: var(--ww-border-radius-04);
+}
+.ww-border-radius-round,
+.rounded {
+  border-radius: var(--ww-border-radius-round);
+}
