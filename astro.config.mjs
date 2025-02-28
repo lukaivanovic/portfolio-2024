@@ -4,10 +4,12 @@ import tailwind from "@astrojs/tailwind";
 
 import vercel from "@astrojs/vercel/serverless";
 
-// https://astro.build/config
+import vue from "@astrojs/vue";
+
 export default defineConfig({
-  integrations: [tailwind()],
+  integrations: [tailwind(), vue()],
   output: "server",
+
   adapter: vercel({
     webAnalytics: { enabled: true },
   }),

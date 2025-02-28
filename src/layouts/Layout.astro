@@ -34,6 +34,8 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global lang="scss">
+  @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
   @font-face {
     font-family: "TWK Lausanne - 450";
     src: url("/fonts/TWKLausanne-450.woff2") format("woff2");
@@ -61,6 +63,10 @@ const { title } = Astro.props;
     --color-accent: #000;
   }
 
+  :root {
+    --tp-base-font-family: "TWK Lausanne - 400", sans-serif;
+  }
+
   .dark-mode {
     --color-bg: #212121;
     --color-primary: #ffffff;
@@ -71,7 +77,7 @@ const { title } = Astro.props;
   }
 
   body {
-    font-family: "TWK Lausanne - 450", sans-serif;
+    font-family: "TWK Lausanne - 400", sans-serif;
     font-size: 14px;
     transition:
       background-color 0.5s ease,
@@ -81,7 +87,7 @@ const { title } = Astro.props;
   }
 
   .container {
-    max-width: 1440px;
+    max-width: 1120px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 32px;
@@ -94,8 +100,8 @@ const { title } = Astro.props;
   }
 
   h1 {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 15px;
+    line-height: 24px;
   }
 
   h2 {
