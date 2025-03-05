@@ -18,7 +18,12 @@ import WwChat from "./ww/WwChat.vue";
 
       <div class="grid grid-cols-2 gap-4 p-6">
         <div
-          class="bg-white border border-neutral-200 flex items-center justify-center rounded-md"
+          class="bg-[url('bg.jpg')] bg-repeat border border-neutral-200 rounded-md row-span-3 col-span-2 flex items-start justify-center h-[640px] pt-8 overflow-hidden"
+        >
+          <WwChat client:only="vue" />
+        </div>
+        <div
+          class="bg-white border border-neutral-200 flex items-center justify-center rounded-md h-[400px]"
         >
           <AiToggle
             class="scale-150 translate-z-0 backface-hidden subpixel-antialiased"
@@ -26,12 +31,7 @@ import WwChat from "./ww/WwChat.vue";
           />
         </div>
         <div
-          class="bg-neutral-50 border border-neutral-200 rounded-md row-span-3 flex items-start justify-center h-[640px] pt-8 overflow-hidden"
-        >
-          <WwChat client:only="vue" />
-        </div>
-        <div
-          class="bg-white border border-neutral-200 flex items-center justify-center rounded-md row-span-2"
+          class="bg-white border border-neutral-200 flex items-center justify-center rounded-md row-span-2 h-[400px]"
         >
         </div>
       </div>

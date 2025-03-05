@@ -41,10 +41,10 @@ const model = defineModel({
 </script>
 
 <template>
-  <div class="w-[220px] bg-neutral-900 rounded-md text-xs shadow-sm">
-    <div class="p-2 border-b border-neutral-700">
+  <div>
+    <div class="p-2 border-b border-neutral-200">
       <button
-        class="w-full px-3 h-7 rounded text-center bg-neutral-700 hover:bg-neutral-800 transition-colors text-neutral-50"
+        class="w-full px-3 h-7 rounded text-center bg-neutral-100 hover:bg-neutral-200 transition-colors text-neutral-900"
         @click="toggleDialog"
       >
         Toggle
@@ -56,15 +56,15 @@ const model = defineModel({
       <!-- Type Selection -->
       <div>
         <div
-          class="flex rounded overflow-hidden border border-neutral-700 p-0.5 gap-0.5 h-7"
+          class="flex rounded overflow-hidden border border-neutral-200 p-0.5 gap-0.5 h-7"
         >
           <button
             @click="updateType('modal')"
             class="flex-1 text-xs transition-colors rounded-sm flex items-center justify-center"
             :class="
               model.type === 'modal'
-                ? 'bg-neutral-700 text-neutral-50'
-                : ' text-neutral-200 hover:bg-neutral-700'
+                ? 'bg-neutral-200 text-neutral-900'
+                : ' text-neutral-700 hover:bg-neutral-100'
             "
           >
             Modal
@@ -74,8 +74,8 @@ const model = defineModel({
             class="flex-1 text-xs transition-colors rounded-sm flex items-center justify-center"
             :class="
               model.type === 'sheet'
-                ? 'bg-neutral-700 text-neutral-50'
-                : ' text-neutral-200 hover:bg-neutral-700'
+                ? 'bg-neutral-200 text-neutral-900'
+                : ' text-neutral-700 hover:bg-neutral-100'
             "
           >
             Sheet
@@ -87,15 +87,15 @@ const model = defineModel({
         <!-- Side Selection -->
         <div>
           <div
-            class="flex rounded overflow-hidden border border-neutral-700 p-0.5 gap-0.5 h-7"
+            class="flex rounded overflow-hidden border border-neutral-200 p-0.5 gap-0.5 h-7"
           >
             <button
               @click="model.side = 'left'"
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'left'
-                  ? 'bg-neutral-600 text-neutral-50'
-                  : ' text-neutral-200 hover:bg-neutral-700'
+                  ? 'bg-neutral-200 text-neutral-900'
+                  : ' text-neutral-700 hover:bg-neutral-100'
               "
             >
               Left
@@ -105,8 +105,8 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'center'
-                  ? 'bg-neutral-700 text-neutral-50'
-                  : ' text-neutral-200 hover:bg-neutral-700'
+                  ? 'bg-neutral-200 text-neutral-900'
+                  : ' text-neutral-700 hover:bg-neutral-100'
               "
             >
               Center
@@ -116,8 +116,8 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'right'
-                  ? 'bg-neutral-700 text-neutral-50'
-                  : ' text-neutral-200 hover:bg-neutral-700'
+                  ? 'bg-neutral-200 text-neutral-900'
+                  : ' text-neutral-700 hover:bg-neutral-100'
               "
             >
               Right
@@ -128,15 +128,15 @@ const model = defineModel({
         <!-- Align Selection -->
         <div>
           <div
-            class="flex rounded overflow-hidden border border-neutral-700 p-0.5 gap-0.5 h-7"
+            class="flex rounded overflow-hidden border border-neutral-200 p-0.5 gap-0.5 h-7"
           >
             <button
               @click="model.align = 'top'"
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.align === 'top'
-                  ? 'bg-neutral-700 text-neutral-50'
-                  : ' text-neutral-200 hover:bg-neutral-700'
+                  ? 'bg-neutral-200 text-neutral-900'
+                  : ' text-neutral-700 hover:bg-neutral-100'
               "
             >
               Top
@@ -146,8 +146,8 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.align === 'center'
-                  ? 'bg-neutral-700 text-neutral-50'
-                  : ' text-neutral-200 hover:bg-neutral-700'
+                  ? 'bg-neutral-200 text-neutral-900'
+                  : ' text-neutral-700 hover:bg-neutral-100'
               "
             >
               Center
@@ -157,8 +157,8 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.align === 'bottom'
-                  ? 'bg-neutral-700 text-neutral-50'
-                  : ' text-neutral-200 hover:bg-neutral-700'
+                  ? 'bg-neutral-200 text-neutral-900'
+                  : ' text-neutral-700 hover:bg-neutral-100'
               "
             >
               Bottom
@@ -170,15 +170,15 @@ const model = defineModel({
       <template v-else>
         <div>
           <div
-            class="flex rounded overflow-hidden border border-neutral-700 p-0.5 gap-0.5"
+            class="flex rounded overflow-hidden border border-neutral-200 p-0.5 gap-0.5"
           >
             <button
               @click="model.side = 'left'"
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'left'
-                  ? 'bg-neutral-700 text-neutral-50'
-                  : ' text-neutral-200 hover:bg-neutral-700'
+                  ? 'bg-neutral-200 text-neutral-900'
+                  : ' text-neutral-700 hover:bg-neutral-100'
               "
             >
               Left
@@ -188,8 +188,8 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'top'
-                  ? 'bg-neutral-700 text-neutral-50'
-                  : ' text-neutral-200 hover:bg-neutral-700'
+                  ? 'bg-neutral-200 text-neutral-900'
+                  : ' text-neutral-700 hover:bg-neutral-100'
               "
             >
               Top
@@ -199,8 +199,8 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'right'
-                  ? 'bg-neutral-700 text-neutral-50'
-                  : ' text-neutral-200 hover:bg-neutral-700'
+                  ? 'bg-neutral-200 text-neutral-900'
+                  : ' text-neutral-700 hover:bg-neutral-100'
               "
             >
               Right
@@ -210,8 +210,8 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'bottom'
-                  ? 'bg-neutral-700 text-neutral-50'
-                  : ' text-neutral-200 hover:bg-neutral-700'
+                  ? 'bg-neutral-200 text-neutral-900'
+                  : ' text-neutral-700 hover:bg-neutral-100'
               "
             >
               Bottom
@@ -221,19 +221,19 @@ const model = defineModel({
       </template>
     </div>
 
-    <div class="p-2 border-t border-neutral-700">
+    <div class="p-2 border-t border-neutral-200">
       <!-- Animation Selection -->
 
       <div
-        class="flex rounded overflow-hidden border border-neutral-700 p-0.5 gap-0.5"
+        class="flex rounded overflow-hidden border border-neutral-200 p-0.5 gap-0.5"
       >
         <button
           @click="model.animation = 'fade'"
           class="flex-1 py-1 text-xs transition-colors"
           :class="
             model.animation === 'fade'
-              ? 'bg-neutral-700 text-neutral-50'
-              : ' text-neutral-200 hover:bg-neutral-700'
+              ? 'bg-neutral-200 text-neutral-900'
+              : ' text-neutral-700 hover:bg-neutral-100'
           "
         >
           Fade
@@ -243,8 +243,8 @@ const model = defineModel({
           class="flex-1 py-1 text-xs transition-colors"
           :class="
             model.animation === 'zoom'
-              ? 'bg-neutral-700 text-neutral-50'
-              : ' text-neutral-200 hover:bg-neutral-700'
+              ? 'bg-neutral-200 text-neutral-900'
+              : ' text-neutral-700 hover:bg-neutral-100'
           "
         >
           Zoom
@@ -254,8 +254,8 @@ const model = defineModel({
           class="flex-1 py-1 text-xs transition-colors"
           :class="
             model.animation === 'slide-in-bottom'
-              ? 'bg-neutral-700 text-neutral-50'
-              : ' text-neutral-200 hover:bg-neutral-700'
+              ? 'bg-neutral-200 text-neutral-900'
+              : ' text-neutral-700 hover:bg-neutral-100'
           "
         >
           Slide in
@@ -263,41 +263,41 @@ const model = defineModel({
       </div>
     </div>
 
-    <div class="p-2 border-t border-neutral-700">
+    <div class="p-2 border-t border-neutral-200">
       <!-- Buttons -->
       <div class="flex gap-2">
         <button
           @click="model.overlay = !model.overlay"
-          class="flex-1 px-3 h-7 rounded text-center bg-neutral-700 hover:bg-neutral-700 transition-colors text-neutral-50"
+          class="flex-1 px-3 h-7 rounded text-center bg-neutral-100 hover:bg-neutral-200 transition-colors text-neutral-900"
         >
           {{ model.overlay ? "Hide overlay" : "Show overlay" }}
         </button>
 
         <button
           @click="model.trigger = !model.trigger"
-          class="flex-1 px-3 h-7 rounded text-center bg-neutral-700 hover:bg-neutral-700 transition-colors text-neutral-50"
+          class="flex-1 px-3 h-7 rounded text-center bg-neutral-100 hover:bg-neutral-200 transition-colors text-neutral-900"
         >
           {{ model.trigger ? "Hide trigger" : "Show trigger" }}
         </button>
       </div>
     </div>
 
-    <div class="p-2 border-t border-neutral-700">
+    <div class="p-2 border-t border-neutral-200">
       <ul>
         <li class="flex items-center justify-start rounded h-7">
           <div class="w-2 h-2 bg-cyan-500 rounded-full mr-2"></div>
-          <span class="text-neutral-100">Trigger</span>
+          <span class="text-neutral-900">Trigger</span>
         </li>
 
         <div :style="{ opacity: isOpen ? 1 : 0.5 }">
           <li class="flex items-center justify-start rounded h-7">
             <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-            <span class="text-neutral-100">Content</span>
+            <span class="text-neutral-900">Content</span>
           </li>
 
           <li class="flex items-center justify-start rounded h-7">
             <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-            <span class="text-neutral-100">Overlay</span>
+            <span class="text-neutral-900">Overlay</span>
           </li>
         </div>
       </ul>
