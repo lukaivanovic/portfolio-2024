@@ -4,7 +4,7 @@ import ProjectHeader from "./ProjectHeader.astro";
 import AiToggle from "./ww/AiToggle.vue";
 import WwChat from "./ww/WwChat.vue";
 import { Image } from "astro:assets";
-import background from "../images/bg.jpg";
+import background from "../images/bg2.png";
 ---
 
 <section class="py-[80px]">
@@ -13,14 +13,14 @@ import background from "../images/bg.jpg";
       <ProjectHeader
         name="WeWeb AI"
         duration="Winter 2024 - Coming soon"
-        description=""
+        description="WeWeb AI is a new way to build applications with AI."
         numeralSvg={numeral}
         accentColor="#274076"
       />
 
       <div class="grid grid-cols-2 gap-4 p-6">
         <div
-          class="relative bg-repeat border border-neutral-200 rounded-md row-span-3 col-span-2 flex items-start justify-center h-[640px] pt-8 overflow-hidden"
+          class="relative rounded-md row-span-3 col-span-2 h-[640px] flex items-start justify-center overflow-hidden"
         >
           <Image
             src={background}
@@ -29,7 +29,7 @@ import background from "../images/bg.jpg";
             quality={100}
           />
 
-          <WwChat client:only="vue" class="z-10" />
+          <WwChat client:only="vue" class="z-10 mt-8" />
         </div>
         <div
           class="bg-white border border-neutral-200 flex items-center justify-center rounded-md h-[400px]"
