@@ -109,47 +109,52 @@ const PARAMS = ref({
 
 <template>
   <div
-    class="relative bg-white rounded-md overflow-hidden mb-12 shadow-md flex flex-row h-[800px]"
+    class="relative bg-white border border-neutral-400 rounded-md overflow-hidden mb-12 flex flex-row h-[800px]"
   >
-    <div class="p-2 z-40 w-[280px bg-white rounded-md text-xs shadow-sm]">
-      <div
-        class="flex gap-1 items-center justify-center border-b border-neutral-200 w-full h-10 bg-white"
-      >
-        <button
-          class="flex items-center justify-center px-2 py-1 text-xs rounded-full"
-          :class="{
-            'bg-neutral-200 text-neutral-900': design == 'one',
-            'text-neutral-600 hover:bg-neutral-100': design != 'one',
-          }"
-          @click="handleLayoutChange('one')"
+    <div
+      class="p-2 z-40 w-[280px]"
+      :class="!isDialogOpen ? 'bg-neutral-100' : 'bg-black/40'"
+    >
+      <div class="bg-white rounded-md text-xs shadow-md h-full">
+        <div
+          class="flex gap-1 items-center justify-center border-b border-neutral-200 w-full h-10 bg-white"
         >
-          Checkout
-        </button>
-        <button
-          class="flex items-center justify-center px-2 py-1 text-xs rounded-full"
-          :class="{
-            'bg-neutral-200 text-neutral-900': design == 'two',
-            'text-neutral-600 hover:bg-neutral-100': design != 'two',
-          }"
-          @click="handleLayoutChange('two')"
-        >
-          Confirmation
-        </button>
-        <button
-          class="flex items-center justify-center px-2 py-1 text-xs rounded-full"
-          :class="{
-            'bg-neutral-200 text-neutral-900': design == 'three',
-            'text-neutral-600 hover:bg-neutral-100': design != 'three',
-          }"
-          @click="handleLayoutChange('three')"
-        >
-          Property Details
-        </button>
+          <button
+            class="flex items-center justify-center px-2 py-1 text-xs rounded-full"
+            :class="{
+              'bg-neutral-200 text-neutral-900': design == 'one',
+              'text-neutral-600 hover:bg-neutral-100': design != 'one',
+            }"
+            @click="handleLayoutChange('one')"
+          >
+            Checkout
+          </button>
+          <button
+            class="flex items-center justify-center px-2 py-1 text-xs rounded-full"
+            :class="{
+              'bg-neutral-200 text-neutral-900': design == 'two',
+              'text-neutral-600 hover:bg-neutral-100': design != 'two',
+            }"
+            @click="handleLayoutChange('two')"
+          >
+            Confirmation
+          </button>
+          <button
+            class="flex items-center justify-center px-2 py-1 text-xs rounded-full"
+            :class="{
+              'bg-neutral-200 text-neutral-900': design == 'three',
+              'text-neutral-600 hover:bg-neutral-100': design != 'three',
+            }"
+            @click="handleLayoutChange('three')"
+          >
+            Property Details
+          </button>
+        </div>
+        <DialogControls
+          v-model="PARAMS"
+          @layout-change="handleLayoutChange"
+        ></DialogControls>
       </div>
-      <DialogControls
-        v-model="PARAMS"
-        @layout-change="handleLayoutChange"
-      ></DialogControls>
     </div>
 
     <div class="relative bg-neutral-100 flex flex-col flex-grow">

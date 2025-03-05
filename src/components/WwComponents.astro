@@ -19,6 +19,14 @@ import DialogPreview from "./ww/dialog/DialogPreview.vue";
         accentColor="#274076"
       />
       <div class="grid grid-cols-2 gap-4 p-6">
+        <div class="col-span-2">
+          <h2>Dialog</h2>
+          <p class="text-sm text-neutral-500">
+            Dialog is a component that allows you to create a modal dialog.
+          </p>
+          Interactive demo
+          <DialogPreview client:only="vue" />
+        </div>
         <div class="p-4 border border-neutral-200 rounded-md">
           <h3 class="text-md font-bold">Select</h3>
           <p class="text-sm text-neutral-500">
@@ -58,14 +66,6 @@ import DialogPreview from "./ww/dialog/DialogPreview.vue";
           <div class="h-[400px] bg-neutral-200">
             <img src="tabs.png" alt="Tabs" />
           </div>
-        </div>
-        <div class="p-4 border border-neutral-200 rounded-md col-span-2">
-          <h3 class="text-md font-bold">Dialog</h3>
-          <p class="text-sm text-neutral-500">
-            Dialog is a component that allows you to create a modal dialog.
-          </p>
-          Interactive demo
-          <DialogPreview client:only="vue" />
         </div>
       </div>
     </div>
