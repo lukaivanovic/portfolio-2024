@@ -427,81 +427,15 @@ import Loader from "./Loader.vue";
 
 const userMessage = useTemplateRef("userMessage");
 const AiAvatar = useTemplateRef("AiAvatar");
-const currentTextAreaText = ref("");
 const textareaElement = useTemplateRef("textareaElement");
 const initialChat = useTemplateRef("initialChat");
 const variableArtifact = useTemplateRef("variableArtifact");
 const workflowArtifact = useTemplateRef("workflowArtifact");
 const layoutArtifact = useTemplateRef("layoutArtifact");
+
+const currentTextAreaText = ref("");
 const isResponseLoading = ref(false);
 const currentElementIndex = ref(0);
-
-onMounted(async () => {
-  await streamMessage(messages.value[0]);
-
-  await new Promise((resolve) => setTimeout(resolve, 200));
-
-  await Promise.all([
-    animate(
-      initialChat.value,
-      { transform: "translateY(400px)" },
-      { duration: 1 }
-    ),
-    animate(
-      userMessage.value,
-      { opacity: 1, transform: "translateY(0px)" },
-      { duration: 0.5 }
-    ),
-  ]);
-
-  await animate(AiAvatar.value, { opacity: 1 }, { duration: 0.5 });
-
-  await new Promise((resolve) => setTimeout(resolve, 1200));
-
-  isResponseLoading.value = true;
-
-  await new Promise((resolve) => setTimeout(resolve, 200));
-
-  await streamMessage(messages.value[1]);
-
-  await animate(variableArtifact.value, { opacity: 1 }, { duration: 0.5 });
-
-  await new Promise((resolve) => {
-    setTimeout(() => {
-      artifacts.value[0].loading = false;
-      resolve();
-    }, 1800);
-  });
-
-  await animate(workflowArtifact.value, { opacity: 1 }, { duration: 0.5 });
-
-  await new Promise((resolve) => {
-    setTimeout(() => {
-      artifacts.value[1].loading = false;
-      resolve();
-    }, 3000);
-  });
-
-  await streamMessage(messages.value[2]);
-
-  await animate(layoutArtifact.value, { opacity: 1 }, { duration: 0.5 });
-
-  // Increment through element indices with random delays
-  for (let i = 0; i <= 9; i++) {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        currentElementIndex.value = i;
-        resolve();
-      }, Math.floor(Math.random() * 400) + 100); // Random delay between 100-500ms
-    });
-  }
-
-  artifacts.value[2].loading = false;
-
-  await streamMessage(messages.value[3]);
-
-  console.log("test");
-});
 
 const messages = ref([
   {
@@ -526,24 +460,106 @@ const messages = ref([
 
 const artifacts = ref([
   {
-    type: "variable",
-    displayName: "Tasks",
-    actionText: "Created variable",
     loading: true,
   },
   {
-    type: "workflow",
-    displayName: "Add new task",
-    actionText: "Created workflow",
     loading: true,
   },
   {
-    type: "layout",
-    displayName: "Task management layout",
-    actionText: "Created layout",
     loading: true,
   },
 ]);
+
+async function runAnimation() {
+  console.log("test");
+  await streamMessage(messages.value[0]);
+  await new Promise((resolve) => setTimeout(resolve, 200));
+  await Promise.all([
+    animate(
+      initialChat.value,
+      { transform: "translateY(400px)" },
+      { duration: 1 }
+    ),
+    animate(
+      userMessage.value,
+      { opacity: 1, transform: "translateY(0px)" },
+      { duration: 0.5 }
+    ),
+  ]);
+  await animate(AiAvatar.value, { opacity: 1 }, { duration: 0.5 });
+  await new Promise((resolve) => setTimeout(resolve, 1200));
+  isResponseLoading.value = true;
+  await new Promise((resolve) => setTimeout(resolve, 200));
+  await streamMessage(messages.value[1]);
+  await animate(variableArtifact.value, { opacity: 1 }, { duration: 0.5 });
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      artifacts.value[0].loading = false;
+      resolve();
+    }, 1800);
+  });
+  await animate(workflowArtifact.value, { opacity: 1 }, { duration: 0.5 });
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      artifacts.value[1].loading = false;
+      resolve();
+    }, 3000);
+  });
+  await streamMessage(messages.value[2]);
+  await animate(layoutArtifact.value, { opacity: 1 }, { duration: 0.5 });
+
+  // Increment through element indices with random delays
+  for (let i = 0; i <= 9; i++) {
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        currentElementIndex.value = i;
+        resolve();
+      }, Math.floor(Math.random() * 400) + 100); // Random delay between 100-500ms
+    });
+  }
+
+  artifacts.value[2].loading = false;
+
+  await streamMessage(messages.value[3]);
+
+  await resetAnimation();
+
+  await runAnimation();
+}
+
+async function resetAnimation() {
+  currentTextAreaText.value = "";
+  isResponseLoading.value = false;
+  currentElementIndex.value = 0;
+
+  messages.value.forEach((message) => {
+    message.currentContent = "";
+  });
+
+  artifacts.value.forEach((artifact) => {
+    artifact.loading = true;
+  });
+
+  await animate(
+    initialChat.value,
+    { transform: "translateY(0px)" },
+    { duration: 1 }
+  );
+  await animate(
+    userMessage.value,
+    { opacity: 0, transform: "translateY(-16px)" },
+    { duration: 0.5 }
+  );
+  await animate(AiAvatar.value, { opacity: 0 }, { duration: 0.5 });
+  await animate(variableArtifact.value, { opacity: 0 }, { duration: 0.5 });
+  await animate(workflowArtifact.value, { opacity: 0 }, { duration: 0.5 });
+  await animate(layoutArtifact.value, { opacity: 0 }, { duration: 0.5 });
+}
+
+onMounted(() => {
+  // Animation can now be triggered by calling runAnimation()
+  runAnimation();
+});
 
 async function streamMessage(message) {
   const chars = message.content.split(" ");

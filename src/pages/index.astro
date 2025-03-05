@@ -10,31 +10,38 @@ import Menu from "../components/Menu.astro";
 <Layout title="Welcome to Astro.">
   <!-- Hero -->
   <section id="hero">
-    <div class="container flex items-center gap-3 h-[420px]">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        fill="currentColor"
-        viewBox="0 0 40 40"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M6.719 17.166V6.722h13.277v1H7.72v8.444h5.11v-3.944h1v4.944H6.72Zm26.562 0V6.722H20.004v1H32.28v8.444h-5.666v-3.944h-1v4.944h7.666ZM6.719 22.834v10.444h13.277v-1H7.72v-8.444h5.11v3.944h1v-4.944H6.72Zm26.562 0v10.444H20.004v-1H32.28v-8.444h-5.666v3.944h-1v-4.944h7.666Z"
-          clip-rule="evenodd"></path>
-        <path fill-rule="evenodd" d="M20.5 7v26h-1V7h1Z" clip-rule="evenodd"
-        ></path>
-        <path
-          fill-rule="evenodd"
-          d="M39 1H1v38h38V1ZM0 0v40h40V0H0Z"
-          clip-rule="evenodd"></path>
-      </svg>
-      <div class="flex flex-col w-full">
-        <h1 class="max-w-[600px]">Software designer and developer</h1>
-        <p>
+    <div class="container h-[420px]">
+      <div class="h-10 flex items-center justify-between">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="10"
+          fill="none"
+          viewBox="0 0 28 10"
+        >
+          <path fill="#0A0300" d="M24 7V6h4v1h-4Z"></path>
+          <path fill="#0A0300" d="M24 7V6h4v1h-4ZM0 7V6h4v1H0Z"></path>
+          <path
+            fill="#0A0300"
+            fill-rule="evenodd"
+            d="M18 3h6v4h-1V4h-4v3h-5V6h4V3Zm-8 0H4v4h1V4h4v3h5V6h-4V3Z"
+            clip-rule="evenodd"></path>
+          <path
+            fill="#000"
+            fill-rule="evenodd"
+            d="M27 1H1v8h26V1ZM0 0v10h28V0H0Z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </div>
+
+      <div class="flex flex-col w-full mt-[88px]">
+        <h1 class="max-w-[600px] mb-2">
+          Independent creative technologist pursuing play with pixels.
+        </h1>
+        <p class="text-neutral-500 text-xs uppercase mt-6">Currently</p>
+        <p class="text-neutral-600">
           Currently at <a href="https://weweb.io">WeWeb</a> on enabling anyone to
-          build applications through a visual interface. Check out snippets page
-          for more work.
+          build applications.
         </p>
       </div>
     </div>

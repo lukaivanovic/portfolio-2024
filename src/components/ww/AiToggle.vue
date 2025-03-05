@@ -104,7 +104,7 @@ export default {
 .topbar-panels {
   position: relative;
   width: 80px;
-  transform: scale(1.5);
+  // transform: scale(1.5);
 
   &__button {
     display: flex;

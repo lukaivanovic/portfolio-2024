@@ -1,5 +1,5 @@
 <script setup>
-import { ref, useTemplateRef, provide, computed } from "vue";
+import { ref, useTemplateRef, provide, computed, onMounted } from "vue";
 import DialogControls from "./DialogControls.vue";
 import Dialog from "./Dialog.vue";
 
@@ -28,8 +28,8 @@ function handleLayoutChange(newLayout) {
   switch (newLayout) {
     case "one":
       PARAMS.value = {
-        type: "sheet",
-        side: "left",
+        type: "modal",
+        side: "center",
         align: "center",
         animation: "zoom",
         animationDuration: 500,
@@ -87,6 +87,10 @@ function handleLayoutChange(newLayout) {
 
   console.log(newLayout);
 }
+
+onMounted(() => {
+  handleLayoutChange("one");
+});
 
 const PARAMS = ref({
   type: "modal",
