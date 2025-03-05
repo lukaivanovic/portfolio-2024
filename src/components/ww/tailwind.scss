@@ -2,6 +2,12 @@
 @use "./typography.scss";
 @use "./border-radius.scss";
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.ww {
+  font-family: "Inter", sans-serif;
+}
+
 @for $i from 0 through 9 {
   .w-#{$i} {
     width: var(--ww-spacing-0#{$i});
@@ -539,4 +545,28 @@ $shadows: (
 .sticky {
   position: sticky;
   top: 0;
+}
+
+@keyframes dots {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "";
+  }
+}
+
+.loading-dots::after {
+  content: "";
+  animation: dots 2s steps(1) infinite;
+  animation-timing-function: ease;
 }

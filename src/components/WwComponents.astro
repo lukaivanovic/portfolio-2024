@@ -8,7 +8,7 @@ import ProjectHeader from "./ProjectHeader.astro";
 import DialogPreview from "./ww/dialog/DialogPreview.vue";
 ---
 
-<section class="py-[200px]">
+<section class="py-[80px]">
   <ProjectHeader
     name="WeWeb Components"
     duration="Fall 2024 - Coming soon"
@@ -19,31 +19,5 @@ import DialogPreview from "./ww/dialog/DialogPreview.vue";
 
   <div class="container">
     <DialogPreview client:only="vue" />
-  </div>
-
-  <div class="container">
-    <div class="w-full flex flex-col">
-      <div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
-          <div class="col-span-1">
-            <Image
-              src={wwComponents1}
-              alt=""
-              quality={100}
-              class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto border border-[var(--color-border)]"
-            />
-          </div>
-
-          <div class="col-span-1">
-            <Image
-              src={wwComponents2}
-              alt=""
-              quality={100}
-              class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-[var(--color-border)]"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>

@@ -1,125 +1,25 @@
 ---
 import { Image } from "astro:assets";
-import wwEditorMainDarkMode from "../images/test2.jpg";
-import wwEditorMainLightMode from "../images/test2-light2.jpg";
-import wwEditorWorkflow from "../images/workflow.png";
+import wwEditorMain from "../images/test2.jpg";
+import wwEditorWorkflow from "../images/workflows.jpg";
 import wwEditorFormula from "../images/formula.png";
-import wwEditorBranching from "../images/branching.png";
-import wwEditorAddPanel from "../images/add-panel.png";
-import wwEditorDeploy from "../images/deploy.png";
 import numeral from "../svg/numeral-one.svg?raw";
 import ProjectHeader from "./ProjectHeader.astro";
-import Testimonial from "./Testimonial.astro";
 ---
 
-<section class="py-[200px]">
+<section class="py-[80px]">
   <ProjectHeader
-    name="WeWeb Editor"
+    name="WeWeb"
     duration="2022 - PRESENT"
-    description="The editor features many intertwining systems such as components, styles, workflows and more. We take web best practices and present them in an elevated and clear interface."
+    description="The editor features many intertwining systems such as components, styles, workflows and more."
     numeralSvg={numeral}
     accentColor="#274076"
   />
 
-  <!-- Editor Image -->
-  <div class="container">
-    <div
-      class="rounded-md flex justify-center items-center py-6 px-6 border border-[var(--color-border)] bg-[var(--main-shot-bg)]"
-    >
-      <div class="relative max-w-[1640px]">
-        <Image
-          class="drop-shadow-sm w-full opacity-[var(--editor-dark-mode-opacity)] rounded-md overflow-hidden outline outline-2 outline-[var(--color-border)]"
-          src={wwEditorMainDarkMode}
-          alt=""
-          quality={"max"}
-        />
-        <Image
-          class="drop-shadow-lg w-full absolute top-0 left-0 opacity-[var(--editor-light-mode-opacity)] transition-opacity duration-500 rounded-md overflow-hidden"
-          src={wwEditorMainLightMode}
-          alt=""
-          quality={"max"}
-        />
-      </div>
-    </div>
+  <div class="container grid grid-cols-2 gap-4">
+    <Image src={wwEditorMain} class="col-span-2" alt="" quality={100} />
+    <Image src={wwEditorWorkflow} class="col-span-2" alt="" quality={100} />
+    <Image src={wwEditorFormula} alt="" quality={100} />
+    <Image src={wwEditorFormula} alt="" quality={100} />
   </div>
-
-  <div class="container mt-16 lg:mt-[24px]">
-    <div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
-        <div class="col-span-1">
-          <Image
-            src={wwEditorAddPanel}
-            alt=""
-            quality={100}
-            class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto border border-neutral-300"
-          />
-        </div>
-
-        <div class="col-span-1">
-          <Image
-            src={wwEditorWorkflow}
-            alt=""
-            quality={100}
-            class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-neutral-300"
-          />
-        </div>
-
-        <div class="col-span-1">
-          <Image
-            src={wwEditorFormula}
-            alt=""
-            quality={100}
-            class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-neutral-300"
-          />
-        </div>
-
-        <div class="col-span-1">
-          <Image
-            src={wwEditorDeploy}
-            alt=""
-            quality={100}
-            class="bg-[var(--main-shot-bg)] overflow-hidden aspect-[5/3.67] lg:aspect-auto object-cover object-top border border-neutral-300"
-          />
-        </div>
-
-        <div
-          class="mx-auto px-4 gap-8 py-12 flex flex-col items-center lg:col-span-2"
-        >
-          <p class="text-xs uppercase text-[var(--color-secondary)]">
-            What some of the users said
-          </p>
-          <div class="flex flex-col lg:flex-row gap-4">
-            <Testimonial
-              comment="It feels a lot like Figma, but with auto-layout always on."
-              handle="stevedesignerd"
-            />
-
-            <Testimonial
-              comment="I started using WeWeb recently and it's on a league of its own."
-              handle="andystrb"
-            />
-
-            <Testimonial
-              comment="Definitely try WeWeb for frontend if you like Webflow."
-              handle="RLooplabs"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <style is:global>
-    :root {
-      --main-shot-bg: #dcdcdc;
-      --shot-bg: #cbcbcb;
-      --editor-light-mode-opacity: 1;
-    }
-
-    .dark-mode {
-      --main-shot-bg: transparent;
-      --shot-bg: #343434;
-      --editor-light-mode-opacity: 0;
-    }
-  </style>
 </section>

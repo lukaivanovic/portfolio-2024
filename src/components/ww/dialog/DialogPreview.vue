@@ -31,7 +31,7 @@ function handleLayoutChange(newLayout) {
         type: "sheet",
         side: "left",
         align: "center",
-        animation: "slide-in-left",
+        animation: "zoom",
         animationDuration: 500,
         animationEasing: "ease",
         preventScrolling: false,
@@ -50,7 +50,7 @@ function handleLayoutChange(newLayout) {
         type: "modal",
         side: "right",
         align: "bottom",
-        animation: "slide-in-bottom",
+        animation: "fade",
         animationDuration: 500,
         animationEasing: "ease",
         preventScrolling: false,
@@ -104,35 +104,43 @@ const PARAMS = ref({
 </script>
 
 <template>
-  <div
-    class="border border-neutral-200 relative bg-white rounded-md overflow-hidden mb-12 shadow-md"
-  >
+  <div class="relative bg-white rounded-md overflow-hidden mb-12 shadow-md">
     <div
-      class="flex gap-1 items-center justify-center border-b border-neutral-200 w-full h-10"
+      class="flex gap-1 items-center justify-center border-b border-neutral-700 w-full h-10 bg-neutral-900"
     >
       <button
         class="flex items-center justify-center px-2 py-1 text-xs rounded-full"
-        :class="{ 'bg-neutral-900 text-white': design == 'one' }"
+        :class="{
+          'bg-neutral-600 text-white': design == 'one',
+          'text-neutral-300 hover:bg-neutral-700': design != 'one',
+        }"
         @click="handleLayoutChange('one')"
       >
         Checkout
       </button>
       <button
         class="flex items-center justify-center px-2 py-1 text-xs rounded-full"
-        :class="{ 'bg-neutral-900 text-white': design == 'two' }"
+        :class="{
+          'bg-neutral-600 text-white': design == 'two',
+          'text-neutral-300 hover:bg-neutral-700': design != 'two',
+        }"
         @click="handleLayoutChange('two')"
       >
         Confirmation
       </button>
       <button
         class="flex items-center justify-center px-2 py-1 text-xs rounded-full"
-        :class="{ 'bg-neutral-900 text-white': design == 'three' }"
+        :class="{
+          'bg-neutral-600 text-white': design == 'three',
+          'text-neutral-300 hover:bg-neutral-700': design != 'three',
+        }"
         @click="handleLayoutChange('three')"
       >
         Property Details
       </button>
     </div>
-    <div class="relative flex flex-row bg-neutral-100 h-[620px]">
+
+    <div class="relative flex flex-row bg-neutral-100 h-[700px]">
       <div class="flex flex-col flex-grow">
         <div class="flex-grow flex items-center justify-center overflow-hidden">
           <template v-if="design == 'one'">

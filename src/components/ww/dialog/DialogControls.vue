@@ -42,26 +42,28 @@ const model = defineModel({
 
 <template>
   <div class="w-[220px] bg-neutral-900 rounded-md text-xs shadow-sm">
-    <div class="p-2 space-y-2">
-      <!-- Layout Selection -->
+    <div class="p-2 border-b border-neutral-700">
       <button
-        class="w-full px-3 h-7 rounded text-center bg-neutral-800 hover:bg-neutral-700 transition-colors text-neutral-50"
+        class="w-full px-3 h-7 rounded text-center bg-neutral-700 hover:bg-neutral-800 transition-colors text-neutral-50"
         @click="toggleDialog"
       >
         Toggle
       </button>
+    </div>
+    <div class="p-2 space-y-2">
+      <!-- Layout Selection -->
 
       <!-- Type Selection -->
       <div>
         <div
-          class="flex rounded overflow-hidden border border-neutral-700 p-0.5 gap-0.5"
+          class="flex rounded overflow-hidden border border-neutral-700 p-0.5 gap-0.5 h-7"
         >
           <button
             @click="updateType('modal')"
-            class="flex-1 py-1 text-xs transition-colors rounded-sm"
+            class="flex-1 text-xs transition-colors rounded-sm flex items-center justify-center"
             :class="
               model.type === 'modal'
-                ? 'bg-neutral-600 text-neutral-50'
+                ? 'bg-neutral-700 text-neutral-50'
                 : ' text-neutral-200 hover:bg-neutral-700'
             "
           >
@@ -69,10 +71,10 @@ const model = defineModel({
           </button>
           <button
             @click="updateType('sheet')"
-            class="flex-1 py-1 text-xs transition-colors rounded-sm"
+            class="flex-1 text-xs transition-colors rounded-sm flex items-center justify-center"
             :class="
               model.type === 'sheet'
-                ? 'bg-neutral-600 text-neutral-50'
+                ? 'bg-neutral-700 text-neutral-50'
                 : ' text-neutral-200 hover:bg-neutral-700'
             "
           >
@@ -85,7 +87,7 @@ const model = defineModel({
         <!-- Side Selection -->
         <div>
           <div
-            class="flex rounded overflow-hidden border border-neutral-700 p-0.5 gap-0.5"
+            class="flex rounded overflow-hidden border border-neutral-700 p-0.5 gap-0.5 h-7"
           >
             <button
               @click="model.side = 'left'"
@@ -103,7 +105,7 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'center'
-                  ? 'bg-neutral-600 text-neutral-50'
+                  ? 'bg-neutral-700 text-neutral-50'
                   : ' text-neutral-200 hover:bg-neutral-700'
               "
             >
@@ -114,7 +116,7 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'right'
-                  ? 'bg-neutral-600 text-neutral-50'
+                  ? 'bg-neutral-700 text-neutral-50'
                   : ' text-neutral-200 hover:bg-neutral-700'
               "
             >
@@ -126,14 +128,14 @@ const model = defineModel({
         <!-- Align Selection -->
         <div>
           <div
-            class="flex rounded overflow-hidden border border-neutral-700 p-0.5 gap-0.5"
+            class="flex rounded overflow-hidden border border-neutral-700 p-0.5 gap-0.5 h-7"
           >
             <button
               @click="model.align = 'top'"
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.align === 'top'
-                  ? 'bg-neutral-600 text-neutral-50'
+                  ? 'bg-neutral-700 text-neutral-50'
                   : ' text-neutral-200 hover:bg-neutral-700'
               "
             >
@@ -144,7 +146,7 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.align === 'center'
-                  ? 'bg-neutral-600 text-neutral-50'
+                  ? 'bg-neutral-700 text-neutral-50'
                   : ' text-neutral-200 hover:bg-neutral-700'
               "
             >
@@ -155,7 +157,7 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.align === 'bottom'
-                  ? 'bg-neutral-600 text-neutral-50'
+                  ? 'bg-neutral-700 text-neutral-50'
                   : ' text-neutral-200 hover:bg-neutral-700'
               "
             >
@@ -175,7 +177,7 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'left'
-                  ? 'bg-neutral-600 text-neutral-50'
+                  ? 'bg-neutral-700 text-neutral-50'
                   : ' text-neutral-200 hover:bg-neutral-700'
               "
             >
@@ -186,7 +188,7 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'top'
-                  ? 'bg-neutral-600 text-neutral-50'
+                  ? 'bg-neutral-700 text-neutral-50'
                   : ' text-neutral-200 hover:bg-neutral-700'
               "
             >
@@ -197,7 +199,7 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'right'
-                  ? 'bg-neutral-600 text-neutral-50'
+                  ? 'bg-neutral-700 text-neutral-50'
                   : ' text-neutral-200 hover:bg-neutral-700'
               "
             >
@@ -208,7 +210,7 @@ const model = defineModel({
               class="flex-1 py-1 text-xs transition-colors"
               :class="
                 model.side === 'bottom'
-                  ? 'bg-neutral-600 text-neutral-50'
+                  ? 'bg-neutral-700 text-neutral-50'
                   : ' text-neutral-200 hover:bg-neutral-700'
               "
             >
@@ -217,104 +219,88 @@ const model = defineModel({
           </div>
         </div>
       </template>
+    </div>
 
+    <div class="p-2 border-t border-neutral-700">
       <!-- Animation Selection -->
-      <div>
-        <select
-          v-model="model.animation"
-          class="bg-neutral-800 text-neutral-200 rounded px-1 py-1 outline outline-1 outline-neutral-700 border-r-8 border-transparent"
+
+      <div
+        class="flex rounded overflow-hidden border border-neutral-700 p-0.5 gap-0.5"
+      >
+        <button
+          @click="model.animation = 'fade'"
+          class="flex-1 py-1 text-xs transition-colors"
+          :class="
+            model.animation === 'fade'
+              ? 'bg-neutral-700 text-neutral-50'
+              : ' text-neutral-200 hover:bg-neutral-700'
+          "
         >
-          <option value="zoom">Zoom</option>
-          <option value="fade">Fade</option>
-          <option value="slide-in-right">Slide in right</option>
-          <option value="slide-in-left">Slide in left</option>
-          <option value="slide-in-top">Slide in top</option>
-          <option value="slide-in-bottom">Slide in bottom</option>
-        </select>
+          Fade
+        </button>
+        <button
+          @click="model.animation = 'zoom'"
+          class="flex-1 py-1 text-xs transition-colors"
+          :class="
+            model.animation === 'zoom'
+              ? 'bg-neutral-700 text-neutral-50'
+              : ' text-neutral-200 hover:bg-neutral-700'
+          "
+        >
+          Zoom
+        </button>
+        <button
+          @click="model.animation = 'slide-in-bottom'"
+          class="flex-1 py-1 text-xs transition-colors"
+          :class="
+            model.animation === 'slide-in-bottom'
+              ? 'bg-neutral-700 text-neutral-50'
+              : ' text-neutral-200 hover:bg-neutral-700'
+          "
+        >
+          Slide in
+        </button>
       </div>
+    </div>
 
-      <!-- Animation Duration -->
-      <div>
-        <input
-          type="number"
-          v-model="model.animationDuration"
-          min="0"
-          max="1000"
-          class="bg-neutral-800 text-neutral-200 rounded px-1 py-1 outline outline-1 outline-neutral-700"
-        />
-      </div>
-
-      <!-- Checkboxes -->
-      <div class="space-y-2">
+    <div class="p-2 border-t border-neutral-700">
+      <!-- Buttons -->
+      <div class="flex gap-2">
         <button
           @click="model.overlay = !model.overlay"
-          class="w-full px-3 h-7 rounded text-center bg-neutral-800 hover:bg-neutral-700 transition-colors"
-          :class="model.overlay ? 'text-neutral-50' : 'text-neutral-300'"
+          class="flex-1 px-3 h-7 rounded text-center bg-neutral-700 hover:bg-neutral-700 transition-colors text-neutral-50"
         >
           {{ model.overlay ? "Hide overlay" : "Show overlay" }}
         </button>
 
         <button
-          @click="model.overlayClickCloses = !model.overlayClickCloses"
-          class="w-full px-3 h-7 rounded text-center bg-neutral-800 hover:bg-neutral-700 transition-colors"
-          :class="
-            model.overlayClickCloses ? 'text-neutral-50' : 'text-neutral-300'
-          "
-        >
-          {{
-            model.overlayClickCloses
-              ? "Disable overlay closing"
-              : "Enable overlay closing"
-          }}
-        </button>
-
-        <button
           @click="model.trigger = !model.trigger"
-          class="w-full px-3 h-7 rounded text-center bg-neutral-800 hover:bg-neutral-700 transition-colors"
-          :class="model.trigger ? 'text-neutral-50' : 'text-neutral-300'"
+          class="flex-1 px-3 h-7 rounded text-center bg-neutral-700 hover:bg-neutral-700 transition-colors text-neutral-50"
         >
           {{ model.trigger ? "Hide trigger" : "Show trigger" }}
-        </button>
-
-        <button
-          @click="model.triggerClickOpens = !model.triggerClickOpens"
-          class="w-full px-3 h-7 rounded text-center bg-neutral-800 hover:bg-neutral-700 transition-colors"
-          :class="
-            model.triggerClickOpens ? 'text-neutral-50' : 'text-neutral-300'
-          "
-        >
-          {{
-            model.triggerClickOpens
-              ? "Disable trigger opening"
-              : "Enable trigger opening"
-          }}
         </button>
       </div>
     </div>
 
-    <div>
-      <div class="p-2 border-t border-neutral-800">
-        <ul>
+    <div class="p-2 border-t border-neutral-700">
+      <ul>
+        <li class="flex items-center justify-start rounded h-7">
+          <div class="w-2 h-2 bg-cyan-500 rounded-full mr-2"></div>
+          <span class="text-neutral-100">Trigger</span>
+        </li>
+
+        <div :style="{ opacity: isOpen ? 1 : 0.5 }">
           <li class="flex items-center justify-start rounded h-7">
-            <div class="w-2 h-2 bg-cyan-500 rounded-full mr-2"></div>
-            <span class="text-neutral-300">Trigger</span>
+            <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+            <span class="text-neutral-100">Content</span>
           </li>
 
-          <Transition>
-            <div v-if="isOpen">
-              <li class="flex items-center justify-start rounded h-7">
-                <div class="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-                <span class="text-neutral-300">Content</span>
-              </li>
-
-              <li class="flex items-center justify-start rounded h-7">
-                <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-                <span class="text-neutral-300">Overlay</span>
-              </li>
-            </div>
-          </Transition>
-        </ul>
-      </div>
+          <li class="flex items-center justify-start rounded h-7">
+            <div class="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+            <span class="text-neutral-100">Overlay</span>
+          </li>
+        </div>
+      </ul>
     </div>
   </div>
 </template>

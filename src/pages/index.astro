@@ -1,74 +1,60 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Illustration from "../components/Illustration.astro";
 import WwComponents from "../components/WwComponents.astro";
 import WwEditor from "../components/WwEditor.astro";
 import WwAi from "../components/WwAi.astro";
-import logo1 from "../svg/logo-1.svg?raw";
-import logo2 from "../svg/logo-2.svg?raw";
-import logo3 from "../svg/logo-3.svg?raw";
 import circle from "../svg/circle2.svg?raw";
 import Menu from "../components/Menu.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <Menu />
-
   <!-- Hero -->
   <section id="hero">
-    <div class="container flex flex-col w-full">
-      <h1 class="mb-6 mt-4 max-w-[600px]">Software designer and developer</h1>
-      <p>
-        Currently at <a href="https://weweb.io">WeWeb</a> on enabling anyone to build
-        applications through a visual interface.
-      </p>
+    <div class="container flex items-center gap-3 h-[420px]">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        fill="currentColor"
+        viewBox="0 0 40 40"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M6.719 17.166V6.722h13.277v1H7.72v8.444h5.11v-3.944h1v4.944H6.72Zm26.562 0V6.722H20.004v1H32.28v8.444h-5.666v-3.944h-1v4.944h7.666ZM6.719 22.834v10.444h13.277v-1H7.72v-8.444h5.11v3.944h1v-4.944H6.72Zm26.562 0v10.444H20.004v-1H32.28v-8.444h-5.666v3.944h-1v-4.944h7.666Z"
+          clip-rule="evenodd"></path>
+        <path fill-rule="evenodd" d="M20.5 7v26h-1V7h1Z" clip-rule="evenodd"
+        ></path>
+        <path
+          fill-rule="evenodd"
+          d="M39 1H1v38h38V1ZM0 0v40h40V0H0Z"
+          clip-rule="evenodd"></path>
+      </svg>
+      <div class="flex flex-col w-full">
+        <h1 class="max-w-[600px]">Software designer and developer</h1>
+        <p>
+          Currently at <a href="https://weweb.io">WeWeb</a> on enabling anyone to
+          build applications through a visual interface. Check out snippets page
+          for more work.
+        </p>
+      </div>
     </div>
   </section>
 
+  <Menu />
+
   <WwEditor />
 
-  <div class="dark-mode-section">
-    <WwComponents />
+  <WwComponents />
 
-    <WwAi />
+  <WwAi />
 
-    <section class="overflow-hidden">
-      <div
-        class="container h-[500px] flex flex-col justify-end items-center py-8 relative"
+  <section class="overflow-hidden">
+    <div
+      class="container h-[500px] flex flex-col justify-end items-center py-8 relative"
+    >
+      <span class="text-[var(--color-secondary)] z-40"
+        >Luka Ivanović © 2024</span
       >
-        <div
-          class="absolute bottom-0 left-[50%] translate-y-[50%] translate-x-[-50%] lg:w-[400px] lg:h-[400px] w-[200px] h-[200px]"
-        >
-          <Fragment set:html={circle} />
-        </div>
-        <span class="text-[var(--color-secondary)] z-40"
-          >Luka Ivanović © 2024</span
-        >
-      </div>
-    </section>
-  </div>
-
-  <!-- 
-  <script>
-    const darkModeTriggers = document.querySelectorAll(".dark-mode-section");
-    const body = document.body;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            body.classList.add("dark-mode");
-          } else {
-            body.classList.remove("dark-mode");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    darkModeTriggers.forEach((trigger) => {
-      observer.observe(trigger);
-    });
-  </script>
-  -->
+    </div>
+  </section>
 </Layout>

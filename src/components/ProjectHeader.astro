@@ -31,26 +31,41 @@ const {
 
 <style define:vars={{ "accent-color": hexToRGB(accentColor) }}></style>
 
-<section class="pb-[80px]">
+<section class="pb-10">
   <!-- Project Number -->
-  <div class="container -wide flex flex-row items-center pb-[80px]">
-    <div class={`h-[1px] w-[16px] bg-black hidden lg:block`}></div>
-    <div
-      class={`text-white w-[20px] h-[20px] bg-[#000] z-10 flex items-center justify-center`}
-    >
-      <Fragment set:html={numeralSvg} />
+  <div class="container">
+    <div class="flex flex-row items-center pb-[40px] overflow-hidden">
+      <!-- 
+      <div
+        class={`text-[white] w-[16px] h-[16px] bg-[#000] z-10 flex items-center justify-center`}
+      >
+        <Fragment set:html={numeralSvg} />
+      </div>
+      -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1268"
+        height="5"
+        fill="currentColor"
+        viewBox="0 0 1268 5"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M4 .5h6v4H9v-3H5v3H0v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Zm10 0h6v4h-1v-3h-4v3h-5v-1h4v-3Z"
+          clip-rule="evenodd"></path>
+      </svg>
     </div>
-    <div class={`h-[1px] flex-grow bg-black`}></div>
   </div>
 
   <div class="container flex flex-col">
-    <h1 class="w-full text-[var(--color-primary)]">
+    <h1 class="w-full">
       {name}
     </h1>
-    <p class="text-xs uppercase text-[var(--color-secondary)]">
-      {duration}
-    </p>
 
-    <p set:html={description} class="w-full" />
+    <p set:html={description} class="w-full text-[var(--color-secondary)]" />
+    <p class="w-full text-[var(--color-secondary)]">Fall 2024</p>
+    <p class="w-full text-[var(--color-secondary)]">
+      UI design, Product Strategy, Development
+    </p>
   </div>
 </section>

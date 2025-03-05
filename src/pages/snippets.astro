@@ -1,13 +1,17 @@
 ---
 import AiToggle from "../components/ww/AiToggle.vue";
+import WwChat from "../components/ww/WwChat.vue";
 ---
 
 <html>
-  <body class="!cursor-none">
+  <body>
+    <section class="flex items-center justify-center m-3 aspect-video">
+      <AiToggle client:only="vue" />
+    </section>
     <section
-      class="flex items-center justify-center m-3 cursor-none aspect-video"
+      class="flex items-center justify-center m-3 aspect-video bg-neutral-50 p-6"
     >
-      <AiToggle client:load />
+      <WwChat client:only="vue" />
     </section>
   </body>
 </html>

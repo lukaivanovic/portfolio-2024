@@ -1,6 +1,8 @@
 ---
 import numeral from "../svg/numeral-three.svg?raw";
 import ProjectHeader from "./ProjectHeader.astro";
+import AiToggle from "./ww/AiToggle.vue";
+import WwChat from "./ww/WwChat.vue";
 ---
 
 <section class="pt-[200px]">
@@ -8,8 +10,21 @@ import ProjectHeader from "./ProjectHeader.astro";
     name="WeWeb AI"
     duration="Winter 2024 - Coming soon"
     description=""
-    description2=""
     numeralSvg={numeral}
     accentColor="#274076"
   />
+
+  <div class="container grid grid-cols-2 gap-4">
+    <div
+      class="bg-white border border-neutral-200 flex items-center justify-center rounded-md"
+    >
+      <AiToggle client:only="vue" />
+    </div>
+    <div
+      class="bg-neutral-50 border border-neutral-200 rounded-md row-span-3 flex items-start justify-center h-[640px] pt-8 overflow-hidden"
+    >
+      <WwChat client:only="vue" />
+    </div>
+    <div class="bg-blue-100 flex items-center justify-center row-span-2"></div>
+  </div>
 </section>

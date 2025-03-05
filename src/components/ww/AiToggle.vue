@@ -104,7 +104,7 @@ export default {
 .topbar-panels {
   position: relative;
   width: 80px;
-  transform: scale(6.5);
+  transform: scale(1.5);
 
   &__button {
     display: flex;
@@ -115,7 +115,7 @@ export default {
     height: 28px;
     border-radius: 14px;
     padding: 1px;
-    cursor: none !important;
+    cursor: default !important;
 
     background: conic-gradient(
       from calc(var(--r2) - 80deg),
