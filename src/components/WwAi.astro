@@ -5,7 +5,7 @@ import AiToggle from "./ww/AiToggle.vue";
 import WwChat from "./ww/WwChat.vue";
 import { Image } from "astro:assets";
 import background from "../images/bg2.png";
-import background2 from "../images/bg3.png";
+import background2 from "../images/bg4.png";
 import tweetPreview from "../images/A0WjaEhdd9njCUcp.jpg";
 import WwAiContext from "./ww/WwAiContext.vue";
 ---
@@ -21,23 +21,63 @@ import WwAiContext from "./ww/WwAiContext.vue";
         accentColor="#274076"
       />
 
-      <div class="grid grid-cols-5 gap-4 p-6">
-        <div
-          class="relative bg-white border col-span-2 border-neutral-200 flex items-center justify-center rounded-md"
+      <div class="grid grid-cols-5 grid-rows-[80px_120px_440px] gap-4 p-6">
+        <a
+          href="https://x.com/lukaivnvc/status/1866056100409417827"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="relative bg-white border col-span-2 border-neutral-200 items-center justify-center rounded-md flex"
+          aria-label="View Twitter post about building a Twitter clone with WeWeb AI"
         >
-          <Image
-            src={background}
-            class="absolute top-0 left-0 w-full h-full object-cover z-0"
-            alt=""
-            quality={100}
-          />
-          <AiToggle
-            class="scale-150 translate-z-0 backface-hidden subpixel-antialiased z-10"
-            client:only="vue"
-          />
-        </div>
+          <div class="h-full aspect-video">
+            <Image
+              src={tweetPreview}
+              class="object-cover z-0 h-full w-full"
+              alt=""
+              quality={100}
+            />
+          </div>
+          <div class="relative">
+            <div class="absolute flex items-center justify-center">
+              <div
+                class="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-100 transition-all duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="text-neutral-900"
+                >
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full flex flex-col">
+            <div class="text-sm">@lukaivnvc</div>
+            <div class="text-sm">
+              Building a Twitter clone with @weweb_io AI in about 5 minutes
+            </div>
+
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 1200 1227"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
+                fill="black"></path>
+            </svg>
+          </div>
+        </a>
+
         <div
-          class="relative rounded-md row-span-3 col-span-3 h-[720px] flex items-start justify-center overflow-hidden p-6"
+          class="relative rounded-md row-span-3 col-span-3 flex items-start justify-center overflow-hidden p-6"
         >
           <Image
             src={background}
@@ -53,50 +93,28 @@ import WwAiContext from "./ww/WwAiContext.vue";
           class="relative bg-white border col-span-2 border-neutral-200 flex items-center justify-center rounded-md"
         >
           <Image
-            src={background}
+            src={background2}
+            class="absolute top-0 left-0 w-full h-full object-cover z-0"
+            alt=""
+            quality={100}
+          />
+          <AiToggle
+            class="scale-150 translate-z-0 backface-hidden subpixel-antialiased z-10"
+            client:only="vue"
+          />
+        </div>
+
+        <div
+          class="relative bg-white border col-span-2 border-neutral-200 flex items-center justify-center rounded-md"
+        >
+          <Image
+            src={background2}
             class="absolute top-0 left-0 w-full h-full object-cover z-0"
             alt=""
             quality={100}
           />
           <WwAiContext client:only="vue" class="z-10" />
         </div>
-
-        <a
-          href="https://x.com/lukaivnvc/status/1866056100409417827"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="relative bg-white border col-span-2 row-span-2 border-neutral-200 items-center justify-center rounded-md aspect-video"
-          aria-label="View Twitter post about building a Twitter clone with WeWeb AI"
-        >
-          <Image
-            src={tweetPreview}
-            class="absolute top-0 left-0 w-full h-full object-cover z-0"
-            alt=""
-            quality={100}
-          />
-          <div
-            class="absolute top-0 left-0 p-4 w-full bg-gradient-to-b from-black to-transparent text-white"
-          >
-            Building a Twitter clone with @weweb_io AI in about 5 minutes
-          </div>
-
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div
-              class="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-100 transition-all duration-300"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="text-neutral-900"
-              >
-                <path d="M8 5v14l11-7z"></path>
-              </svg>
-            </div>
-          </div>
-        </a>
       </div>
     </div>
   </div>

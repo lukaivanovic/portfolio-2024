@@ -1,8 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import wwComponents1 from "../images/components-01.png";
-import wwComponents2 from "../images/components-02.png";
-import wwComponents3 from "../images/components-03.png";
 import numeral from "../svg/numeral-two.svg?raw";
 import ProjectHeader from "./ProjectHeader.astro";
 import DialogPreview from "./ww/dialog/DialogPreview.vue";
@@ -18,33 +15,300 @@ import DialogPreview from "./ww/dialog/DialogPreview.vue";
         numeralSvg={numeral}
         accentColor="#274076"
       />
-      <div class="grid grid-cols-3 gap-4 p-6 h-[800px]">
+      <div class="grid grid-cols-3 grid-rows-2 gap-4 p-6 h-[800px]">
         <div class="col-span-2 row-span-2">
           <DialogPreview client:only="vue" class="h-full" />
         </div>
-        <div class="border border-neutral-200 rounded-md overflow-hidden">
+
+        <!-- Select -->
+        <div
+          class="flex flex-col border border-neutral-200 rounded-md overflow-hidden"
+        >
+          <!-- Header -->
           <div
             class="border-b border-neutral-200 flex items-center justify-between p-2 bg-white"
           >
             <div class="text-center basis-0 flex-grow text-xs">Select</div>
           </div>
 
-          <div class="bg-neutral-200">
-            <img src="select.png" alt="Select" />
+          <!-- Content -->
+          <div
+            class="bg-neutral-200 flex-grow p-4 flex flex-col items-center justify-center"
+          >
+            <div class="w-[240px]">
+              <!-- Trigger -->
+              <div
+                class="trigger relative flex items-center justify-between p-2 bg-white border border-neutral-300 rounded-md shadow-sm cursor-pointer"
+              >
+                <span class="text-xs text-neutral-900">Apple</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-neutral-500"
+                >
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </div>
+
+              <!-- Dropdown -->
+              <div
+                class="dropdown p-1 relative mt-1 bg-white border border-neutral-200 rounded-md shadow-md z-10"
+              >
+                <!-- Search input -->
+                <div
+                  class="search relative border-b border-neutral-200 flex items-center gap-2 p-2 text-xs"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="text-neutral-400"
+                  >
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                  </svg>
+                  Search
+                </div>
+                <div class="py-1">
+                  <div
+                    class="option relative px-3 py-2 text-xs text-neutral-900 bg-neutral-100 flex items-center justify-between cursor-pointer"
+                  >
+                    <span>Apple</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="text-neutral-900"
+                    >
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                  </div>
+                  <div
+                    class="px-3 py-2 text-xs text-neutral-900 hover:bg-neutral-50 cursor-pointer"
+                  >
+                    Banana
+                  </div>
+                  <div
+                    class="px-3 py-2 text-xs text-neutral-900 hover:bg-neutral-50 cursor-pointer"
+                  >
+                    Orange
+                  </div>
+                  <div
+                    class="px-3 py-2 text-xs text-neutral-900 hover:bg-neutral-50 cursor-pointer"
+                  >
+                    Strawberry
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="border border-neutral-200 rounded-md overflow-hidden">
+
+        <!-- Tabs -->
+        <div
+          class="flex flex-col border border-neutral-200 rounded-md overflow-hidden"
+        >
+          <!-- Header -->
           <div
             class="border-b border-neutral-200 flex items-center justify-between p-2 bg-white"
           >
-            <div class="text-center basis-0 flex-grow text-xs">Tabs</div>
+            <div class="text-center basis-0 flex-grow text-xs">Select</div>
           </div>
 
-          <div class="bg-neutral-200">
-            <img src="select.png" alt="Select" />
+          <!-- Content -->
+          <div
+            class="bg-neutral-200 flex flex-col items-center justify-center flex-grow"
+          >
+            <div
+              class="tabs-container w-[280px] border border-neutral-300 rounded-md bg-white shadow-sm"
+            >
+              <!-- Tab headers -->
+              <div class="tabs-header flex border-b border-neutral-200">
+                <div
+                  class="tab-trigger active relative px-4 py-2 text-xs font-medium text-neutral-900 bg-white border-b-2 border-blue-500 cursor-pointer flex-grow flex items-center justify-center"
+                >
+                  Tab 1
+                  <span
+                    class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-3 h-0.5 bg-black rounded-full"
+                  ></span>
+                </div>
+                <div
+                  class="relative px-4 py-2 text-xs text-neutral-500 hover:text-neutral-700 cursor-pointer flex-grow flex items-center justify-center"
+                >
+                  Tab 2
+                </div>
+                <div
+                  class="relative px-4 py-2 text-xs text-neutral-500 hover:text-neutral-700 cursor-pointer flex-grow flex items-center justify-center"
+                >
+                  Tab 3
+                </div>
+              </div>
+
+              <!-- Tab content -->
+              <div class="tab-content relative p-4 flex items-center">
+                <div class="h-12 w-12 bg-neutral-100 rounded-lg flex-shrink-0">
+                  <img
+                    src="/illustration.png"
+                    alt="Premium Wireless Headphones"
+                    class="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+                <div class="text-neutral-800 ml-3">
+                  <div class="text-sm">Tab content</div>
+                  <div class="text-xs text-neutral-500">Description</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<style lang="scss">
+  .dropdown {
+    inset: -2;
+    border: 1px dashed;
+    @apply border-purple-400;
+
+    &:after {
+      content: "DROPDOWN";
+      position: absolute;
+      top: calc(50% - 9px);
+      left: calc(100% + 4px);
+      @apply bg-purple-500/50;
+      @apply text-purple-800;
+      font-size: 9px;
+      font-family: monospace;
+      padding: 2px 2px;
+      border-radius: 4px;
+      pointer-events: none;
+      // z-index: 9999;
+    }
+  }
+
+  .search {
+    inset: -2;
+    border: 1px dashed;
+    @apply border-orange-400;
+
+    &:after {
+      content: "SEARCH";
+      position: absolute;
+      top: calc(50% - 9px);
+      right: calc(100% + 16px);
+      @apply bg-orange-500/50;
+      @apply text-orange-800;
+      font-size: 9px;
+      font-family: monospace;
+      padding: 2px 2px;
+      border-radius: 4px;
+      pointer-events: none;
+      // z-index: 9999;
+    }
+  }
+
+  .option {
+    inset: -2;
+    border: 1px dashed;
+    @apply border-green-400;
+
+    &:after {
+      content: "OPTION";
+      position: absolute;
+      top: calc(50% - 9px);
+      right: calc(100% + 16px);
+      @apply bg-green-500/50;
+      @apply text-green-800;
+      font-size: 9px;
+      font-family: monospace;
+      padding: 2px 2px;
+      border-radius: 4px;
+      pointer-events: none;
+      // z-index: 9999;
+    }
+  }
+
+  .trigger {
+    inset: -2;
+    border: 1px dashed;
+    @apply border-cyan-400;
+
+    &:after {
+      content: "TRIGGER";
+      position: absolute;
+      top: calc(50% - 9px);
+      left: calc(100% + 4px);
+      @apply bg-cyan-500/50;
+      @apply text-cyan-800;
+      font-size: 9px;
+      font-family: monospace;
+      padding: 2px 2px;
+      border-radius: 4px;
+      pointer-events: none;
+      // z-index: 9999;
+    }
+  }
+
+  .tab-trigger {
+    inset: -2;
+    border: 1px dashed;
+    @apply border-cyan-400;
+
+    &:after {
+      content: "TRIGGER";
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 0;
+      @apply bg-cyan-500/50;
+      @apply text-cyan-800;
+      font-size: 9px;
+      font-family: monospace;
+      padding: 2px 2px;
+      border-radius: 4px;
+      pointer-events: none;
+      // z-index: 9999;
+    }
+  }
+
+  .tab-content {
+    inset: -2;
+    border: 1px dashed;
+    @apply border-rose-400;
+
+    &:after {
+      content: "CONTENT";
+      position: absolute;
+      top: calc(50%);
+      left: calc(100% + 8px);
+      @apply bg-rose-500/50;
+      @apply text-rose-800;
+      font-size: 9px;
+      font-family: monospace;
+      padding: 2px 2px;
+      border-radius: 4px;
+      pointer-events: none;
+      // z-index: 9999;
+    }
+  }
+</style>

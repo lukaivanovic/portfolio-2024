@@ -493,7 +493,7 @@ async function runAnimation() {
     [chat.value, { y: 40 }, { duration: 0.5 }, { ease: "easeInOut" }],
     [
       chat.value,
-      { scale: 1.25 },
+      { scale: 1.2 },
       { duration: 0.3 },
       { ease: "easeOut" },
       { delay: 0.02 },
