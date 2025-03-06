@@ -3,15 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import WwComponents from "../components/WwComponents.astro";
 import WwEditor from "../components/WwEditor.astro";
 import WwAi from "../components/WwAi.astro";
-import circle from "../svg/circle2.svg?raw";
 import Menu from "../components/Menu.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <!-- Hero -->
   <section id="hero">
-    <div class="container -wide h-[420px]">
-      <div class="h-10 flex items-center justify-between text-primary">
+    <div class="container -wide h-[360px]">
+      <div class="h-10 flex items-center text-primary">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="28"
@@ -32,9 +31,14 @@ import Menu from "../components/Menu.astro";
             d="M27 1H1v8h26V1ZM0 0v10h28V0H0Z"
             clip-rule="evenodd"></path>
         </svg>
+
+        <div class="flex flex-row gap-4">
+          <a href="/snippets">Snippets</a>
+          <a href="/contact">Contact</a>
+        </div>
       </div>
 
-      <div class="flex flex-col w-full mt-[88px]">
+      <div class="flex flex-col w-full justify-center h-full">
         <h1 class="max-w-[600px] mb-2">
           Independent creative technologist pursuing play with pixels.
         </h1>
@@ -47,7 +51,7 @@ import Menu from "../components/Menu.astro";
     </div>
   </section>
 
-  <Menu />
+  <!-- <Menu /> -->
 
   <WwEditor />
 

@@ -29,7 +29,7 @@ const { title } = Astro.props;
     />
     <title>Luka Ivanovic © 2024</title>
   </head>
-  <body class="antialiased dark-mode">
+  <body class="antialiased">
     <slot />
   </body>
 </html>
@@ -57,7 +57,7 @@ const { title } = Astro.props;
   :root {
     --color-bg: #f8f8f6;
     --color-primary: theme("colors.neutral.900");
-    --color-secondary: #1d1d1d;
+    --color-secondary: theme("colors.neutral.600");
     --color-border: #e5e5e5;
     --color-accent: #000;
   }
@@ -67,7 +67,7 @@ const { title } = Astro.props;
   }
 
   .dark-mode {
-    --color-bg: theme("colors.black");
+    --color-bg: theme("colors.neutral.900");
     --color-primary: theme("colors.white");
     --color-secondary: #d9d9d9;
     --color-border: #3b3b3b;
@@ -106,13 +106,13 @@ const { title } = Astro.props;
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 21px;
     line-height: 1.25;
     font-family: "TWK Lausanne - 450", sans-serif;
   }
 
   h2 {
-    font-size: 21px;
+    font-size: 26px;
     line-height: 1.25;
     font-family: "TWK Lausanne - 450", sans-serif;
   }
@@ -120,7 +120,7 @@ const { title } = Astro.props;
   p {
     font-family: "TWK Lausanne - 400", sans-serif;
     font-size: 14px;
-    line-height: 26px;
+    line-height: 1.6;
   }
 
   a {

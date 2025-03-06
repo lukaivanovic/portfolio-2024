@@ -5,8 +5,6 @@ import AiToggle from "./ww/AiToggle.vue";
 import WwChat from "./ww/WwChat.vue";
 import { Image } from "astro:assets";
 import background from "../images/bg2.png";
-import background2 from "../images/bg4.png";
-import tweetPreview from "../images/A0WjaEhdd9njCUcp.jpg";
 import WwAiContext from "./ww/WwAiContext.vue";
 ---
 
@@ -14,7 +12,7 @@ import WwAiContext from "./ww/WwAiContext.vue";
   <div class="container -wide">
     <div class="border border-neutral-400 pb-12">
       <ProjectHeader
-        name="WeWeb AI"
+        name="Designing AI that can build web applications"
         duration="Winter 2024 - Coming soon"
         description="WeWeb AI is a new way to build applications with AI."
         numeralSvg={numeral}
@@ -80,14 +78,8 @@ import WwAiContext from "./ww/WwAiContext.vue";
         -->
 
         <div
-          class="relative row-span-1 bg-white border col-span-2 border-neutral-200 flex items-center justify-center rounded-md"
+          class="bg-[#220858] row-span-1 bg-white border col-span-2 border-neutral-200 flex items-center justify-center rounded-md"
         >
-          <Image
-            src={background2}
-            class="absolute top-0 left-0 w-full h-full object-cover z-0"
-            alt=""
-            quality={100}
-          />
           <AiToggle
             class="scale-150 translate-z-0 backface-hidden subpixel-antialiased z-10"
             client:only="vue"
@@ -108,23 +100,11 @@ import WwAiContext from "./ww/WwAiContext.vue";
         </div>
 
         <div
-          class="relative bg-white border col-span-2 row-span-1 border-neutral-200 flex items-center justify-center rounded-md"
+          class="bg-[#220858] border col-span-2 row-span-1 border-neutral-200 flex items-center justify-center rounded-md"
         >
-          <Image
-            src={background2}
-            class="absolute top-0 left-0 w-full h-full object-cover z-0"
-            alt=""
-            quality={100}
-          />
           <WwAiContext client:only="vue" class="z-10" />
         </div>
       </div>
     </div>
   </div>
-
-  <style>
-    .r-l5o3uw {
-      background-color: red !important;
-    }
-  </style>
 </section>
