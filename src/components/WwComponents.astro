@@ -15,8 +15,12 @@ import DialogPreview from "./ww/dialog/DialogPreview.vue";
         numeralSvg={numeral}
         accentColor="#274076"
       />
-      <div class="grid grid-cols-3 grid-rows-2 gap-4 p-6 h-[800px]">
-        <div class="col-span-2 row-span-2">
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 px-6 md:h-[800px]"
+      >
+        <div
+          class="col-span-1 row-span-1 md:col-span-2 md:row-span-2 min-h-[480px]"
+        >
           <DialogPreview client:only="vue" class="h-full" />
         </div>
 
