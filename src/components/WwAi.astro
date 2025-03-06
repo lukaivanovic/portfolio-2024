@@ -19,7 +19,9 @@ import WwAiContext from "./ww/WwAiContext.vue";
         accentColor="#274076"
       />
 
-      <div class="grid grid-cols-5 grid-rows-[160px_500px] gap-4 px-6">
+      <div
+        class="grid md:grid-cols-5 grid-cols-1 grid-rows-[160px_1fr] h-[740px] gap-4 px-6"
+      >
         <!-- Twitter post 
         <a
           href="https://x.com/lukaivnvc/status/1866056100409417827"
@@ -78,7 +80,7 @@ import WwAiContext from "./ww/WwAiContext.vue";
         -->
 
         <div
-          class="bg-[#220858] row-span-1 border col-span-2 border-neutral-200 flex items-center justify-center rounded-md"
+          class="bg-[#341D65] row-span-1 md:col-span-2 col-span-1 flex items-center justify-center rounded-md"
         >
           <AiToggle
             class="scale-150 translate-z-0 backface-hidden subpixel-antialiased z-10"
@@ -87,7 +89,7 @@ import WwAiContext from "./ww/WwAiContext.vue";
         </div>
 
         <div
-          class="relative rounded-md row-span-3 col-span-3 flex items-start justify-center overflow-hidden p-6"
+          class="bg-[#341D65] relative rounded-md row-span-2 md:col-span-3 col-span-1 flex items-start justify-center overflow-hidden p-6 h-[740px]"
         >
           <Image
             src={background}
@@ -100,7 +102,7 @@ import WwAiContext from "./ww/WwAiContext.vue";
         </div>
 
         <div
-          class="bg-[#220858] border col-span-2 row-span-1 border-neutral-200 flex items-center justify-center rounded-md"
+          class="bg-[#341D65] md:col-span-2 col-span-1 flex items-end justify-center rounded-md overflow-hidden pb-6 h-full"
         >
           <WwAiContext client:only="vue" class="z-10" />
         </div>

@@ -51,9 +51,12 @@
       </div>
     </div>
 
-    <div ref="chatContainer" class="flex flex-col flex-grow">
+    <div class="flex flex-col flex-grow">
       <!-- Chat Messages -->
-      <div class="chat-messages overflow-y-auto p-3 space-y-2 flex-grow">
+      <div
+        class="chat-messages overflow-y-auto p-3 space-y-2 flex-grow"
+        ref="chatContainer"
+      >
         <!-- User Message -->
         <div
           class="flex flex-col bg-neutral-50 p-3 rounded-md border border-neutral-100 body-sm opacity-0 translate-y-[-24px]"
@@ -248,7 +251,7 @@
 
                 <span class="label-sm ml-2">Task Management</span>
               </div>
-              <span class="text-xs text-neutral-600">Created page</span>
+              <span class="text-xs text-neutral-600">Page</span>
             </div>
 
             <div class="p-2 bg-neutral-50 border-t border-neutral-200">
@@ -313,7 +316,7 @@
                       class="text-xs text-neutral-600"
                       v-else-if="currentElementIndex === 9"
                     >
-                      DueDate
+                      Page generated
                     </span>
                   </div>
                 </Transition>
@@ -478,7 +481,6 @@ const artifacts = ref([
 
 async function runAnimation() {
   await new Promise((resolve) => setTimeout(resolve, 1000));
-  // await animate(chat.value, { opacity: 1 }, { duration: 1 });
   await animate(chatContainer.value, { opacity: 1 }, { duration: 0.5 });
 
   await streamMessage(messages.value[0]);
@@ -490,28 +492,21 @@ async function runAnimation() {
     { ease: "easeOut" }
   );
   await animate([
-    [chat.value, { y: 40 }, { duration: 0.5 }, { ease: "easeInOut" }],
+    [chat.value, { y: 0 }, { duration: 0.5 }, { ease: "easeInOut" }],
     [
       chat.value,
-      { scale: 1.2 },
+      { scale: 1.3 },
       { duration: 0.3 },
       { ease: "easeOut" },
       { delay: 0.02 },
       { at: 1 },
     ],
   ]);
-  await Promise.all([
-    animate(
-      initialChat.value,
-      { transform: "translateY(0px)" },
-      { duration: 1 }
-    ),
-    animate(
-      userMessage.value,
-      { opacity: 1, transform: "translateY(0px)" },
-      { duration: 0.5 }
-    ),
-  ]);
+  await animate(
+    userMessage.value,
+    { opacity: 1, transform: "translateY(0px)" },
+    { duration: 0.5 }
+  );
   await animate(AiAvatar.value, { opacity: 1 }, { duration: 0.5 });
   await new Promise((resolve) => setTimeout(resolve, 1200));
   isResponseLoading.value = true;
@@ -548,9 +543,11 @@ async function runAnimation() {
 
   await streamMessage(messages.value[3]);
 
-  // await resetAnimation();
+  await new Promise((resolve) => setTimeout(resolve, 2000));
 
-  // await runAnimation();
+  await resetAnimation();
+
+  await runAnimation();
 }
 
 async function resetAnimation() {
@@ -568,20 +565,26 @@ async function resetAnimation() {
     artifact.loading = true;
   });
 
-  await animate(
-    initialChat.value,
-    { transform: "translateY(0px)" },
-    { duration: 1 }
-  );
-  await animate(
+  animate(
     userMessage.value,
     { opacity: 0, transform: "translateY(-16px)" },
     { duration: 0.5 }
   );
-  await animate(AiAvatar.value, { opacity: 0 }, { duration: 0.5 });
-  await animate(variableArtifact.value, { opacity: 0 }, { duration: 0.5 });
-  await animate(workflowArtifact.value, { opacity: 0 }, { duration: 0.5 });
-  await animate(layoutArtifact.value, { opacity: 0 }, { duration: 0.5 });
+  animate(AiAvatar.value, { opacity: 0 }, { duration: 0.5 });
+  animate(variableArtifact.value, { opacity: 0 }, { duration: 0.5 });
+  animate(workflowArtifact.value, { opacity: 0 }, { duration: 0.5 });
+  animate(layoutArtifact.value, { opacity: 0 }, { duration: 0.5 });
+  await animate([
+    [chat.value, { y: 0 }, { duration: 0.5 }, { ease: "easeInOut" }],
+    [
+      chat.value,
+      { scale: 1 },
+      { duration: 0.3 },
+      { ease: "easeOut" },
+      { delay: 0.02 },
+      { at: 1 },
+    ],
+  ]);
 }
 
 onMounted(async () => {

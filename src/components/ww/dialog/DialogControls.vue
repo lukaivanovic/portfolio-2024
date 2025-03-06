@@ -74,6 +74,10 @@ const model = defineModel({
           </button>
         </div>
       </div>
+    </div>
+
+    <div class="p-2 border-t border-neutral-200 space-y-2">
+      <div>Position</div>
 
       <template v-if="model.type === 'modal'">
         <!-- Side Selection -->
@@ -306,38 +310,40 @@ const model = defineModel({
     <div class="p-2 border-t border-neutral-200">
       <!-- Animation Selection -->
 
+      <div>Animation</div>
+
       <div
-        class="flex rounded overflow-hidden border border-neutral-200 p-0.5 gap-0.5"
+        class="flex rounded overflow-hidden bg-neutral-200 p-0.5 gap-0.5 mt-2"
       >
         <button
           @click="model.animation = 'fade'"
-          class="flex-1 py-1 text-xs transition-colors"
+          class="flex-1 py-1 text-xs rounded-md transition-colors"
           :class="
             model.animation === 'fade'
-              ? 'bg-neutral-200 text-neutral-900'
-              : ' text-neutral-700 hover:bg-neutral-100'
+              ? 'bg-white text-neutral-900'
+              : ' text-neutral-500 hover:bg-neutral-100'
           "
         >
           Fade
         </button>
         <button
           @click="model.animation = 'zoom'"
-          class="flex-1 py-1 text-xs transition-colors"
+          class="flex-1 py-1 text-xs rounded-md transition-colors"
           :class="
             model.animation === 'zoom'
-              ? 'bg-neutral-200 text-neutral-900'
-              : ' text-neutral-700 hover:bg-neutral-100'
+              ? 'bg-white text-neutral-900'
+              : ' text-neutral-500 hover:bg-neutral-100'
           "
         >
           Zoom
         </button>
         <button
           @click="model.animation = 'slide-in-bottom'"
-          class="flex-1 py-1 text-xs transition-colors"
+          class="flex-1 py-1 text-xs rounded-md transition-colors"
           :class="
             model.animation === 'slide-in-bottom'
-              ? 'bg-neutral-200 text-neutral-900'
-              : ' text-neutral-700 hover:bg-neutral-100'
+              ? 'bg-white text-neutral-900'
+              : ' text-neutral-500 hover:bg-neutral-100'
           "
         >
           Slide in
@@ -350,14 +356,14 @@ const model = defineModel({
       <div class="flex gap-2">
         <button
           @click="model.overlay = !model.overlay"
-          class="flex-1 px-3 h-6 rounded text-center bg-neutral-100 hover:bg-neutral-200 transition-colors text-neutral-900"
+          class="flex-1 px-3 h-6 rounded text-center bg-neutral-200 hover:bg-neutral-200 transition-colors text-neutral-900"
         >
           Overlay
         </button>
 
         <button
           @click="model.trigger = !model.trigger"
-          class="flex-1 px-3 h-6 rounded text-center bg-neutral-100 hover:bg-neutral-200 transition-colors text-neutral-900"
+          class="flex-1 px-3 h-6 rounded text-center bg-neutral-200 hover:bg-neutral-200 transition-colors text-neutral-900"
         >
           Trigger
         </button>

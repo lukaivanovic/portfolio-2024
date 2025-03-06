@@ -1,6 +1,6 @@
 <template>
   <div
-    class="subpixel-antialiased ww ww-theme-light w-[400px] h-[400px] flex flex-col justify-end"
+    class="subpixel-antialiased ww-theme-light body-sm ww flex flex-col justify-end bg-gradient-to-t from-white to-transparent rounded-lg overflow-hidden w-[400px] h-full"
   >
     <!-- Input Area -->
     <div
@@ -25,7 +25,7 @@
           </svg>
         </button>
         <div
-          class="w-[360px] p-2 bg-primary rounded-lg shadow-sm border-secondary absolute bottom-6 left-2"
+          class="w-[280px] p-2 bg-primary rounded-md shadow-lg border-secondary absolute bottom-5 left-2"
         >
           <!-- Segmented Control -->
           <div
