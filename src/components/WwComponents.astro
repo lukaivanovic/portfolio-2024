@@ -18,53 +18,30 @@ import DialogPreview from "./ww/dialog/DialogPreview.vue";
         numeralSvg={numeral}
         accentColor="#274076"
       />
-      <div class="grid grid-cols-2 gap-4 p-6">
-        <div class="col-span-2">
-          <h2>Dialog</h2>
-          <p class="text-sm text-neutral-500">
-            Dialog is a component that allows you to create a modal dialog.
-          </p>
-          Interactive demo
-          <DialogPreview client:only="vue" />
+      <div class="grid grid-cols-3 gap-4 p-6 h-[800px]">
+        <div class="col-span-2 row-span-2">
+          <DialogPreview client:only="vue" class="h-full" />
         </div>
-        <div class="p-4 border border-neutral-200 rounded-md">
-          <h3 class="text-md font-bold">Select</h3>
-          <p class="text-sm text-neutral-500">
-            Select is a component that allows you to select one or more options
-            from a list.
-          </p>
-          <div class="h-[400px] bg-neutral-200">
+        <div class="border border-neutral-200 rounded-md overflow-hidden">
+          <div
+            class="border-b border-neutral-200 flex items-center justify-between p-2 bg-white"
+          >
+            <div class="text-center basis-0 flex-grow text-xs">Select</div>
+          </div>
+
+          <div class="bg-neutral-200">
             <img src="select.png" alt="Select" />
           </div>
         </div>
-        <div class="p-4 border border-neutral-200 rounded-md">
-          <h3 class="text-md font-bold">Accordion</h3>
-          <p class="text-sm text-neutral-500">
-            Accordion is a component that allows you to collapse and expand a
-            list of items.
-          </p>
-          <div class="h-[400px] bg-neutral-200">
-            <img src="accordion.png" alt="Accordion" />
+        <div class="border border-neutral-200 rounded-md overflow-hidden">
+          <div
+            class="border-b border-neutral-200 flex items-center justify-between p-2 bg-white"
+          >
+            <div class="text-center basis-0 flex-grow text-xs">Tabs</div>
           </div>
-        </div>
-        <div class="p-4 border border-neutral-200 rounded-md">
-          <h3 class="text-md font-bold">Dropdown</h3>
-          <p class="text-sm text-neutral-500">
-            Dropdown is a component that allows you to select one or more
-            options from a list.
-          </p>
-          <div class="h-[400px] bg-neutral-200">
-            <img src="dropdown.png" alt="Dropdown" />
-          </div>
-        </div>
-        <div class="p-4 border border-neutral-200 rounded-md">
-          <h3 class="text-md font-bold">Tabs</h3>
-          <p class="text-sm text-neutral-500">
-            Tabs is a component that allows you to switch between different
-            views.
-          </p>
-          <div class="h-[400px] bg-neutral-200">
-            <img src="tabs.png" alt="Tabs" />
+
+          <div class="bg-neutral-200">
+            <img src="select.png" alt="Select" />
           </div>
         </div>
       </div>

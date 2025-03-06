@@ -1,6 +1,7 @@
 <template>
   <div
-    class="ww-theme-light body-sm ww border-secondary flex flex-col bg-white rounded-lg overflow-hidden w-[400px] h-[760px]"
+    class="subpixel-antialiased ww-theme-light body-sm ww border-secondary flex flex-col bg-white rounded-lg overflow-hidden w-[400px] h-full origin-top"
+    ref="chat"
   >
     <!-- Header -->
     <div
@@ -50,9 +51,9 @@
       </div>
     </div>
 
-    <div ref="chatContainer" class="opacity-0">
+    <div ref="chatContainer" class="flex flex-col flex-grow">
       <!-- Chat Messages -->
-      <div class="chat-messages flex-1 overflow-y-auto p-3 space-y-2">
+      <div class="chat-messages overflow-y-auto p-3 space-y-2 flex-grow">
         <!-- User Message -->
         <div
           class="flex flex-col bg-neutral-50 p-3 rounded-md border border-neutral-100 body-sm opacity-0 translate-y-[-24px]"
@@ -435,7 +436,9 @@ const variableArtifact = useTemplateRef("variableArtifact");
 const workflowArtifact = useTemplateRef("workflowArtifact");
 const layoutArtifact = useTemplateRef("layoutArtifact");
 const chatContainer = useTemplateRef("chatContainer");
+const chat = useTemplateRef("chat");
 
+const hasBeenInView = ref(false);
 const currentTextAreaText = ref("");
 const isResponseLoading = ref(false);
 const currentElementIndex = ref(0);
@@ -474,14 +477,33 @@ const artifacts = ref([
 ]);
 
 async function runAnimation() {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  // await animate(chat.value, { opacity: 1 }, { duration: 1 });
   await animate(chatContainer.value, { opacity: 1 }, { duration: 0.5 });
 
   await streamMessage(messages.value[0]);
   await new Promise((resolve) => setTimeout(resolve, 200));
+  await animate(
+    chat.value,
+    { opacity: 1 },
+    { duration: 1 },
+    { ease: "easeOut" }
+  );
+  await animate([
+    [chat.value, { y: 40 }, { duration: 0.5 }, { ease: "easeInOut" }],
+    [
+      chat.value,
+      { scale: 1.25 },
+      { duration: 0.3 },
+      { ease: "easeOut" },
+      { delay: 0.02 },
+      { at: 1 },
+    ],
+  ]);
   await Promise.all([
     animate(
       initialChat.value,
-      { transform: "translateY(400px)" },
+      { transform: "translateY(0px)" },
       { duration: 1 }
     ),
     animate(
@@ -526,9 +548,9 @@ async function runAnimation() {
 
   await streamMessage(messages.value[3]);
 
-  await resetAnimation();
+  // await resetAnimation();
 
-  await runAnimation();
+  // await runAnimation();
 }
 
 async function resetAnimation() {
@@ -562,9 +584,33 @@ async function resetAnimation() {
   await animate(layoutArtifact.value, { opacity: 0 }, { duration: 0.5 });
 }
 
-onMounted(() => {
+onMounted(async () => {
   // Animation can now be triggered by calling runAnimation()
-  runAnimation();
+
+  // Create an Intersection Observer to detect when the component is scrolled into view
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting && !hasBeenInView.value) {
+        // Component is now visible in the viewport and hasn't been in view before
+        hasBeenInView.value = true;
+        // Open the dialog after a short delay to ensure smooth animation
+        setTimeout(() => {
+          runAnimation();
+        }, 500);
+      }
+    },
+    {
+      // Options for the observer
+      threshold: 0.5, // Trigger when at least 50% of the component is visible
+      rootMargin: "0px", // No margin
+    }
+  );
+
+  // Start observing the component
+  if (chat.value) {
+    observer.observe(chat.value);
+  }
 });
 
 async function streamMessage(message) {
@@ -573,7 +619,7 @@ async function streamMessage(message) {
     message.currentContent += char + " ";
     currentTextAreaText.value = message.currentContent;
     adjustTextareaHeight();
-    await new Promise((resolve) => setTimeout(resolve, 80)); // 20ms delay between chars
+    await new Promise((resolve) => setTimeout(resolve, 100)); // 20ms delay between chars
   }
 }
 

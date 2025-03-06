@@ -5,6 +5,9 @@ import AiToggle from "./ww/AiToggle.vue";
 import WwChat from "./ww/WwChat.vue";
 import { Image } from "astro:assets";
 import background from "../images/bg2.png";
+import background2 from "../images/bg3.png";
+import tweetPreview from "../images/A0WjaEhdd9njCUcp.jpg";
+import WwAiContext from "./ww/WwAiContext.vue";
 ---
 
 <section class="py-[80px]">
@@ -18,32 +21,63 @@ import background from "../images/bg2.png";
         accentColor="#274076"
       />
 
-      <div class="grid grid-cols-2 gap-4 p-6">
+      <div class="grid grid-cols-5 gap-4 p-6">
         <div
-          class="relative rounded-md row-span-3 col-span-2 h-[640px] flex items-start justify-center overflow-hidden"
+          class="relative bg-white border col-span-2 border-neutral-200 flex items-center justify-center rounded-md"
         >
           <Image
             src={background}
-            class="absolute w-full h-full object-cover z-0"
+            class="absolute top-0 left-0 w-full h-full object-cover z-0"
             alt=""
             quality={100}
           />
-
-          <WwChat client:only="vue" class="z-10 mt-8" />
-        </div>
-        <div
-          class="bg-white border border-neutral-200 flex items-center justify-center rounded-md h-[400px]"
-        >
           <AiToggle
-            class="scale-150 translate-z-0 backface-hidden subpixel-antialiased"
+            class="scale-150 translate-z-0 backface-hidden subpixel-antialiased z-10"
             client:only="vue"
           />
         </div>
         <div
-          class="bg-white border border-neutral-200 flex items-center justify-center rounded-md row-span-2 h-[400px]"
+          class="relative rounded-md row-span-3 col-span-3 h-[720px] flex items-start justify-center overflow-hidden p-6"
         >
+          <Image
+            src={background}
+            class="absolute top-0 left-0 w-full h-full object-cover z-0"
+            alt=""
+            quality={100}
+          />
+
+          <WwChat client:only="vue" class="z-10" />
         </div>
+
+        <div
+          class="relative bg-white border col-span-2 border-neutral-200 flex items-center justify-center rounded-md"
+        >
+          <Image
+            src={background}
+            class="absolute top-0 left-0 w-full h-full object-cover z-0"
+            alt=""
+            quality={100}
+          />
+          <WwAiContext client:only="vue" class="z-10" />
+        </div>
+
+        <a
+          href="https://x.com/lukaivnvc/status/1866056100409417827"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="relative bg-white border col-span-2 border-neutral-200 flex flex-col items-center justify-center rounded-md row-span-2"
+          aria-label="View Twitter post about building a Twitter clone with WeWeb AI"
+        >
+          Building a Twitter clone with @weweb_io AI in about 5 minutes
+          <Image src={tweetPreview} class="" alt="" quality={100} />
+        </a>
       </div>
     </div>
   </div>
+
+  <style>
+    .r-l5o3uw {
+      background-color: red !important;
+    }
+  </style>
 </section>

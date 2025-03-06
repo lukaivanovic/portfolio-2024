@@ -10,7 +10,7 @@
     "
     role="dialog"
   >
-    <div v-if="content.trigger" @click="onTriggerClick()">
+    <div v-if="content.trigger" @click="onTriggerClick()" class="w-full">
       <slot name="trigger" />
     </div>
 
