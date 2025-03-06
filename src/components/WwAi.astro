@@ -65,11 +65,37 @@ import WwAiContext from "./ww/WwAiContext.vue";
           href="https://x.com/lukaivnvc/status/1866056100409417827"
           target="_blank"
           rel="noopener noreferrer"
-          class="relative bg-white border col-span-2 border-neutral-200 flex flex-col items-center justify-center rounded-md row-span-2"
+          class="relative bg-white border col-span-2 row-span-2 border-neutral-200 items-center justify-center rounded-md aspect-video"
           aria-label="View Twitter post about building a Twitter clone with WeWeb AI"
         >
-          Building a Twitter clone with @weweb_io AI in about 5 minutes
-          <Image src={tweetPreview} class="" alt="" quality={100} />
+          <Image
+            src={tweetPreview}
+            class="absolute top-0 left-0 w-full h-full object-cover z-0"
+            alt=""
+            quality={100}
+          />
+          <div
+            class="absolute top-0 left-0 p-4 w-full bg-gradient-to-b from-black to-transparent text-white"
+          >
+            Building a Twitter clone with @weweb_io AI in about 5 minutes
+          </div>
+
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div
+              class="w-16 h-16 bg-white bg-opacity-80 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-100 transition-all duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="text-neutral-900"
+              >
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+            </div>
+          </div>
         </a>
       </div>
     </div>

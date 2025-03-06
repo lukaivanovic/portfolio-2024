@@ -4,6 +4,8 @@ import wwEditorMain from "../images/test2.jpg";
 import wwEditorWorkflow from "../images/workflows.jpg";
 import wwEditorFormula from "../images/formula.png";
 import wwEditorIcons from "../images/icons.png";
+import wwEditorKeyframes from "../images/keyframe.png";
+import wwEditorFormulas from "../images/formula.png";
 import numeral from "../svg/numeral-one.svg?raw";
 import ProjectHeader from "./ProjectHeader.astro";
 ---
@@ -22,8 +24,26 @@ import ProjectHeader from "./ProjectHeader.astro";
       <div class="grid grid-cols-2 gap-4 px-6">
         <Image src={wwEditorMain} class="col-span-2" alt="" quality={100} />
         <Image src={wwEditorWorkflow} class="col-span-2" alt="" quality={100} />
-        <Image src={wwEditorFormula} alt="" quality={100} />
-        <Image src={wwEditorIcons} alt="" quality={100} />
+      </div>
+      <div class="grid grid-cols-2 grid-rows-3 gap-4 px-6">
+        <Image
+          class="bg-white rounded-md border border-neutral-200"
+          src={wwEditorFormula}
+          alt=""
+          quality={100}
+        />
+        <Image
+          class="row-span-3 bg-white rounded-md border border-neutral-200"
+          src={wwEditorIcons}
+          alt=""
+          quality={100}
+        />
+        <Image
+          class="row-span-2 bg-white rounded-md border border-neutral-200"
+          src={wwEditorKeyframes}
+          alt=""
+          quality={100}
+        />
       </div>
     </div>
   </div>
