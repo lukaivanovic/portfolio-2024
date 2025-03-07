@@ -9,7 +9,9 @@
     >
       <!-- Add context button -->
       <div class="relative flex items-center px-2 pt-2">
-        <button class="content-secondary p-[1px] border-secondary rounded-md">
+        <button
+          class="content-secondary p-[1px] border-secondary rounded-md cursor-default"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
@@ -32,22 +34,22 @@
             class="flex w-full mb-2 bg-secondary border-secondary rounded-lg p-0.5 h-[28px]"
           >
             <button
-              class="flex-1 px-2 body-sm font-medium rounded-md bg-primary text-neutral-800 shadow-sm border-secondary"
+              class="flex-1 px-2 body-sm font-medium rounded-md bg-primary text-neutral-800 shadow-sm border-secondary cursor-default"
             >
               Context
             </button>
             <button
-              class="flex-1 px-2 body-sm font-medium rounded-md text-neutral-500"
+              class="flex-1 px-2 body-sm font-medium rounded-md text-neutral-500 cursor-default"
             >
               Variables
             </button>
             <button
-              class="flex-1 px-2 body-sm font-medium rounded-md text-neutral-500"
+              class="flex-1 px-2 body-sm font-medium rounded-md text-neutral-500 cursor-default"
             >
               Data
             </button>
             <button
-              class="flex-1 px-2 body-sm font-medium rounded-md text-neutral-500"
+              class="flex-1 px-2 body-sm font-medium rounded-md text-neutral-500 cursor-default"
             >
               User
             </button>

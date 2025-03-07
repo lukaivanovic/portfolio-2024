@@ -4,5 +4,42 @@ import Menu from "../components/Menu.astro";
 ---
 
 <Layout title="Welcome to Astro.">
+  <section id="hero">
+    <div class="container px-6 pb-[200px]">
+      <div class="h-12 flex items-center text-primary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="10"
+          fill="none"
+          viewBox="0 0 28 10"
+        >
+          <path fill="currentColor" d="M24 7V6h4v1h-4Z"></path>
+          <path fill="currentColor" d="M24 7V6h4v1h-4ZM0 7V6h4v1H0Z"></path>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M18 3h6v4h-1V4h-4v3h-5V6h4V3Zm-8 0H4v4h1V4h4v3h5V6h-4V3Z"
+            clip-rule="evenodd"></path>
+          <path
+            fill="currentColor"
+            fill-rule="evenodd"
+            d="M27 1H1v8h26V1ZM0 0v10h28V0H0Z"
+            clip-rule="evenodd"></path>
+        </svg>
+
+        <div class="flex flex-row gap-4 ml-3">
+          <a href="/snippets">Snippets</a>
+          <a href="/contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col w-full mt-[80px]">
+        <h1 class="max-w-[600px] mb-2">
+          Independent creative technologist pursuing play with pixels.
+        </h1>
+      </div>
+    </div>
+  </section>
   <Menu />
 </Layout>
