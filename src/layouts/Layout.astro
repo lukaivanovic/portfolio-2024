@@ -54,16 +54,22 @@ const { title } = Astro.props;
     font-display: swap;
   }
 
+  body {
+    font-family: "TWK Lausanne - 400", sans-serif;
+    font-size: 14px;
+    transition:
+      background-color 0.5s ease,
+      color 0.5s ease;
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+  }
+
   :root {
     --color-bg: #f8f8f6;
     --color-primary: theme("colors.neutral.900");
     --color-secondary: theme("colors.neutral.600");
-    --color-border: #e5e5e5;
+    --color-border: theme("colors.neutral.300");
     --color-accent: #000;
-  }
-
-  :root {
-    --tp-base-font-family: "TWK Lausanne - 400", sans-serif;
   }
 
   .dark-mode {
@@ -82,26 +88,18 @@ const { title } = Astro.props;
     color: var(--color-secondary);
   }
 
-  body {
-    font-family: "TWK Lausanne - 400", sans-serif;
-    font-size: 14px;
-    transition:
-      background-color 0.5s ease,
-      color 0.5s ease;
-    background-color: var(--color-bg);
-    color: var(--color-primary);
-  }
-
   .container {
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 32px;
-    padding-right: 32px;
+    //padding-left: 32px;
+    //padding-right: 32px;
+    border-left: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
 
     &.-wide {
-      padding-left: 16px;
-      padding-right: 16px;
+      //padding-left: 16px;
+      //padding-right: 16px;
     }
   }
 

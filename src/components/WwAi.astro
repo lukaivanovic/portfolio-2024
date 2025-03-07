@@ -8,21 +8,20 @@ import background from "../images/bg2.png";
 import WwAiContext from "./ww/WwAiContext.vue";
 ---
 
-<section class="py-[80px]">
-  <div class="container -wide">
-    <div class="border border-neutral-400 pb-12">
-      <ProjectHeader
-        name="Designing AI that can build web applications"
-        duration="Winter 2024 - Coming soon"
-        description="WeWeb AI is a new way to build applications with AI."
-        numeralSvg={numeral}
-        accentColor="#274076"
-      />
+<section>
+  <div class="container -wide border-t border-neutral-300 pt-1 pb-[200px]">
+    <ProjectHeader
+      name="Designing AI that can build web applications"
+      duration="Winter 2024 - Coming soon"
+      description="WeWeb AI is a new way to build applications with AI."
+      numeralSvg={numeral}
+      accentColor="#274076"
+    />
 
-      <div
-        class="grid md:grid-cols-5 grid-cols-1 grid-rows-[160px_1fr] h-[740px] gap-4 px-6"
-      >
-        <!-- Twitter post 
+    <div
+      class="grid md:grid-cols-5 grid-cols-1 grid-rows-[160px_1fr] h-[740px] gap-4 px-6"
+    >
+      <!-- Twitter post 
         <a
           href="https://x.com/lukaivnvc/status/1866056100409417827"
           target="_blank"
@@ -79,33 +78,32 @@ import WwAiContext from "./ww/WwAiContext.vue";
 
         -->
 
-        <div
-          class="bg-[#341D65] row-span-1 md:col-span-2 col-span-1 flex items-center justify-center rounded-md"
-        >
-          <AiToggle
-            class="scale-150 translate-z-0 backface-hidden subpixel-antialiased z-10"
-            client:only="vue"
-          />
-        </div>
+      <div
+        class="bg-[#341D65] row-span-1 md:col-span-2 col-span-1 flex items-center justify-center rounded-md"
+      >
+        <AiToggle
+          class="scale-150 translate-z-0 backface-hidden subpixel-antialiased z-10"
+          client:only="vue"
+        />
+      </div>
 
-        <div
-          class="bg-[#341D65] relative rounded-md row-span-2 md:col-span-3 col-span-1 flex items-start justify-center overflow-hidden p-6 h-[740px]"
-        >
-          <Image
-            src={background}
-            class="absolute top-0 left-0 w-full h-full object-cover z-0"
-            alt=""
-            quality={100}
-          />
+      <div
+        class="bg-[#341D65] relative rounded-md row-span-2 md:col-span-3 col-span-1 flex items-start justify-center overflow-hidden p-6 h-[740px]"
+      >
+        <Image
+          src={background}
+          class="absolute top-0 left-0 w-full h-full object-cover z-0"
+          alt=""
+          quality={100}
+        />
 
-          <WwChat client:only="vue" class="z-10" />
-        </div>
+        <WwChat client:only="vue" class="z-10" />
+      </div>
 
-        <div
-          class="bg-[#341D65] md:col-span-2 col-span-1 flex items-end justify-center rounded-md overflow-hidden pb-6 h-full"
-        >
-          <WwAiContext client:only="vue" class="z-10" />
-        </div>
+      <div
+        class="bg-[#341D65] md:col-span-2 col-span-1 flex items-end justify-center rounded-md overflow-hidden pb-6 h-full"
+      >
+        <WwAiContext client:only="vue" class="z-10" />
       </div>
     </div>
   </div>

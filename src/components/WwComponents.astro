@@ -5,46 +5,69 @@ import ProjectHeader from "./ProjectHeader.astro";
 import DialogPreview from "./ww/dialog/DialogPreview.vue";
 ---
 
-<section class="py-[80px]">
-  <div class="container -wide">
-    <div class="border border-neutral-400 pb-12">
-      <ProjectHeader
-        name="Designing and building powerful components that are simple to use"
-        duration="Fall 2024 - Coming soon"
-        description="Offering basic components is essential for an app builder, however, the biggest issue is customizability. Inspired by the power of Radix and the simplicity of shadcn/ui, we set out to revamp our component toolkit, focusing on full customizability, functionality and accessibility."
-        numeralSvg={numeral}
-        accentColor="#274076"
-      />
+<section>
+  <div class="container -wide border-t border-neutral-300 pt-1 pb-[200px]">
+    <ProjectHeader
+      name="Designing and building powerful components that are simple to use"
+      duration="Fall 2024 - Coming soon"
+      description="Offering basic components is essential for an app builder, however, the biggest issue is customizability. Inspired by the power of Radix and the simplicity of shadcn/ui, we set out to revamp our component toolkit, focusing on full customizability, functionality and accessibility."
+      numeralSvg={numeral}
+      accentColor="#274076"
+    />
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 px-6 md:h-[800px]"
+    >
       <div
-        class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-4 px-6 md:h-[800px]"
+        class="col-span-1 row-span-1 md:col-span-2 md:row-span-2 min-h-[480px]"
       >
+        <DialogPreview client:only="vue" class="h-full" />
+      </div>
+
+      <!-- Select -->
+      <div
+        class="flex flex-col border border-neutral-200 rounded-md overflow-hidden"
+      >
+        <!-- Header -->
         <div
-          class="col-span-1 row-span-1 md:col-span-2 md:row-span-2 min-h-[480px]"
+          class="border-b border-neutral-200 flex items-center justify-between p-2 bg-white"
         >
-          <DialogPreview client:only="vue" class="h-full" />
+          <div class="text-center basis-0 flex-grow text-xs">Select</div>
         </div>
 
-        <!-- Select -->
+        <!-- Content -->
         <div
-          class="flex flex-col border border-neutral-200 rounded-md overflow-hidden"
+          class="bg-neutral-200 flex-grow p-4 flex flex-col items-center justify-center"
         >
-          <!-- Header -->
-          <div
-            class="border-b border-neutral-200 flex items-center justify-between p-2 bg-white"
-          >
-            <div class="text-center basis-0 flex-grow text-xs">Select</div>
-          </div>
-
-          <!-- Content -->
-          <div
-            class="bg-neutral-200 flex-grow p-4 flex flex-col items-center justify-center"
-          >
-            <div class="w-[240px]">
-              <!-- Trigger -->
-              <div
-                class="trigger relative flex items-center justify-between p-2 bg-white border border-neutral-300 rounded-md shadow-sm cursor-pointer"
+          <div class="w-[240px]">
+            <!-- Trigger -->
+            <div
+              class="trigger relative flex items-center justify-between p-2 bg-white border border-neutral-300 rounded-md shadow-sm cursor-pointer"
+            >
+              <span class="text-xs text-neutral-900">Apple</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-neutral-500"
               >
-                <span class="text-xs text-neutral-900">Apple</span>
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </div>
+
+            <!-- Dropdown -->
+            <div
+              class="dropdown p-1 relative mt-1 bg-white border border-neutral-200 rounded-md shadow-md z-10"
+            >
+              <!-- Search input -->
+              <div
+                class="search relative border-b border-neutral-200 flex items-center gap-2 p-2 text-xs"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -55,20 +78,18 @@ import DialogPreview from "./ww/dialog/DialogPreview.vue";
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="text-neutral-500"
+                  class="text-neutral-400"
                 >
-                  <path d="m6 9 6 6 6-6"></path>
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
                 </svg>
+                Search
               </div>
-
-              <!-- Dropdown -->
-              <div
-                class="dropdown p-1 relative mt-1 bg-white border border-neutral-200 rounded-md shadow-md z-10"
-              >
-                <!-- Search input -->
+              <div class="py-1">
                 <div
-                  class="search relative border-b border-neutral-200 flex items-center gap-2 p-2 text-xs"
+                  class="option relative px-3 py-2 text-xs text-neutral-900 bg-neutral-100 flex items-center justify-between cursor-pointer"
                 >
+                  <span>Apple</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -79,107 +100,84 @@ import DialogPreview from "./ww/dialog/DialogPreview.vue";
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="text-neutral-400"
+                    class="text-neutral-900"
                   >
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.3-4.3"></path>
+                    <path d="M20 6 9 17l-5-5"></path>
                   </svg>
-                  Search
                 </div>
-                <div class="py-1">
-                  <div
-                    class="option relative px-3 py-2 text-xs text-neutral-900 bg-neutral-100 flex items-center justify-between cursor-pointer"
-                  >
-                    <span>Apple</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="text-neutral-900"
-                    >
-                      <path d="M20 6 9 17l-5-5"></path>
-                    </svg>
-                  </div>
-                  <div
-                    class="px-3 py-2 text-xs text-neutral-900 hover:bg-neutral-50 cursor-pointer"
-                  >
-                    Banana
-                  </div>
-                  <div
-                    class="px-3 py-2 text-xs text-neutral-900 hover:bg-neutral-50 cursor-pointer"
-                  >
-                    Orange
-                  </div>
-                  <div
-                    class="px-3 py-2 text-xs text-neutral-900 hover:bg-neutral-50 cursor-pointer"
-                  >
-                    Strawberry
-                  </div>
+                <div
+                  class="px-3 py-2 text-xs text-neutral-900 hover:bg-neutral-50 cursor-pointer"
+                >
+                  Banana
+                </div>
+                <div
+                  class="px-3 py-2 text-xs text-neutral-900 hover:bg-neutral-50 cursor-pointer"
+                >
+                  Orange
+                </div>
+                <div
+                  class="px-3 py-2 text-xs text-neutral-900 hover:bg-neutral-50 cursor-pointer"
+                >
+                  Strawberry
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Tabs -->
+      <!-- Tabs -->
+      <div
+        class="flex flex-col border border-neutral-200 rounded-md overflow-hidden"
+      >
+        <!-- Header -->
         <div
-          class="flex flex-col border border-neutral-200 rounded-md overflow-hidden"
+          class="border-b border-neutral-200 flex items-center justify-between p-2 bg-white"
         >
-          <!-- Header -->
-          <div
-            class="border-b border-neutral-200 flex items-center justify-between p-2 bg-white"
-          >
-            <div class="text-center basis-0 flex-grow text-xs">Tabs</div>
-          </div>
+          <div class="text-center basis-0 flex-grow text-xs">Tabs</div>
+        </div>
 
-          <!-- Content -->
+        <!-- Content -->
+        <div
+          class="bg-neutral-200 flex flex-col items-center justify-center flex-grow"
+        >
           <div
-            class="bg-neutral-200 flex flex-col items-center justify-center flex-grow"
+            class="tabs-container w-[280px] border border-neutral-300 rounded-md bg-white shadow-sm"
           >
-            <div
-              class="tabs-container w-[280px] border border-neutral-300 rounded-md bg-white shadow-sm"
-            >
-              <!-- Tab headers -->
-              <div class="tabs-header flex border-b border-neutral-200">
-                <div
-                  class="tab-trigger active relative px-4 py-2 text-xs font-medium text-neutral-900 bg-white border-b-2 border-blue-500 cursor-pointer flex-grow flex items-center justify-center"
-                >
-                  Tab 1
-                  <span
-                    class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-3 h-0.5 bg-black rounded-full"
-                  ></span>
-                </div>
-                <div
-                  class="relative px-4 py-2 text-xs text-neutral-500 hover:text-neutral-700 cursor-pointer flex-grow flex items-center justify-center"
-                >
-                  Tab 2
-                </div>
-                <div
-                  class="relative px-4 py-2 text-xs text-neutral-500 hover:text-neutral-700 cursor-pointer flex-grow flex items-center justify-center"
-                >
-                  Tab 3
-                </div>
+            <!-- Tab headers -->
+            <div class="tabs-header flex border-b border-neutral-200">
+              <div
+                class="tab-trigger active relative px-4 py-2 text-xs font-medium text-neutral-900 bg-white border-b-2 border-blue-500 cursor-pointer flex-grow flex items-center justify-center"
+              >
+                Tab 1
+                <span
+                  class="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-3 h-0.5 bg-black rounded-full"
+                ></span>
               </div>
+              <div
+                class="relative px-4 py-2 text-xs text-neutral-500 hover:text-neutral-700 cursor-pointer flex-grow flex items-center justify-center"
+              >
+                Tab 2
+              </div>
+              <div
+                class="relative px-4 py-2 text-xs text-neutral-500 hover:text-neutral-700 cursor-pointer flex-grow flex items-center justify-center"
+              >
+                Tab 3
+              </div>
+            </div>
 
-              <!-- Tab content -->
-              <div class="tab-content relative p-4 flex items-center">
-                <div class="h-12 w-12 bg-neutral-100 rounded-lg flex-shrink-0">
-                  <img
-                    src="/illustration.png"
-                    alt="Premium Wireless Headphones"
-                    class="w-full h-full object-cover rounded-lg"
-                  />
-                </div>
-                <div class="text-neutral-800 ml-3">
-                  <div class="text-sm">Tab content</div>
-                  <div class="text-xs text-neutral-500">Description</div>
-                </div>
+            <!-- Tab content -->
+            <div class="tab-content relative p-4 flex items-center">
+              <div class="h-12 w-12 bg-neutral-100 rounded-lg flex-shrink-0">
+                <img
+                  src="/illustration.png"
+                  alt="Premium Wireless Headphones"
+                  class="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <div class="text-neutral-800 ml-3">
+                <div class="text-sm">Tab content</div>
+                <div class="text-xs text-neutral-500">Description</div>
               </div>
             </div>
           </div>
