@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProjectHeader from "../components/ProjectHeader.astro";
 import WwComponents from "../components/WwComponents.astro";
 import WwEditor from "../components/WwEditor.astro";
 import WwAi from "../components/WwAi.astro";
-import Menu from "../components/Menu.astro";
+import Tsushima from "../components/tsushima/Tsushima.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -46,7 +47,7 @@ import Menu from "../components/Menu.astro";
     </div>
   </section>
 
-  <Menu />
+  <!-- <Menu /> -->
 
   <WwEditor />
 
@@ -54,8 +55,37 @@ import Menu from "../components/Menu.astro";
 
   <WwComponents />
 
+  <section>
+    <div class="container -wide border-t border-neutral-300 pt-1 pb-[200px]">
+      <ProjectHeader
+        name="Snippets"
+        showBadge={false}
+        description="A collection of snippets that I've written over the years."
+        accentColor="#341D65"
+      />
+
+      <div class="px-6 pb-[200px] grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <Tsushima />
+        </div>
+        <div>
+          <img
+            src="/GSH-TCpWYAAr_Jt.jpeg"
+            alt="Tsushima"
+            class="w-full h-auto"
+          />
+        </div>
+        <div>
+          <img src="/branding-02.png" alt="Tsushima" class="w-full h-auto" />
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="overflow-hidden">
-    <div class="container h-[320px] flex flex-col justify-end py-8 relative">
+    <div
+      class="container px-6 h-[200px] flex flex-col justify-end items-center pb-8 relative"
+    >
       <span class="text-[var(--color-secondary)] z-40"
         >Luka Ivanović © 2024</span
       >

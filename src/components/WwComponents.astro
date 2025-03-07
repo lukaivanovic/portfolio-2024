@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import numeral from "../svg/numeral-two.svg?raw";
 import ProjectHeader from "./ProjectHeader.astro";
 import DialogPreview from "./ww/dialog/DialogPreview.vue";
 ---
@@ -9,9 +7,8 @@ import DialogPreview from "./ww/dialog/DialogPreview.vue";
   <div class="container -wide border-t border-neutral-300 pt-1 pb-[200px]">
     <ProjectHeader
       name="Designing and building powerful components that are simple to use"
-      duration="Fall 2024 - Coming soon"
+      showBadge={true}
       description="Offering basic components is essential for an app builder, however, the biggest issue is customizability. Inspired by the power of Radix and the simplicity of shadcn/ui, we set out to revamp our component toolkit, focusing on full customizability, functionality and accessibility."
-      numeralSvg={numeral}
       accentColor="#274076"
     />
     <div

@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Menu from "../components/Menu.astro";
+import Tsushima from "../components/tsushima/Tsushima.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -41,5 +42,72 @@ import Menu from "../components/Menu.astro";
       </div>
     </div>
   </section>
+  <section>
+    <div class="container px-6 pb-[200px]">
+      <div class="masonry">
+        <div class="masonry-item">
+          <Tsushima />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="/GSH-TCpWYAAr_Jt.jpeg"
+            alt="Tsushima"
+            class="w-full h-auto"
+          />
+        </div>
+        <div class="masonry-item">
+          <img src="/branding-01.png" alt="Tsushima" class="w-full h-auto" />
+        </div>
+        <div class="masonry-item">
+          <img src="/branding-02.png" alt="Tsushima" class="w-full h-auto" />
+        </div>
+        <div class="masonry-item">
+          <img src="/branding-03.png" alt="Tsushima" class="w-full h-auto" />
+        </div>
+        <div class="masonry-item">
+          <img src="/branding-04.png" alt="Tsushima" class="w-full h-auto" />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="/GWj3xBSWwAAu77k.jpeg"
+            alt="Tsushima"
+            class="w-full h-auto"
+          />
+        </div>
+        <div class="masonry-item">
+          <img
+            src="/GZ_xABsWkAEDSon.png"
+            alt="Tsushima"
+            class="w-full h-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
   <Menu />
 </Layout>
+
+<style>
+  .masonry {
+    column-count: 3;
+    column-gap: 16px;
+  }
+
+  .masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .masonry {
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .masonry {
+      column-count: 1;
+    }
+  }
+</style>
