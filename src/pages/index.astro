@@ -10,85 +10,257 @@ import Tsushima from "../components/tsushima/Tsushima.astro";
 <Layout title="Welcome to Astro.">
   <!-- Hero -->
   <section id="hero">
-    <div class="container px-6 pb-[200px]">
-      <div class="h-12 flex items-center text-primary">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="10"
-          fill="none"
-          viewBox="0 0 28 10"
-        >
-          <path fill="currentColor" d="M24 7V6h4v1h-4Z"></path>
-          <path fill="currentColor" d="M24 7V6h4v1h-4ZM0 7V6h4v1H0Z"></path>
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M18 3h6v4h-1V4h-4v3h-5V6h4V3Zm-8 0H4v4h1V4h4v3h5V6h-4V3Z"
-            clip-rule="evenodd"></path>
-          <path
-            fill="currentColor"
-            fill-rule="evenodd"
-            d="M27 1H1v8h26V1ZM0 0v10h28V0H0Z"
-            clip-rule="evenodd"></path>
-        </svg>
+    <div class="container">
+      <div class="inner-container pb-[200px]">
+        <div class="h-12 flex items-center text-primary">
+          <a href="/">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="28"
+              height="10"
+              fill="none"
+              viewBox="0 0 28 10"
+            >
+              <path fill="currentColor" d="M24 7V6h4v1h-4Z"></path>
+              <path fill="currentColor" d="M24 7V6h4v1h-4ZM0 7V6h4v1H0Z"></path>
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M18 3h6v4h-1V4h-4v3h-5V6h4V3Zm-8 0H4v4h1V4h4v3h5V6h-4V3Z"
+                clip-rule="evenodd"></path>
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M27 1H1v8h26V1ZM0 0v10h28V0H0Z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </a>
 
-        <div class="flex flex-row gap-4 ml-3">
-          <a href="/snippets">Snippets</a>
-          <a href="/contact">Contact</a>
+          <div class="flex flex-row gap-4 ml-3">
+            <a href="/snippets">Snippets</a>
+            <a href="/contact">Contact</a>
+          </div>
         </div>
-      </div>
 
-      <div class="flex flex-col w-full mt-[80px]">
-        <h1 class="max-w-[600px] mb-2">
-          Independent creative technologist pursuing play with pixels.
-        </h1>
+        <div class="flex flex-col w-full mt-[80px]">
+          <h1 class="max-w-[600px] mb-2">
+            Independent creative technologist pursuing play with pixels.
+          </h1>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- <Menu /> -->
+  <!-- Divider -->
+  <div class="container">
+    <div class="inner-container !p-0">
+      <div
+        class="flex flex-row items-center pb-[80px] overflow-hidden text-neutral-400"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1540"
+          height="4"
+          fill="currentColor"
+          viewBox="0 0 1540 4"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4 0h6v4H9V1H5v3H0V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
 
   <WwEditor />
 
+  <!-- Divider -->
+  <div class="container">
+    <div class="inner-container !p-0">
+      <div
+        class="flex flex-row items-center pb-[80px] overflow-hidden text-neutral-400"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1540"
+          height="4"
+          fill="currentColor"
+          viewBox="0 0 1540 4"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4 0h6v4H9V1H5v3H0V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+
   <WwAi />
+
+  <!-- Divider -->
+  <div class="container">
+    <div class="inner-container !p-0">
+      <div
+        class="flex flex-row items-center pb-[80px] overflow-hidden text-neutral-400"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1540"
+          height="4"
+          fill="currentColor"
+          viewBox="0 0 1540 4"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4 0h6v4H9V1H5v3H0V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
 
   <WwComponents />
 
-  <section>
-    <div class="container -wide border-t border-neutral-300 pt-1 pb-[200px]">
-      <ProjectHeader
-        name="Snippets"
-        showBadge={false}
-        description="A collection of snippets that I've written over the years."
-        accentColor="#341D65"
-      />
+  <!-- Divider -->
+  <div class="container">
+    <div class="inner-container !p-0">
+      <div
+        class="flex flex-row items-center pb-[80px] overflow-hidden text-neutral-400"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1540"
+          height="4"
+          fill="currentColor"
+          viewBox="0 0 1540 4"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4 0h6v4H9V1H5v3H0V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
 
-      <div class="px-6 pb-[200px] grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <Tsushima />
-        </div>
-        <div>
-          <img
-            src="/GSH-TCpWYAAr_Jt.jpeg"
-            alt="Tsushima"
-            class="w-full h-auto"
-          />
-        </div>
-        <div>
-          <img src="/branding-02.png" alt="Tsushima" class="w-full h-auto" />
+  <section>
+    <div class="container">
+      <div class="inner-container pb-[200px]">
+        <ProjectHeader
+          name="Snippets"
+          showBadge={false}
+          description="A collection of snippets that I've written over the years."
+          accentColor="#341D65"
+        />
+
+        <div class="pb-[200px]">
+          <div class="masonry">
+            <div class="masonry-item">
+              <Tsushima />
+              <div class="text-black/80 text-[10px] pt-2 uppercase">
+                threejs dissolve effect from Ghost of Tsushima
+              </div>
+            </div>
+            <div class="masonry-item">
+              <img
+                src="/branding-04.png"
+                alt="Tsushima"
+                class="w-full h-auto"
+              />
+            </div>
+
+            <div class="masonry-item">
+              <img
+                src="/branding-01.png"
+                alt="Tsushima"
+                class="w-full h-auto"
+              />
+            </div>
+            <div class="masonry-item">
+              <img
+                src="/branding-02.png"
+                alt="Tsushima"
+                class="w-full h-auto"
+              />
+            </div>
+            <div class="masonry-item">
+              <img
+                src="/branding-03.png"
+                alt="Tsushima"
+                class="w-full h-auto"
+              />
+            </div>
+
+            <div class="masonry-item">
+              <img
+                src="/GSH-TCpWYAAr_Jt.jpeg"
+                alt="Tsushima"
+                class="w-full h-auto"
+              />
+            </div>
+          </div>
+          <div class="w-full flex justify-center">
+            <a href="/snippets" class="text-primary underline"
+              >See all snippets</a
+            >
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="overflow-hidden">
-    <div
-      class="container px-6 h-[200px] flex flex-col justify-end items-center pb-8 relative"
-    >
-      <span class="text-[var(--color-secondary)] z-40"
-        >Luka Ivanović © 2024</span
+  <!-- Divider -->
+  <div class="container">
+    <div class="border border-neutral-300 text-neutral-300 py-1">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1540"
+        height="4"
+        fill="currentColor"
+        viewBox="0 0 1540 4"
       >
+        <path
+          fill-rule="evenodd"
+          d="M4 0h6v4H9V1H5v3H0V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Zm10 0h6v4h-1V1h-4v3h-5V3h4V0Z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </div>
+  </div>
+
+  <section class="overflow-hidden">
+    <div class="container">
+      <div class="inner-container">
+        <span class="text-[var(--color-secondary)] z-40"
+          >Luka Ivanović © 2022</span
+        >
+      </div>
     </div>
   </section>
 </Layout>
+
+<style>
+  .masonry {
+    column-count: 3;
+    column-gap: 16px;
+  }
+
+  .masonry-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .masonry {
+      column-count: 2;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .masonry {
+      column-count: 1;
+    }
+  }
+</style>

@@ -580,7 +580,7 @@ async function resetAnimation() {
       chat.value,
       { scale: 1 },
       { duration: 0.3 },
-      { ease: "easeOut" },
+      { ease: "easeInOut" },
       { delay: 0.02 },
       { at: 1 },
     ],

@@ -60,7 +60,7 @@ getGeometryFromSVG()
 
 const params = {
   time: 0,
-  animationTime: 540,
+  animationTime: 320,
   delayFrames: 50,
 };
 
@@ -70,16 +70,38 @@ function animate() {
       const linearProgress =
         (params.time - params.delayFrames) / params.animationTime;
 
-      const effectProgress = linearProgress * linearProgress;
+      if (linearProgress >= 2.5) {
+        params.time = 0;
 
-      pointAnimation(
-        effectProgress,
-        width,
-        params.time - params.delayFrames,
-        params.animationTime,
-        pointCloud.geometry.attributes
-      );
-      dissolveMaterial.uniforms.threshold.value = effectProgress;
+        const attributes = pointCloud.geometry.attributes;
+        const positions = attributes.position.array;
+        const initialPositions = attributes.initialPositions.array;
+        const opacities = attributes.pointOpacity.array;
+
+        for (let i = 0; i < positions.length; i++) {
+          positions[i] = initialPositions[i];
+        }
+
+        for (let i = 0; i < opacities.length; i++) {
+          if (opacities[i] !== -1) {
+            opacities[i] = 0;
+          }
+        }
+
+        attributes.position.needsUpdate = true;
+        attributes.pointOpacity.needsUpdate = true;
+      } else {
+        const effectProgress = linearProgress * linearProgress;
+
+        pointAnimation(
+          effectProgress,
+          width,
+          params.time - params.delayFrames,
+          params.animationTime,
+          pointCloud.geometry.attributes
+        );
+        dissolveMaterial.uniforms.threshold.value = effectProgress;
+      }
     }
     params.time++;
   }

@@ -3,7 +3,7 @@ import * as THREE from "three";
 export default new THREE.ShaderMaterial({
   uniforms: {
     globalOpacity: { value: 1.0 },
-    particleSize: { value: 140.0 },
+    particleSize: { value: 80.0 },
     time: { value: 0 },
   },
   vertexShader: `
