@@ -67,7 +67,7 @@ const { title } = Astro.props;
   :root {
     --color-bg: #f8f8f6;
     --color-primary: theme("colors.neutral.900");
-    --color-secondary: theme("colors.neutral.600");
+    --color-secondary: theme("colors.neutral.700");
     --color-border: #b8b8b8;
   }
 
@@ -87,11 +87,11 @@ const { title } = Astro.props;
   }
 
   .container {
-    max-width: 1492px;
+    max-width: 1496px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 8px;
+    padding-right: 8px;
 
     &.-wide {
       padding-left: 16px;
@@ -102,18 +102,18 @@ const { title } = Astro.props;
   .inner-container {
     border-left: 1px solid var(--color-border);
     border-right: 1px solid var(--color-border);
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 120px;
+    padding-right: 120px;
   }
 
   h1 {
-    font-size: 26px;
+    font-size: 32px;
     line-height: 1.25;
     font-family: "TWK Lausanne - 450", sans-serif;
   }
 
   h2 {
-    font-size: 26px;
+    font-size: 28px;
     line-height: 1.25;
     font-family: "TWK Lausanne - 450", sans-serif;
   }
@@ -124,8 +124,9 @@ const { title } = Astro.props;
 
   p {
     font-family: "TWK Lausanne - 400", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
+    color: var(--color-secondary);
   }
 
   a {
