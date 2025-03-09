@@ -147,7 +147,7 @@ watch(
 
 <template>
   <div
-    class="flex flex-col bg-white border border-neutral-200 rounded-md overflow-hidden mb-12"
+    class="flex flex-col bg-white border border-neutral-200 rounded-md overflow-hidden mb-12 text-neutral-900"
     ref="previewRef"
   >
     <div

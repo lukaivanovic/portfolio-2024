@@ -337,7 +337,7 @@
 
         <!-- Input Area -->
         <div
-          class="chat-input m-3 border-secondary rounded-md bg-white shadow-sm"
+          class="chat-input m-3 border-secondary rounded-md bg-white shadow-sm shrink-0"
           ref="initialChat"
         >
           <!-- Add context button -->
