@@ -32,18 +32,23 @@ import ProjectHeader from "./ProjectHeader.astro";
       <div class="h-[80px]"></div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Image
-          src={wwEditorWorkflow}
-          class="col-span-1 md:col-span-2"
-          alt=""
-          quality={100}
-        />
-        <Image
-          class="w-full h-full object-cover"
-          src={wwEditorIcons}
-          alt=""
-          quality={100}
-        />
+        <div class="col-span-1 md:col-span-2 overflow-hidden">
+          <Image
+            src={wwEditorWorkflow}
+            class="hover:scale-[1.02] will-change-transform transition-all duration-300"
+            alt=""
+            quality={100}
+          />
+        </div>
+
+        <div class="overflow-hidden">
+          <Image
+            class="w-full h-full object-cover hover:scale-[1.02] will-change-transform transition-all duration-300"
+            src={wwEditorIcons}
+            alt=""
+            quality={100}
+          />
+        </div>
       </div>
     </div>
   </div>

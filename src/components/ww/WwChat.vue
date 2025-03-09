@@ -1,7 +1,7 @@
 <template>
   <div class="h-full">
     <div
-      class="subpixel-antialiased ww-theme-light body-sm ww border-secondary flex flex-col bg-white rounded-lg overflow-hidden w-[400px] h-full origin-top"
+      class="subpixel-antialiased ww-theme-light body-sm ww border-secondary flex flex-col bg-white rounded-lg overflow-hidden w-[400px] h-full origin-top text-neutral-900"
       ref="chat"
     >
       <!-- Header -->
