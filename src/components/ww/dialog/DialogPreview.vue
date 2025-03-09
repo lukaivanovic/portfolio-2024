@@ -163,7 +163,7 @@ watch(
       <div class="basis-0 flex-grow"></div>
     </div>
 
-    <div class="relative shadow-2xl bg-neutral-200 flex-grow">
+    <div class="relative shadow-2xl bg-neutral-300 flex-grow">
       <button
         class="absolute top-2 left-2 px-2 h-7 z-40 bg-white rounded-md text-xs shadow-sm flex items-center gap-1 border border-neutral-200 hover:bg-neutral-100 transition-colors"
         @click="settingsOpened = !settingsOpened"

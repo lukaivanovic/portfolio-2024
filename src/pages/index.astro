@@ -27,11 +27,11 @@ import pattern from "../svg/pattern.svg?raw";
           <div class="text-right">
             <a href="/">Contact me</a>
             <br />
-            <a href="/" class="opacity-60">@lukaivnvc</a>
+            <a href="#" id="theme-toggle" class="opacity-60">Switch mode</a>
           </div>
         </div>
 
-        <div class="flex flex-col w-full max-w-[1150px]">
+        <div class="flex flex-col w-full max-w-[1000px]">
           <h1 class="mb-2 mt-2">
             Software designer and developer looking to make a change through
             technology.
@@ -41,7 +41,7 @@ import pattern from "../svg/pattern.svg?raw";
             </span>
           </h1>
 
-          <div class="mt-8 max-w-[472px]">
+          <!-- <div class="mt-8 max-w-[472px]">
             <span class="text-[10px] uppercase">[ About ]</span>
 
             <a href="/" class="opacity-70 mt-2">
@@ -49,7 +49,7 @@ import pattern from "../svg/pattern.svg?raw";
               playing football. I also like to travel and explore new places. I
               also like to cook and bake.
             </a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -70,12 +70,14 @@ import pattern from "../svg/pattern.svg?raw";
   <section>
     <div class="container">
       <div class="inner-container pb-[200px]">
+        <div class="h-[80px]"></div>
         <ProjectHeader
           name="Snippets"
           showBadge={false}
           description="A collection of snippets that I've written over the years."
           accentColor="#341D65"
         />
+        <div class="h-[80px]"></div>
 
         <div>
           <div class="masonry">
@@ -123,11 +125,6 @@ import pattern from "../svg/pattern.svg?raw";
               />
             </div>
           </div>
-          <div class="w-full flex justify-center">
-            <a href="/snippets" class="text-primary underline"
-              >See all snippets</a
-            >
-          </div>
         </div>
       </div>
     </div>
@@ -136,6 +133,29 @@ import pattern from "../svg/pattern.svg?raw";
   <Divider />
   <div class="h-12"></div>
 </Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById("theme-toggle");
+
+    themeToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.body.classList.toggle("dark-mode");
+
+      // Optional: Save the preference to localStorage
+      const isDarkMode = document.body.classList.contains("dark-mode");
+      localStorage.setItem("darkMode", isDarkMode ? "true" : "false");
+    });
+
+    // Optional: Load preference from localStorage on page load
+    const savedDarkMode = localStorage.getItem("darkMode");
+    if (savedDarkMode === "false") {
+      document.body.classList.remove("dark-mode");
+    } else if (savedDarkMode === "true") {
+      document.body.classList.add("dark-mode");
+    }
+  });
+</script>
 
 <style>
   .masonry {

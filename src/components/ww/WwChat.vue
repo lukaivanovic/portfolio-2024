@@ -617,12 +617,12 @@ onMounted(async () => {
 });
 
 async function streamMessage(message) {
-  const chars = message.content.split(" ");
+  const chars = message.content.split("");
   for (const char of chars) {
-    message.currentContent += char + " ";
+    message.currentContent += char;
     currentTextAreaText.value = message.currentContent;
     adjustTextareaHeight();
-    await new Promise((resolve) => setTimeout(resolve, 100)); // 20ms delay between chars
+    await new Promise((resolve) => setTimeout(resolve, 30)); // 20ms delay between chars
   }
 }
 
