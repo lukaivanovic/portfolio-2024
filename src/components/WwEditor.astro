@@ -10,12 +10,14 @@ import ProjectHeader from "./ProjectHeader.astro";
   <div class="container">
     <div class="inner-container pb-[200px]">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Image
-          src={wwEditorMain}
-          class="col-span-1 md:col-span-3"
-          alt=""
-          quality={100}
-        />
+        <div class="col-span-1 md:col-span-3 overflow-hidden">
+          <Image
+            class="hover:scale-[1.02] will-change-transform transition-all duration-300"
+            src={wwEditorMain}
+            alt=""
+            quality={100}
+          />
+        </div>
       </div>
 
       <div class="h-[80px]"></div>

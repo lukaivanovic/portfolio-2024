@@ -83,7 +83,11 @@ import WwAiContext from "./ww/WwAiContext.vue";
             quality={100}
           />
 
-          <WwChat client:only="vue" class="z-10" />
+          <div
+            class="w-full h-full flex items-center justify-center scale-10 sm:scale-100 will-change-transform"
+          >
+            <WwChat client:only="vue" class="z-10" />
+          </div>
         </div>
       </div>
     </div>
