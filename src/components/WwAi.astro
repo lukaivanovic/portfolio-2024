@@ -22,7 +22,7 @@ import WwAiContext from "./ww/WwAiContext.vue";
 
       <div class="grid lg:grid-cols-5 grid-cols-1 gap-4">
         <div class="col-span-2 h-full flex flex-col gap-4">
-          <div class="flex gap-4 flex-grow">
+          <div class="flex flex-col sm:flex-row gap-4 flex-grow">
             <a
               href="https://x.com/lukaivnvc/status/1866056100409417827"
               target="_blank"
@@ -83,11 +83,10 @@ import WwAiContext from "./ww/WwAiContext.vue";
             quality={100}
           />
 
-          <div
-            class="w-full h-full flex items-center justify-center scale-10 sm:scale-100 will-change-transform"
-          >
-            <WwChat client:only="vue" class="z-10" />
-          </div>
+          <WwChat
+            client:only="vue"
+            class="z-10 scale-[0.5] sm:scale-100 will-change-transform h-[200%] origin-top"
+          />
         </div>
       </div>
     </div>
