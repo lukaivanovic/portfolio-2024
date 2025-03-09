@@ -54,6 +54,14 @@ const { title } = Astro.props;
     font-display: swap;
   }
 
+  .text-regular {
+    font-family: "TWK Lausanne - 400", sans-serif;
+  }
+
+  .text-medium {
+    font-family: "TWK Lausanne - 450", sans-serif;
+  }
+
   body {
     font-family: "TWK Lausanne - 400", sans-serif;
     font-size: 14px;
@@ -65,7 +73,7 @@ const { title } = Astro.props;
   }
 
   :root {
-    --color-bg: #fff;
+    --color-bg: #f8f8f6;
     --color-primary: theme("colors.neutral.900");
     --color-secondary: theme("colors.neutral.700");
     --color-border: #b8b8b8;
@@ -87,11 +95,11 @@ const { title } = Astro.props;
   }
 
   .container {
-    max-width: 1496px;
+    max-width: 1520px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
 
     &.-wide {
       padding-left: 16px;
@@ -102,19 +110,19 @@ const { title } = Astro.props;
   .inner-container {
     border-left: 1px solid var(--color-border);
     border-right: 1px solid var(--color-border);
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 72px;
+    padding-right: 72px;
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 40px;
     line-height: 1.25;
     font-family: "TWK Lausanne - 450", sans-serif;
   }
 
   h2 {
-    font-size: 28px;
-    line-height: 1.25;
+    font-size: 26px;
+    line-height: 1.2;
     font-family: "TWK Lausanne - 450", sans-serif;
   }
 
