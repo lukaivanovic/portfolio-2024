@@ -9,6 +9,15 @@ import ProjectHeader from "./ProjectHeader.astro";
 <section>
   <div class="container">
     <div class="inner-container pb-[200px]">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <Image
+          src={wwEditorMain}
+          class="col-span-1 md:col-span-3"
+          alt=""
+          quality={100}
+        />
+      </div>
+
       <ProjectHeader
         name="Designing a powerful AI app builder"
         showBadge={true}
@@ -17,12 +26,6 @@ import ProjectHeader from "./ProjectHeader.astro";
       />
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <Image
-          src={wwEditorMain}
-          class="col-span-1 md:col-span-3"
-          alt=""
-          quality={100}
-        />
         <Image
           src={wwEditorWorkflow}
           class="col-span-1 md:col-span-2"

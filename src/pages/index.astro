@@ -12,7 +12,7 @@ import pattern from "../svg/pattern.svg?raw";
 <Layout title="Home">
   <div class="h-[8px]"></div>
 
-  <div class="container">
+  <!-- <div class="container">
     <div
       class="relative border border-[var(--color-border)] text-[var(--color-border)] py-2 overflow-hidden"
     >
@@ -641,12 +641,14 @@ import pattern from "../svg/pattern.svg?raw";
 
       <Fragment set:html={pattern} />
     </div>
-  </div>
+  </div> -->
+
+  <Divider />
 
   <section>
     <div class="container">
-      <div class="inner-container min-h-[80vh] py-4 flex flex-col">
-        <div class="justify-between text-primary">
+      <div class="inner-container min-h-[60vh] py-4 flex flex-col">
+        <div class="w-full flex justify-between text-primary">
           <!-- <a href="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -670,36 +672,61 @@ import pattern from "../svg/pattern.svg?raw";
             </svg>
           </a> -->
 
-          <div class="w-full flex flex-row gap-6">
-            <a href="/">[0] Index</a>
-            <a href="/snippets">[1] Snippets</a>
-            <a href="/contact">[2] Contact</a>
+          <div class="flex flex-row gap-6">
+            <span class="text-neutral-500 uppercase text-[12px] tracking-wider"
+              >Luka Ivanovic</span
+            >
+            <a href="/"
+              >Index <span class="align-super text-[10px] opacity-60">
+                [0]</span
+              ></a
+            >
+            <a href="/snippets"
+              >Snippets <span class="align-super text-[10px] opacity-60">
+                [1]</span
+              ></a
+            >
+            <a href="/contact">
+              Contact <span class="align-super text-[10px] opacity-60">
+                [2]</span
+              ></a
+            >
+          </div>
+
+          <div class="flex flex-row gap-6">
+            <span class="text-neutral-500 uppercase text-[12px] tracking-wider"
+              >Luka Ivanovic</span
+            >
+            <a href="/"
+              >Index <span class="align-super text-[10px] opacity-60">
+                [0]</span
+              ></a
+            >
+            <a href="/snippets">X</a>
+            <a href="/contact"> LinkedIn</a>
           </div>
         </div>
 
-        <div class="flex flex-col w-full max-w-[740px] mt-[120px]">
-          <span class="text-neutral-500 uppercase text-[12px] tracking-wider"
-            >Luka Ivanovic</span
-          >
+        <div class="flex flex-col w-full max-w-[860px] mt-[120px]">
           <h1 class="mb-8 mt-2">
-            Software developer and designer looking to make the world a better
-            place through technology. <span class="opacity-50">
-              Currently working at weweb on enabling anyone to build
-              applications through a visual interface.
+            Software designer and developer<span
+              class="align-super text-xs opacity-60"
+            >
+              kind of</span
+            > looking to make the world a better place through technology.
+            <span class="opacity-50">
+              Currently working at weweb<span
+                class="align-super text-xs opacity-60"
+              >
+                [.io]</span
+              > on enabling anyone to build applications through a visual
+              interface.
             </span>
           </h1>
-        </div>
-
-        <div class="flex flex-col w-full max-w-[620px] mt-auto">
-          <span class="text-neutral-500 uppercase text-[12px] tracking-wider"
-            >scroll for projects</span
-          >
         </div>
       </div>
     </div>
   </section>
-
-  <Divider />
 
   <WwEditor />
 
