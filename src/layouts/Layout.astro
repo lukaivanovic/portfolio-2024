@@ -29,15 +29,13 @@ const { title } = Astro.props;
     />
     <title>Luka Ivanovic</title>
   </head>
-  <body class="antialiased dark-mode relative">
+  <body class="antialiased relative">
     <slot />
   </body>
 </html>
 
 <style is:global lang="scss">
   @use "../styles/global.css";
-
-  @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
   @font-face {
     font-family: "TWK Lausanne - 450";
@@ -69,22 +67,23 @@ const { title } = Astro.props;
     font-family: "TWK Lausanne - 400", sans-serif;
     font-size: 14px;
     transition:
-      background-color 0.5s ease,
-      color 0.5s ease;
+      background-color 0.3s ease,
+      color 0.3s ease;
+
     background-color: var(--color-bg);
     color: var(--color-primary);
   }
 
   :root {
     --color-bg: #f8f8f6;
-    --color-primary: theme("colors.neutral.900");
-    --color-secondary: theme("colors.neutral.700");
+    --color-primary: var(--color-neutral-900);
+    --color-secondary: var(--color-neutral-700);
     --color-border: #b0b0b0;
   }
 
   .dark-mode {
-    --color-bg: theme("colors.neutral.900");
-    --color-primary: theme("colors.white");
+    --color-bg: var(--color-neutral-900);
+    --color-primary: var(--color-white);
     --color-secondary: #d9d9d9;
     --color-border: #3b3b3b;
   }
@@ -115,6 +114,7 @@ const { title } = Astro.props;
     border-right: 1px solid var(--color-border);
     padding-left: 72px;
     padding-right: 72px;
+    transition: border-color 0.3s ease;
   }
 
   h1 {
