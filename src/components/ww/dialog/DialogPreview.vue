@@ -2,6 +2,7 @@
 import { ref, useTemplateRef, provide, computed, onMounted, watch } from "vue";
 import DialogControls from "./DialogControls.vue";
 import Dialog from "./Dialog.vue";
+import "../../../styles/global.css";
 
 const dialogRef = useTemplateRef("dialogRef");
 const previewRef = useTemplateRef("previewRef");
@@ -235,7 +236,7 @@ watch(
                   >
                     <template #trigger>
                       <button
-                        class="trigger w-full relative px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-700 transition-colors text-nowrap"
+                        class="trigger after:bg-cyan-200 after:text-cyan-800 w-full relative px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-700 transition-colors text-nowrap"
                       >
                         Add to Cart
                       </button></template
@@ -250,7 +251,7 @@ watch(
                             PARAMS.type == 'sheet' &&
                             (PARAMS.side == 'left' || PARAMS.side == 'right'),
                         }"
-                        class="content ww-dialog bg-white p-6 rounded-lg shadow-lg"
+                        class="content after:bg-orange-200 after:text-orange-800 ww-dialog bg-white p-6 rounded-lg shadow-lg"
                       >
                         <div class="flex justify-between items-center mb-4">
                           <h3 class="text-xl font-semibold text-neutral-900">
@@ -340,7 +341,7 @@ watch(
                     </template>
                     <template #overlay>
                       <div
-                        class="absolute top-0 left-0 w-full h-full bg-black/40 overlay"
+                        class="absolute after:bg-purple-200 after:text-purple-800 top-0 left-0 w-full h-full bg-black/40 overlay"
                       ></div>
                     </template>
                   </Dialog>
@@ -672,18 +673,18 @@ watch(
 </template>
 
 <style lang="scss" scoped>
+@use "../../../styles/global.css";
+
 .overlay {
   inset: -2;
   border: 1px dashed;
-  @apply border-purple-600;
+  border-color: var(--color-border-purple-600);
 
   &:after {
     content: "OVERLAY";
     position: absolute;
     bottom: 2px;
     right: 2px;
-    @apply bg-purple-500;
-    @apply text-purple-100;
     font-size: 9px;
     font-family: monospace;
     padding: 2px 2px;
@@ -695,15 +696,13 @@ watch(
 .content {
   inset: -2;
   border: 1px dashed;
-  @apply border-orange-400;
+  border-color: var(--color-border-orange-400);
 
   &:after {
     content: "CONTENT";
     position: absolute;
     top: 2px;
     right: 2px;
-    @apply bg-orange-500/50;
-    @apply text-orange-800;
     font-size: 9px;
     font-family: monospace;
     padding: 2px 2px;
@@ -715,15 +714,13 @@ watch(
 .trigger {
   inset: -2;
   border: 1px dashed;
-  @apply border-cyan-400;
+  border-color: var(--color-border-cyan-400);
 
   &:after {
     content: "TRIGGER";
     position: absolute;
     top: calc(50% - 9px);
     left: calc(100% + 4px);
-    @apply bg-cyan-500/50;
-    @apply text-cyan-800;
     font-size: 9px;
     font-family: monospace;
     padding: 2px 2px;

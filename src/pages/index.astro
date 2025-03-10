@@ -29,19 +29,19 @@ import "../styles/global.css";
             <div class="leading-4">
               <span class="text-xs opacity-60">Contact </span>
               <br />
-              <a href="/">Email </a>
+              <a href="/" class="cursor-default">Email </a>
             </div>
 
             <div class="leading-4">
               <span class="text-xs opacity-60">Social </span>
               <br />
-              <a href="/">@lukaivnvc </a>
+              <a href="/" class="cursor-default">@lukaivnvc </a>
             </div>
 
             <div class="leading-4">
               <span class="text-xs opacity-60">Switch mode </span>
               <br />
-              <a id="theme-toggle">Light</a>
+              <a id="theme-toggle" class="cursor-default">Light</a>
             </div>
           </div>
         </div>
@@ -158,21 +158,23 @@ import "../styles/global.css";
   <!-- <div class="h-12"></div> -->
 
   <div class="container relative overflow-hidden">
-    <div class="inner-container h-[600px] flex items-end justify-between py-6">
-      <div>
-        <span class="opacity-60">Built with Astro.</span>
+    <div
+      class="inner-container h-[700px] flex flex-col items-center justify-end py-6"
+    >
+      <Fragment set:html={apollon} />
+      <div class="mt-4">
+        <span class="opacity-60">Built with Astro.js</span>
       </div>
       <div class="text-right">
         <span class="opacity-60"
           >Using the TWK Lausanne typeface from Weltkern.</span
         >
       </div>
-      <Fragment set:html={apollon} />
     </div>
   </div>
 
   <Divider />
-  <div class="h-[100px]"></div>
+  <div class="h-4"></div>
 </Layout>
 
 <script>
