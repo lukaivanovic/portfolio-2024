@@ -33,7 +33,10 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
+
 <style is:global lang="scss">
+  @use "../styles/global.css";
+
   @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
   @font-face {

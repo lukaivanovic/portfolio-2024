@@ -6,8 +6,8 @@ import WwEditor from "../components/WwEditor.astro";
 import WwAi from "../components/WwAi.astro";
 import Tsushima from "../components/tsushima/Tsushima.astro";
 import Divider from "../components/Divider.astro";
-import pattern from "../svg/pattern.svg?raw";
 import apollon from "../svg/apollon.svg?raw";
+import "../styles/global.css";
 ---
 
 <Layout title="Home">
@@ -665,6 +665,12 @@ import apollon from "../svg/apollon.svg?raw";
             <br />
             <a href="#" id="theme-toggle" class="opacity-60">Switch mode</a>
           </div>
+
+          <div class="text-right">
+            <a href="/">Switch mode</a>
+            <br />
+            <a href="#" id="theme-toggle" class="opacity-60">Light</a>
+          </div>
         </div>
 
         <div class="flex flex-col w-full max-w-[840px]">
@@ -727,7 +733,7 @@ import apollon from "../svg/apollon.svg?raw";
         <div>
           <div class="masonry">
             <div class="masonry-item">
-              <Tsushima client:load />
+              <Tsushima />
               <div class="text-secondary text-[10px] pt-2 uppercase">
                 threejs dissolve effect from Ghost of Tsushima
               </div>
@@ -775,18 +781,27 @@ import apollon from "../svg/apollon.svg?raw";
     </div>
   </section>
 
-  <Divider />
-  <div class="h-12"></div>
+  <!-- <Divider /> -->
+  <!-- <div class="h-12"></div> -->
 
-  <img
-    src="/apollon.png"
-    alt="Luka Ivanovic"
-    class="w-[360px] h-[360px] mx-auto"
-  />
-
-  <div class="relative h-[400px] overflow-hidden">
-    <Fragment set:html={apollon} />
+  <div class="container relative overflow-hidden">
+    <div class="inner-container h-[400px] flex items-end justify-between py-6">
+      <div>
+        <a href="/">Luka Ivanovic </a>
+        <br />
+        <span class="opacity-60">Product Designer</span>
+      </div>
+      <div class="text-right">
+        <a href="/">TWK Lausanne </a>
+        <br />
+        <span class="opacity-60">Weltkern</span>
+      </div>
+      <Fragment set:html={apollon} />
+    </div>
   </div>
+
+  <Divider />
+  <div class="h-[100px]"></div>
 </Layout>
 
 <script>

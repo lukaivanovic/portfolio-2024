@@ -1,14 +1,18 @@
 import { defineConfig } from "astro/config";
 
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
-import vercel from "@astrojs/vercel/serverless";
+import vercel from "@astrojs/vercel";
 
 import vue from "@astrojs/vue";
 
 export default defineConfig({
-  integrations: [tailwind(), vue()],
+  integrations: [vue()],
   output: "server",
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 
   adapter: vercel({
     webAnalytics: { enabled: true },
