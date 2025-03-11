@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import WwChat from "../components/ww/WwChat.vue";
+import background from "../images/bg2.png";
+import { Image } from "astro:assets";
+---
+
+<Layout title="Chat">
+  <section class="flex items-center justify-center p-4">
+    <div
+      class="bg-[#341D65] relative flex items-center justify-center overflow-hidden p-2 sm:p-6 aspect-[1/1] h-[96vh]"
+    >
+      <Image
+        src={background}
+        class="absolute top-0 left-0 w-full h-full object-cover z-0"
+        alt=""
+        quality={100}
+      />
+      <WwChat client:only="vue" class="z-10 h-[700px]" />
+    </div>
+  </section>
+</Layout>

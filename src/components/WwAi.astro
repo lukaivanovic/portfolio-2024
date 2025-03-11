@@ -74,7 +74,7 @@ import WwAiContext from "./ww/WwAiContext.vue";
         </div>
 
         <div
-          class="bg-[#341D65] relative rounded-md md:col-span-3 col-span-1 flex items-start justify-center overflow-hidden p-2 sm:p-6 aspect-[8/7]"
+          class="bg-[#341D65] relative rounded-md md:col-span-3 col-span-1 overflow-hidden aspect-[8/7]"
         >
           <Image
             src={background}
@@ -85,7 +85,7 @@ import WwAiContext from "./ww/WwAiContext.vue";
 
           <WwChat
             client:only="vue"
-            class="z-10 scale-[0.5] sm:scale-100 will-change-transform h-[200%] md:h-full origin-top"
+            class="z-10 will-change-transform origin-top"
           />
         </div>
       </div>
