@@ -43,6 +43,7 @@ const model = defineModel({
 <template>
   <div>
     <div class="p-2 space-y-2">
+      <div class="mb-2">Dialog</div>
       <!-- Layout Selection -->
 
       <!-- Type Selection -->

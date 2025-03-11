@@ -151,7 +151,7 @@ watch(
     class="flex flex-col bg-white border border-neutral-200 rounded-md overflow-hidden mb-12 text-neutral-900"
     ref="previewRef"
   >
-    <div
+    <!-- <div
       class="border-b border-neutral-200 flex items-center justify-between p-2"
     >
       <div class="flex gap-1 basis-0 flex-grow">
@@ -162,9 +162,9 @@ watch(
 
       <div class="text-center basis-0 flex-grow text-xs">Dialog</div>
       <div class="basis-0 flex-grow"></div>
-    </div>
+    </div> -->
 
-    <div class="relative shadow-2xl bg-neutral-300 flex-grow">
+    <div class="relative shadow-2xl bg-neutral-900 flex-grow">
       <div
         class="absolute left-2 top-2 z-40 w-[200px] bg-white rounded-md text-xs shadow-lg border border-neutral-200"
       >
@@ -181,11 +181,11 @@ watch(
         <div class="flex-grow flex items-center justify-center overflow-hidden">
           <template v-if="design == 'one'">
             <div
-              class="max-w-[480px] bg-white p-4 rounded-md shadow-sm border border-neutral-200"
+              class="max-w-[400px] bg-white p-4 rounded-md shadow-sm border border-neutral-200"
             >
               <!-- Product Image -->
               <div
-                class="h-[240px] bg-neutral-100 rounded-lg flex-shrink-0 mb-8"
+                class="h-[240px] bg-neutral-100 rounded-lg flex-shrink-0 mb-4"
               >
                 <img
                   src="/pattern.png"
@@ -197,9 +197,9 @@ watch(
               <!-- Product Details -->
               <div class="flex flex-col flex-shrink-0">
                 <div>
-                  <h2 class="text-xl font-semibold text-neutral-900 mb-1">
+                  <h3 class="text-lg font-semibold text-neutral-900 mb-1">
                     Abstract Generative Illustration Suite
-                  </h2>
+                  </h3>
                   <p class="text-neutral-600 mb-4">
                     Create stunning algorithmic artwork with our abstract
                     generative illustration suite.
@@ -229,7 +229,7 @@ watch(
                             PARAMS.type == 'sheet' &&
                             (PARAMS.side == 'left' || PARAMS.side == 'right'),
                         }"
-                        class="content after:bg-orange-200 after:text-orange-800 ww-dialog bg-white p-6 rounded-lg shadow-lg"
+                        class="content after:bg-orange-200 after:text-orange-800 ww-dialog bg-white p-6 rounded-lg shadow-lg w-[300px]"
                       >
                         <div class="flex justify-between items-center mb-4">
                           <h3 class="text-xl font-semibold text-neutral-900">
@@ -252,36 +252,6 @@ watch(
                               />
                             </svg>
                           </button>
-                        </div>
-
-                        <div class="space-y-4 mb-6">
-                          <!-- Cart Item 1 -->
-                          <div class="flex items-center space-x-4 py-2">
-                            <div class="flex-1">
-                              <h4 class="text-neutral-900 font-medium">
-                                Abstract Generative Illustration Suite
-                              </h4>
-                              <p class="text-neutral-600 text-sm">
-                                Illustration pack
-                              </p>
-                            </div>
-                            <div class="text-right">
-                              <p class="text-neutral-900">$299.99</p>
-                              <div class="flex items-center mt-1">
-                                <button
-                                  class="text-neutral-600 hover:text-neutral-800 px-2"
-                                >
-                                  -
-                                </button>
-                                <span class="text-neutral-700 mx-2">1</span>
-                                <button
-                                  class="text-neutral-600 hover:text-neutral-800 px-2"
-                                >
-                                  +
-                                </button>
-                              </div>
-                            </div>
-                          </div>
                         </div>
 
                         <div class="border-t border-neutral-200 pt-4">
