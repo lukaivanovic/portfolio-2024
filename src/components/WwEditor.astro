@@ -3,21 +3,21 @@ import { Image } from "astro:assets";
 import wwEditorMain from "../images/test2.jpg";
 import wwEditorWorkflow from "../images/workflows.jpg";
 import wwEditorIcons from "../images/icons.png";
+import branching from "../images/branching.png";
+import publish from "../images/publish.png";
 import ProjectHeader from "./ProjectHeader.astro";
 ---
 
 <section>
   <div class="container">
     <div class="inner-container pb-[200px]">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="col-span-1 md:col-span-3 overflow-hidden">
-          <Image
-            class="hover:scale-[1.02] will-change-transform transition-all duration-300"
-            src={wwEditorMain}
-            alt=""
-            quality={100}
-          />
-        </div>
+      <div class="col-span-1 md:col-span-3 overflow-hidden">
+        <Image
+          class="hover:scale-[1.02] will-change-transform transition-all duration-300"
+          src={wwEditorMain}
+          alt=""
+          quality={100}
+        />
       </div>
 
       <div class="h-[80px]"></div>
@@ -31,20 +31,36 @@ import ProjectHeader from "./ProjectHeader.astro";
 
       <div class="h-[80px]"></div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="col-span-1 md:col-span-3 overflow-hidden">
+      <div class="col-span-1 md:col-span-3 overflow-hidden">
+        <Image
+          src={wwEditorWorkflow}
+          class="hover:scale-[1.02] will-change-transform transition-all duration-300"
+          alt=""
+          quality={100}
+        />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+        <div class="overflow-hidden">
           <Image
-            src={wwEditorWorkflow}
-            class="hover:scale-[1.02] will-change-transform transition-all duration-300"
+            class="object-cover hover:scale-[1.02] will-change-transform transition-all duration-300"
+            src={wwEditorIcons}
             alt=""
             quality={100}
           />
         </div>
-
         <div class="overflow-hidden">
           <Image
-            class="w-full h-full object-cover hover:scale-[1.02] will-change-transform transition-all duration-300"
-            src={wwEditorIcons}
+            class="object-cover hover:scale-[1.02] will-change-transform transition-all duration-300"
+            src={branching}
+            alt=""
+            quality={100}
+          />
+        </div>
+        <div class="overflow-hidden">
+          <Image
+            class="object-cover hover:scale-[1.02] will-change-transform transition-all duration-300"
+            src={publish}
             alt=""
             quality={100}
           />

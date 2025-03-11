@@ -165,30 +165,8 @@ watch(
     </div>
 
     <div class="relative shadow-2xl bg-neutral-300 flex-grow">
-      <button
-        class="absolute top-2 left-2 px-2 h-7 z-40 bg-white rounded-md text-xs shadow-sm flex items-center gap-1 border border-neutral-200 hover:bg-neutral-100 transition-colors"
-        @click="settingsOpened = !settingsOpened"
-      >
-        Settings
-
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          viewBox="0 0 16 16"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M5.083 2.75c.242 0 .438.196.438.438v.77a2.333 2.333 0 0 1 0 4.584v4.27a.438.438 0 0 1-.875 0v-4.27a2.333 2.333 0 0 1 0-4.584v-.77c0-.242.196-.438.437-.438Zm5.834 0c.241 0 .437.196.437.438v5.436a2.333 2.333 0 1 1-.875 0V3.187c0-.241.196-.437.438-.437ZM5.083 4.792a1.458 1.458 0 1 0 0 2.915 1.458 1.458 0 0 0 0-2.915Zm5.834 4.666a1.458 1.458 0 1 0-.001 2.916 1.458 1.458 0 0 0 0-2.916Z"
-            clip-rule="evenodd"
-          />
-        </svg>
-      </button>
-
       <div
-        class="absolute left-2 top-10 z-40 w-[200px] bg-white rounded-md text-xs shadow-lg border border-neutral-200"
-        v-if="settingsOpened"
+        class="absolute left-2 top-2 z-40 w-[200px] bg-white rounded-md text-xs shadow-lg border border-neutral-200"
       >
         <DialogControls
           v-model="PARAMS"
