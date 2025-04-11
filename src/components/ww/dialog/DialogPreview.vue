@@ -164,7 +164,7 @@ watch(
       <div class="basis-0 flex-grow"></div>
     </div> -->
 
-    <div class="relative shadow-2xl bg-neutral-900 flex-grow">
+    <div class="relative shadow-2xl bg-white flex-grow">
       <div
         class="absolute left-2 top-2 z-40 w-[200px] bg-white rounded-md text-xs shadow-lg border border-neutral-200"
       >
