@@ -536,11 +536,11 @@ async function runAnimation() {
 
   await animate(
     chat.value,
-    { y: [-400, -360, 900, 200], scale: [1.9, 2.0, 2.2, 1.55] },
+    { y: [-400, 200], scale: [1.9, 1.55] },
     {
       duration: 1,
       ease: "easeInOut",
-      times: [0, 0.2, 0.7, 1],
+      times: [0, 1],
     }
   );
 

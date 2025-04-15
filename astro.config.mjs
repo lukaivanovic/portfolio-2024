@@ -6,8 +6,10 @@ import vercel from "@astrojs/vercel";
 
 import vue from "@astrojs/vue";
 
+import react from "@astrojs/react";
+
 export default defineConfig({
-  integrations: [vue()],
+  integrations: [vue(), react()],
   output: "server",
 
   vite: {

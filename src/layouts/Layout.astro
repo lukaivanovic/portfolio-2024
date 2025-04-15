@@ -77,17 +77,15 @@ const { title } = Astro.props;
   }
 
   :root {
-    --color-bg: #f8f8f6;
-    --color-primary: var(--color-neutral-900);
-    --color-secondary: var(--color-neutral-700);
-    --color-border: #b0b0b0;
-  }
+    // --color-bg: #fff;
+    // --color-primary: var(--color-neutral-900);
+    // --color-secondary: var(--color-neutral-700);
+    // --color-border: #b0b0b0;
 
-  .dark-mode {
-    --color-bg: var(--color-neutral-900);
-    --color-primary: var(--color-white);
-    --color-secondary: #d9d9d9;
-    --color-border: #3b3b3b;
+    --color-bg: #000;
+    --color-primary: white;
+    --color-secondary: #b0b0b0;
+    --color-border: #b0b0b0;
   }
 
   .text-primary {
@@ -99,34 +97,25 @@ const { title } = Astro.props;
   }
 
   .container {
-    max-width: 1520px;
+    max-width: 660px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 16px;
     padding-right: 16px;
 
     &.-wide {
-      padding-left: 16px;
-      padding-right: 16px;
+      max-width: 900px;
     }
   }
 
-  .inner-container {
-    border-left: 1px solid var(--color-border);
-    border-right: 1px solid var(--color-border);
-    padding-left: 72px;
-    padding-right: 72px;
-    transition: border-color 0.3s ease;
-  }
-
   h1 {
-    font-size: 42px;
-    line-height: 1.2;
+    font-size: 24px;
+    line-height: 1.25;
     font-family: "TWK Lausanne - 450", sans-serif;
   }
 
   h2 {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1.2;
     font-family: "TWK Lausanne - 450", sans-serif;
   }
@@ -137,15 +126,24 @@ const { title } = Astro.props;
 
   p {
     font-family: "TWK Lausanne - 400", sans-serif;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
     color: var(--color-secondary);
   }
 
   a {
+    color: var(--color-secondary);
+    svg {
+      transition: transform 0.3s ease;
+    }
+
     &:hover {
       color: var(--color-primary);
-      text-decoration: underline;
+
+      svg {
+        transform: translateX(4px);
+      }
     }
   }
 
