@@ -7,6 +7,7 @@ import WwComponents from "../components/WwComponents.astro";
 import Tsushima from "../components/tsushima/Tsushima.astro";
 import "../styles/global.css";
 import RadialMenu from "../components/radial-menu/RadialMenu.jsx";
+import apollon from "../svg/apollon.svg";
 ---
 
 <Layout title="Home">
@@ -202,6 +203,24 @@ import RadialMenu from "../components/radial-menu/RadialMenu.jsx";
       </div>
     </div>
   </section>
+
+  <div class="container relative overflow-hidden">
+    <div
+      class="inner-container h-[700px] flex flex-col items-center justify-end py-6"
+    >
+      <Fragment set:html={apollon} />
+      <div class="mt-4">
+        <span class="opacity-60">Built with Astro.js</span>
+      </div>
+      <div class="text-right">
+        <span class="opacity-60"
+          >Using the TWK Lausanne typeface from Weltkern.</span
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="h-4"></div>
 </Layout>
 
 <script>
