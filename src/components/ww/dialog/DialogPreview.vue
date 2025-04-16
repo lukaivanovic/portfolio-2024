@@ -8,6 +8,7 @@ const dialogRef = useTemplateRef("dialogRef");
 const previewRef = useTemplateRef("previewRef");
 const settingsOpened = ref(false);
 const hasBeenInView = ref(false);
+const closeTimeout = ref(null);
 
 function toggleDialog() {
   if (dialogRef.value) {
@@ -144,476 +145,142 @@ watch(
   },
   { deep: true }
 );
+
+function handleMouseEnter() {
+  if (closeTimeout.value) {
+    clearTimeout(closeTimeout.value);
+  }
+}
+
+function handleMouseLeave() {
+  closeTimeout.value = setTimeout(() => {
+    settingsOpened.value = false;
+  }, 200);
+}
+
+function toggleSettings() {
+  settingsOpened.value = !settingsOpened.value;
+}
 </script>
 
 <template>
   <div
-    class="flex flex-col bg-white border border-neutral-200 rounded-md overflow-hidden mb-12 text-neutral-900"
+    class="flex flex-col bg-neutral-800 rounded-md overflow-hidden mb-12 text-neutral-900"
     ref="previewRef"
   >
-    <!-- <div
-      class="border-b border-neutral-200 flex items-center justify-between p-2"
-    >
-      <div class="flex gap-1 basis-0 flex-grow">
-        <div class="w-[10px] h-[10px] rounded-full bg-neutral-200"></div>
-        <div class="w-[10px] h-[10px] rounded-full bg-neutral-200"></div>
-        <div class="w-[10px] h-[10px] rounded-full bg-neutral-200"></div>
-      </div>
-
-      <div class="text-center basis-0 flex-grow text-xs">Dialog</div>
-      <div class="basis-0 flex-grow"></div>
-    </div> -->
-
-    <div class="relative shadow-2xl bg-white flex-grow">
+    <div class="relative shadow-2xl flex-grow">
       <div
-        class="absolute left-2 top-2 z-40 w-[200px] bg-white rounded-md text-xs shadow-lg border border-neutral-200"
+        @mouseenter="handleMouseEnter"
+        @mouseleave="handleMouseLeave"
+        class="absolute left-2 top-2 z-40"
       >
-        <DialogControls
-          v-model="PARAMS"
-          @layout-change="handleLayoutChange"
-        ></DialogControls>
+        <button
+          @click="toggleSettings"
+          class="w-8 h-8 bg-neutral-700 rounded-full flex items-center justify-center hover:bg-neutral-600 transition-colors text-neutral-100"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+          >
+            <path
+              d="M64,105V40a8,8,0,0,0-16,0v65a32,32,0,0,0,0,62v49a8,8,0,0,0,16,0V167a32,32,0,0,0,0-62Zm-8,47a16,16,0,1,1,16-16A16,16,0,0,1,56,152Zm80-95V40a8,8,0,0,0-16,0V57a32,32,0,0,0,0,62v97a8,8,0,0,0,16,0V119a32,32,0,0,0,0-62Zm-8,47a16,16,0,1,1,16-16A16,16,0,0,1,128,104Zm104,64a32.06,32.06,0,0,0-24-31V40a8,8,0,0,0-16,0v97a32,32,0,0,0,0,62v17a8,8,0,0,0,16,0V199A32.06,32.06,0,0,0,232,168Zm-32,16a16,16,0,1,1,16-16A16,16,0,0,1,200,184Z"
+            ></path>
+          </svg>
+        </button>
+
+        <div
+          v-if="settingsOpened"
+          class="absolute left-0 top-10 w-[192px] text-xs"
+        >
+          <DialogControls
+            v-model="PARAMS"
+            @layout-change="handleLayoutChange"
+          ></DialogControls>
+        </div>
       </div>
 
       <div
         class="relative flex flex-col flex-grow h-full"
         @click="settingsOpened = false"
       >
-        <div class="flex-grow flex items-center justify-center overflow-hidden">
-          <template v-if="design == 'one'">
-            <div
-              class="max-w-[400px] bg-white p-4 rounded-md shadow-sm border border-neutral-200"
+        <div
+          class="flex-grow flex items-center justify-center overflow-hidden scale-80"
+        >
+          <Dialog :content="{ ...PARAMS }" ref="dialogRef">
+            <template #trigger>
+              <button
+                class="trigger after:bg-cyan-200 after:text-cyan-800 relative px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-700 transition-colors text-nowrap"
+              >
+                Click me!
+              </button></template
             >
-              <!-- Product Image -->
+            <template #content>
               <div
-                class="h-[240px] bg-neutral-100 rounded-lg flex-shrink-0 mb-4"
+                :class="{
+                  'w-full rounded-none w-[320px]':
+                    PARAMS.type == 'sheet' &&
+                    (PARAMS.side == 'top' || PARAMS.side == 'bottom'),
+                  'h-full rounded-none w-[320px]':
+                    PARAMS.type == 'sheet' &&
+                    (PARAMS.side == 'left' || PARAMS.side == 'right'),
+                  'w-[440px]': PARAMS.type == 'modal',
+                }"
+                class="content after:bg-orange-200 after:text-orange-800 ww-dialog bg-black p-6 rounded-lg shadow-lg"
               >
-                <img
-                  src="/pattern.png"
-                  alt="Premium Wireless Headphones"
-                  class="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-
-              <!-- Product Details -->
-              <div class="flex flex-col flex-shrink-0">
-                <div>
-                  <h3 class="text-lg font-semibold text-neutral-900 mb-1">
-                    Abstract Generative Illustration Suite
-                  </h3>
-                  <p class="text-neutral-600 mb-4">
-                    Create stunning algorithmic artwork with our abstract
-                    generative illustration suite.
-                  </p>
-                </div>
-
-                <div class="flex flex-row items-center gap-2 w-full">
-                  <Dialog
-                    :content="{ ...PARAMS }"
-                    ref="dialogRef"
-                    class="w-full"
+                <div class="flex justify-between items-center mb-4">
+                  <div class="text-lg font-semibold text-neutral-100">
+                    Confirm Action
+                  </div>
+                  <button
+                    class="text-neutral-400 hover:text-neutral-200"
+                    @click="toggleDialog"
                   >
-                    <template #trigger>
-                      <button
-                        class="trigger after:bg-cyan-200 after:text-cyan-800 w-full relative px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-700 transition-colors text-nowrap"
-                      >
-                        Add to Cart
-                      </button></template
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
                     >
-                    <template #content>
-                      <div
-                        :class="{
-                          'w-full rounded-none':
-                            PARAMS.type == 'sheet' &&
-                            (PARAMS.side == 'top' || PARAMS.side == 'bottom'),
-                          'h-full rounded-none':
-                            PARAMS.type == 'sheet' &&
-                            (PARAMS.side == 'left' || PARAMS.side == 'right'),
-                        }"
-                        class="content after:bg-orange-200 after:text-orange-800 ww-dialog bg-white p-6 rounded-lg shadow-lg w-[300px]"
-                      >
-                        <div class="flex justify-between items-center mb-4">
-                          <h3 class="text-xl font-semibold text-neutral-900">
-                            Your Cart
-                          </h3>
-                          <button
-                            class="text-neutral-600 hover:text-neutral-800"
-                            @click="toggleDialog"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              class="h-5 w-5"
-                              viewBox="0 0 20 20"
-                              fill="currentColor"
-                            >
-                              <path
-                                fill-rule="evenodd"
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clip-rule="evenodd"
-                              />
-                            </svg>
-                          </button>
-                        </div>
-
-                        <div class="border-t border-neutral-200 pt-4">
-                          <div
-                            class="flex justify-between text-neutral-700 mb-2"
-                          >
-                            <span>Subtotal</span>
-                            <span>$299.99</span>
-                          </div>
-                          <div
-                            class="flex justify-between text-neutral-700 mb-4"
-                          >
-                            <span>Shipping</span>
-                            <span>Free</span>
-                          </div>
-                          <div
-                            class="flex justify-between text-neutral-900 font-semibold mb-6"
-                          >
-                            <span>Total</span>
-                            <span>$299.9</span>
-                          </div>
-
-                          <button
-                            class="w-full py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-700 transition-colors font-medium"
-                          >
-                            Checkout
-                          </button>
-                          <button
-                            class="w-full py-2 mt-2 text-neutral-600 hover:text-neutral-800 transition-colors"
-                          >
-                            Continue Shopping
-                          </button>
-                        </div>
-                      </div>
-                    </template>
-                    <template #overlay>
-                      <div
-                        class="absolute after:bg-purple-200 after:text-purple-800 top-0 left-0 w-full h-full bg-black/40 overlay"
-                      ></div>
-                    </template>
-                  </Dialog>
+                      <path
+                        fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
                 </div>
-              </div>
-            </div>
-          </template>
-          <template v-if="design == 'two'">
-            <div class="max-w-[720px] py-12">
-              <div
-                class="bg-white rounded-lg shadow-sm border border-neutral-200"
-              >
-                <div class="p-6">
-                  <h2 class="text-xl font-semibold text-neutral-900 mb-4">
-                    Your Cart
-                  </h2>
 
-                  <div class="divide-y divide-neutral-200">
-                    <!-- Cart Item 1 -->
-                    <div class="py-4 flex items-center gap-4">
-                      <div
-                        class="h-16 w-16 rounded-md bg-neutral-100 flex-shrink-0"
-                      ></div>
-                      <div class="flex-grow">
-                        <h3 class="font-medium text-neutral-900">
-                          Premium Wireless Headphones
-                        </h3>
-                        <p class="text-sm text-neutral-500">
-                          Black | Noise Cancelling
-                        </p>
-                      </div>
-                      <div class="flex items-center gap-4">
-                        <div class="flex items-center">
-                          <button
-                            class="w-8 h-8 flex items-center justify-center rounded-md border border-neutral-200 text-neutral-500 hover:bg-neutral-50"
-                          >
-                            <span>-</span>
-                          </button>
-                          <span class="w-8 text-center text-neutral-900"
-                            >1</span
-                          >
-                          <button
-                            class="w-8 h-8 flex items-center justify-center rounded-md border border-neutral-200 text-neutral-500 hover:bg-neutral-50"
-                          >
-                            <span>+</span>
-                          </button>
-                        </div>
-                        <span class="font-medium text-neutral-900"
-                          >$299.99</span
-                        >
-                        <Dialog :content="{ ...PARAMS }" ref="dialogRef">
-                          <template #trigger>
-                            <button
-                              class="relative trigger text-neutral-400 hover:text-red-500 transition-colors"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="18"
-                                height="18"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              >
-                                <path d="M3 6h18"></path>
-                                <path
-                                  d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"
-                                ></path>
-                                <path
-                                  d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"
-                                ></path>
-                              </svg></button
-                          ></template>
-                          <template #content>
-                            <div
-                              :class="{
-                                'w-full':
-                                  PARAMS.type == 'sheet' &&
-                                  (PARAMS.side == 'top' ||
-                                    PARAMS.side == 'bottom'),
-                                'h-full':
-                                  PARAMS.type == 'sheet' &&
-                                  (PARAMS.side == 'left' ||
-                                    PARAMS.side == 'right'),
-                              }"
-                              class="content ww-dialog bg-white p-3 rounded-lg shadow-lg w-[360px] m-4"
-                            >
-                              <div class="flex items-center justify-between">
-                                <h3
-                                  class="text-md font-medium text-neutral-900"
-                                >
-                                  Remove item from cart
-                                </h3>
-
-                                <div class="flex flex-col items-center gap-2">
-                                  <button
-                                    class="w-[120px] px-3 py-1.5 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm"
-                                    @click="toggleDialog"
-                                  >
-                                    Remove
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          </template>
-                          <template #overlay>
-                            <div
-                              class="absolute top-0 left-0 w-full h-full bg-black/40 overlay"
-                            ></div>
-                          </template>
-                        </Dialog>
-                      </div>
-                    </div>
-
-                    <!-- Cart Item 2 -->
-                    <div class="py-4 flex items-center gap-4">
-                      <div
-                        class="h-16 w-16 rounded-md bg-neutral-100 flex-shrink-0"
-                      ></div>
-                      <div class="flex-grow">
-                        <h3 class="font-medium text-neutral-900">
-                          Wireless Earbuds
-                        </h3>
-                        <p class="text-sm text-neutral-500">
-                          White | Water Resistant
-                        </p>
-                      </div>
-                      <div class="flex items-center gap-4">
-                        <div class="flex items-center">
-                          <button
-                            class="w-8 h-8 flex items-center justify-center rounded-md border border-neutral-200 text-neutral-500 hover:bg-neutral-50"
-                          >
-                            <span>-</span>
-                          </button>
-                          <span class="w-8 text-center text-neutral-900"
-                            >2</span
-                          >
-                          <button
-                            class="w-8 h-8 flex items-center justify-center rounded-md border border-neutral-200 text-neutral-500 hover:bg-neutral-50"
-                          >
-                            <span>+</span>
-                          </button>
-                        </div>
-                        <span class="font-medium text-neutral-900"
-                          >$159.98</span
-                        >
-                        <button
-                          class="text-neutral-400 hover:text-red-500 transition-colors"
-                          @click="toggleDialog"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="18"
-                            height="18"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          >
-                            <path d="M3 6h18"></path>
-                            <path
-                              d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"
-                            ></path>
-                            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="mt-6 pt-6 border-t border-neutral-200">
-                    <div class="flex justify-between mb-2">
-                      <span class="text-neutral-500">Subtotal</span>
-                      <span class="font-medium">$459.97</span>
-                    </div>
-                    <div class="flex justify-between mb-2">
-                      <span class="text-neutral-500">Shipping</span>
-                      <span class="font-medium">$9.99</span>
-                    </div>
-                    <div class="flex justify-between font-medium text-lg mt-4">
-                      <span>Total</span>
-                      <span>$469.96</span>
-                    </div>
+                <div class="mb-6">
+                  <div class="text-neutral-400 text-md">
+                    Are you sure you want to perform this action? This cannot be
+                    undone.
                   </div>
                 </div>
-              </div>
-            </div>
-          </template>
-          <template v-if="design == 'three'">
-            <div class="max-w-[720px] py-12">
-              <div
-                class="bg-white rounded-lg shadow-sm border border-neutral-200 p-6"
-              >
-                <h2 class="text-xl font-semibold text-neutral-900 mb-6">
-                  Property Listings
-                </h2>
 
-                <div class="border border-neutral-200 rounded-lg">
-                  <!-- Table Header -->
-                  <div
-                    class="grid grid-cols-3 bg-neutral-50 border-b border-neutral-200"
+                <div class="flex gap-3 justify-end">
+                  <button
+                    class="px-4 py-2 border border-neutral-700 text-neutral-300 rounded-lg hover:bg-neutral-800 transition-colors"
+                    @click="toggleDialog"
                   >
-                    <div class="px-4 py-3 text-sm font-medium text-neutral-700">
-                      Property
-                    </div>
-                    <div class="px-4 py-3 text-sm font-medium text-neutral-700">
-                      Location
-                    </div>
-                    <div class="px-4 py-3 text-sm font-medium text-neutral-700">
-                      Price
-                    </div>
-                  </div>
-
-                  <!-- Table Rows -->
-                  <div class="divide-y divide-neutral-200">
-                    <Dialog :content="{ ...PARAMS }" ref="dialogRef">
-                      <template #trigger>
-                        <div
-                          class="relative trigger grid grid-cols-3 hover:bg-neutral-50 cursor-pointer"
-                        >
-                          <div class="px-4 py-3 text-neutral-800">
-                            Modern Apartment
-                          </div>
-                          <div class="px-4 py-3 text-neutral-600">Downtown</div>
-                          <div class="px-4 py-3 text-neutral-800 font-medium">
-                            $350,000
-                          </div>
-                        </div>
-                      </template>
-
-                      <template #content>
-                        <div
-                          :class="{
-                            'w-full rounded-none':
-                              PARAMS.type == 'sheet' &&
-                              (PARAMS.side == 'top' || PARAMS.side == 'bottom'),
-                            'h-full rounded-none':
-                              PARAMS.type == 'sheet' &&
-                              (PARAMS.side == 'left' || PARAMS.side == 'right'),
-                          }"
-                          class="content ww-dialog bg-white p-6 rounded-lg shadow-lg w-[400px]"
-                        >
-                          <div
-                            class="h-48 bg-neutral-100 rounded-lg mb-4"
-                          ></div>
-                          <h3
-                            class="text-xl font-semibold text-neutral-900 mb-2"
-                          >
-                            Modern Apartment
-                          </h3>
-                          <p class="text-neutral-600 mb-4">
-                            Downtown | 2 bed | 2 bath | 1,200 sq ft
-                          </p>
-
-                          <div class="space-y-4 mb-6">
-                            <div>
-                              <h4 class="font-medium text-neutral-800 mb-1">
-                                Description
-                              </h4>
-                              <p class="text-neutral-600 text-sm">
-                                A beautiful modern apartment in the heart of
-                                downtown. Features include hardwood floors,
-                                stainless steel appliances, and floor-to-ceiling
-                                windows with city views.
-                              </p>
-                            </div>
-                          </div>
-
-                          <div class="flex justify-between items-center">
-                            <span class="text-xl font-semibold text-neutral-900"
-                              >$350,000</span
-                            >
-                            <button
-                              class="px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition-colors"
-                            >
-                              Contact Agent
-                            </button>
-                          </div>
-                        </div>
-                      </template>
-                      <template #overlay>
-                        <div
-                          class="absolute top-0 left-0 w-full h-full bg-black/40 overlay"
-                        ></div>
-                      </template>
-                    </Dialog>
-                    <!-- Row 1 -->
-
-                    <!-- Row 2 -->
-                    <div
-                      class="grid grid-cols-3 hover:bg-neutral-50 cursor-pointer"
-                      @click="toggleDialog"
-                    >
-                      <div class="px-4 py-3 text-neutral-800">Family House</div>
-                      <div class="px-4 py-3 text-neutral-600">Suburbs</div>
-                      <div class="px-4 py-3 text-neutral-800 font-medium">
-                        $520,000
-                      </div>
-                    </div>
-
-                    <!-- Row 3 -->
-                    <div
-                      class="grid grid-cols-3 hover:bg-neutral-50 cursor-pointer"
-                      @click="toggleDialog"
-                    >
-                      <div class="px-4 py-3 text-neutral-800">Luxury Villa</div>
-                      <div class="px-4 py-3 text-neutral-600">Beachfront</div>
-                      <div class="px-4 py-3 text-neutral-800 font-medium">
-                        $1,250,000
-                      </div>
-                    </div>
-                  </div>
+                    Cancel
+                  </button>
+                  <button
+                    class="px-4 py-2 bg-neutral-700 text-white rounded-lg hover:bg-neutral-600 transition-colors font-medium"
+                  >
+                    Confirm
+                  </button>
                 </div>
-
-                <p class="mt-4 text-sm text-neutral-500">
-                  Click on any property to view more details
-                </p>
               </div>
-            </div>
-          </template>
+            </template>
+            <template #overlay>
+              <div
+                class="absolute after:bg-purple-200 after:text-purple-800 top-0 left-0 w-full h-full bg-black/40 overlay"
+              ></div>
+            </template>
+          </Dialog>
         </div>
       </div>
     </div>
@@ -626,7 +293,8 @@ watch(
 .overlay {
   inset: -2;
   border: 1px dashed;
-  border-color: var(--color-border-purple-600);
+  border-radius: 10px;
+  border-color: var(--color-purple-600);
 
   &:after {
     content: "OVERLAY";
@@ -644,7 +312,7 @@ watch(
 .content {
   inset: -2;
   border: 1px dashed;
-  border-color: var(--color-border-orange-400);
+  border-color: var(--color-orange-400);
 
   &:after {
     content: "CONTENT";
@@ -662,7 +330,7 @@ watch(
 .trigger {
   inset: -2;
   border: 1px dashed;
-  border-color: var(--color-border-cyan-400);
+  border-color: var(--color-cyan-400);
 
   &:after {
     content: "TRIGGER";

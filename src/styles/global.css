@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+body {
+  font-family: "TWK Lausanne - 400", sans-serif;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  background-color: var(--color-bg);
+  color: var(--color-primary);
+}

@@ -9,7 +9,7 @@ import ProjectHeader from "./ProjectHeader.astro";
 ---
 
 <section>
-  <div class="container">
+  <!-- <div class="container">
     <div class="image-gallery">
       <div
         class="relative main-image-container overflow-hidden rounded-lg mb-4 aspect-[8/5]"
@@ -18,46 +18,136 @@ import ProjectHeader from "./ProjectHeader.astro";
           id="mainImage"
           src={wwEditorMain.src}
           alt="WeWeb Editor Main View"
-          class="w-full hover:scale-[1.02] will-change-transform transition-all duration-300"
+          class="w-full object-cover h-full hover:scale-[1.02] will-change-transform transition-all duration-300"
         />
+        <div
+          class="thumbnails-container flex items-center justify-center gap-2 overflow-x-auto pb-2 absolute bottom-0 left-0 right-0 z-99 px-4 bg-linear-to-b to-black"
+        >
+          <button
+            class="thumbnail-btn active overflow-hidden rounded-md border-2 border-[#274076]"
+            data-src={wwEditorMain.src}
+            data-alt="WeWeb Editor Main View"
+          >
+            <img src={wwEditorMain.src} alt="WeWeb Editor Main View" />
+          </button>
+          <button
+            class="thumbnail-btn overflow-hidden rounded-md border-2 border-transparent"
+            data-src={wwEditorWorkflow.src}
+            data-alt="WeWeb Editor Workflow"
+          >
+            <img src={wwEditorWorkflow.src} alt="WeWeb Editor Workflow" />
+          </button>
+          <button
+            class="thumbnail-btn overflow-hidden rounded-md border-2 border-transparent"
+            data-src={wwEditorIcons.src}
+            data-alt="WeWeb Editor Icons"
+          >
+            <img src={wwEditorIcons.src} alt="WeWeb Editor Icons" />
+          </button>
+          <button
+            class="thumbnail-btn overflow-hidden rounded-md border-2 border-transparent"
+            data-src={branching.src}
+            data-alt="WeWeb Editor Branching"
+          >
+            <img src={branching.src} alt="WeWeb Editor Branching" />
+          </button>
+          <button
+            class="thumbnail-btn overflow-hidden rounded-md border-2 border-transparent"
+            data-src={publish.src}
+            data-alt="WeWeb Editor Publishing"
+          >
+            <img src={publish.src} alt="WeWeb Editor Publishing" />
+          </button>
+        </div>
       </div>
-      <div class="thumbnails-container flex gap-2 overflow-x-auto pb-2">
-        <button
-          class="thumbnail-btn active overflow-hidden rounded-md border-2 border-[#274076]"
-          data-src={wwEditorMain.src}
-          data-alt="WeWeb Editor Main View"
-        >
-          <img src={wwEditorMain.src} alt="WeWeb Editor Main View" />
-        </button>
-        <button
-          class="thumbnail-btn overflow-hidden rounded-md border-2 border-transparent"
-          data-src={wwEditorWorkflow.src}
-          data-alt="WeWeb Editor Workflow"
-        >
-          <img src={wwEditorWorkflow.src} alt="WeWeb Editor Workflow" />
-        </button>
-        <button
-          class="thumbnail-btn overflow-hidden rounded-md border-2 border-transparent"
-          data-src={wwEditorIcons.src}
-          data-alt="WeWeb Editor Icons"
-        >
-          <img src={wwEditorIcons.src} alt="WeWeb Editor Icons" />
-        </button>
-        <button
-          class="thumbnail-btn overflow-hidden rounded-md border-2 border-transparent"
-          data-src={branching.src}
-          data-alt="WeWeb Editor Branching"
-        >
-          <img src={branching.src} alt="WeWeb Editor Branching" />
-        </button>
-        <button
-          class="thumbnail-btn overflow-hidden rounded-md border-2 border-transparent"
-          data-src={publish.src}
-          data-alt="WeWeb Editor Publishing"
-        >
-          <img src={publish.src} alt="WeWeb Editor Publishing" />
-        </button>
+    </div>
+    <div>
+      <div>Designing an AI experience for app building</div>
+      <div class="text-secondary">
+        Layout and UI challenges when integrating AI into a no-code app builder.
       </div>
+    </div>
+  </div> -->
+
+  <div class="container py-4 rounded-md">
+    <div
+      class="relative rounded-md md:col-span-3 col-span-1 overflow-hidden aspect-[8/5]"
+    >
+      <div
+        class="relative main-image-container overflow-hidden rounded-lg mb-4 aspect-[8/5]"
+      >
+        <img
+          id="mainImage"
+          src={wwEditorMain.src}
+          alt="WeWeb Editor Main View"
+          class="w-full object-cover h-full hover:scale-[1.02] will-change-transform transition-all duration-300"
+        />
+        <div
+          class="thumbnails-container flex items-center justify-center gap-2 overflow-x-auto pb-2 absolute bottom-0 left-0 right-0 z-99 px-4 bg-linear-to-b to-black"
+        >
+          <button
+            class="thumbnail-btn active overflow-hidden rounded-md border-2 border-[#274076]"
+            data-src={wwEditorMain.src}
+            data-alt="WeWeb Editor Main View"
+          >
+            <img src={wwEditorMain.src} alt="WeWeb Editor Main View" />
+          </button>
+          <button
+            class="thumbnail-btn overflow-hidden rounded-md border-2 border-transparent"
+            data-src={wwEditorWorkflow.src}
+            data-alt="WeWeb Editor Workflow"
+          >
+            <img src={wwEditorWorkflow.src} alt="WeWeb Editor Workflow" />
+          </button>
+          <button
+            class="thumbnail-btn overflow-hidden rounded-md border-2 border-transparent"
+            data-src={wwEditorIcons.src}
+            data-alt="WeWeb Editor Icons"
+          >
+            <img src={wwEditorIcons.src} alt="WeWeb Editor Icons" />
+          </button>
+          <button
+            class="thumbnail-btn overflow-hidden rounded-md border-2 border-transparent"
+            data-src={branching.src}
+            data-alt="WeWeb Editor Branching"
+          >
+            <img src={branching.src} alt="WeWeb Editor Branching" />
+          </button>
+          <button
+            class="thumbnail-btn overflow-hidden rounded-md border-2 border-transparent"
+            data-src={publish.src}
+            data-alt="WeWeb Editor Publishing"
+          >
+            <img src={publish.src} alt="WeWeb Editor Publishing" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-between items-center pt-6">
+      <div>
+        <p class="text=primary mb-1">
+          Designing an AI experience for app building
+        </p>
+        <div class="text-secondary">
+          Layout and UI challenges when integrating AI into a no-code app
+          builder.
+        </div>
+      </div>
+
+      <a href="/posts/test" class="flex items-center gap-2">
+        Read more
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 256 256"
+          ><path
+            d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+          ></path></svg
+        >
+      </a>
     </div>
   </div>
 
@@ -196,5 +286,20 @@ import ProjectHeader from "./ProjectHeader.astro";
     img {
       opacity: 1;
     }
+  }
+</style>
+
+<style lang="'scss">
+  .container {
+    opacity: 0.7;
+    transition: opacity 0.1s ease-in-out, background 0.1s ease-in-out;
+    &:hover {
+      
+      opacity: 1;
+    }
+  }
+
+  p {
+    color: white;
   }
 </style>

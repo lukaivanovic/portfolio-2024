@@ -1,11 +1,20 @@
 <template>
   <div
-    class="w-full h-full flex items-center justify-center"
+    class="w-full h-full flex items-end justify-center"
     ref="parentContainer"
+    :style="{
+      // opacity: !isHovering ? 0.5 : 1,
+      backgroundColor: '#341D65',
+      transition: 'opacity 0.3s ease-in-out',
+    }"
+    @mouseenter="handleMouseEnter"
+    @mouseleave="handleMouseLeave"
   >
-    <div :style="`transform: scale(${scaleFactor})`">
+    <div
+      :style="`transform: scale(${scaleFactor}); transform-origin: bottom; z-index: 100`"
+    >
       <div
-        class="subpixel-antialiased ww-theme-light body-sm ww border-secondary flex flex-col bg-white rounded-lg overflow-hidden w-[400px] aspect-[6/10] text-neutral-900 opacity-0"
+        class="subpixel-antialiased ww-theme-light body-sm ww border-secondary flex flex-col bg-white rounded-lg overflow-hidden w-[400px] aspect-[6/10] text-neutral-900 translate-y-[-400px]"
         ref="chat"
       >
         <!-- Header -->
@@ -438,6 +447,11 @@
         </div>
       </div>
     </div>
+    <img
+      class="absolute top-0 left-0 w-full h-full object-cover"
+      src="/bg2.png"
+      alt=""
+    />
   </div>
 </template>
 
@@ -446,6 +460,7 @@ import { onMounted, ref, useTemplateRef } from "vue";
 import { animate } from "motion";
 import { spring } from "motion";
 import Loader from "./Loader.vue";
+const isHovering = ref(false);
 const userMessage = useTemplateRef("userMessage");
 const AiAvatar = useTemplateRef("AiAvatar");
 const textareaElement = useTemplateRef("textareaElement");
@@ -504,17 +519,6 @@ async function runAnimation() {
   );
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
-  // Fade in the chat container
-  await animate(chatContainer.value, { opacity: 1 }, { duration: 0.5 });
-
-  await animate([
-    [
-      chat.value,
-      { y: -400, scale: 1.9, opacity: 1 },
-      { type: spring, bounce: 0.4, duration: 0.8 },
-    ],
-  ]);
-
   // Stream the first message to the text area and click on the button
   await streamMessageToTextArea(messages.value[0]);
   await new Promise((resolve) => setTimeout(resolve, 300));
@@ -533,14 +537,13 @@ async function runAnimation() {
   await new Promise((resolve) => setTimeout(resolve, 400));
 
   // Fade in the chat
-
   await animate(
     chat.value,
-    { y: [-400, 200], scale: [1.9, 1.55] },
+
+    { y: 200 },
     {
       duration: 1,
       ease: "easeInOut",
-      times: [0, 1],
     }
   );
 
@@ -615,14 +618,6 @@ async function resetAnimation() {
   animate(layoutArtifact.value, { opacity: 0 }, { duration: 0.5 });
   await animate([
     [chat.value, { y: 0 }, { duration: 0.5 }, { ease: "easeInOut" }],
-    [
-      chat.value,
-      { scale: 1 },
-      { duration: 0.3 },
-      { ease: "easeInOut" },
-      { delay: 0.02 },
-      { at: 1 },
-    ],
   ]);
 }
 
@@ -695,6 +690,14 @@ function adjustTextareaHeight() {
   textareaElement.value.style.height =
     textareaElement.value.scrollHeight + "px";
 }
+
+function handleMouseEnter() {
+  isHovering.value = true;
+}
+
+function handleMouseLeave() {
+  isHovering.value = false;
+}
 </script>
 
 <style lang="scss" scoped>
@@ -704,6 +707,7 @@ p {
   font-family: "Inter", sans-serif;
   font-size: 12px;
   line-height: 1.6;
+  color: var(--ww-color-content-primary);
 }
 
 .slide-up-enter-active,

@@ -4,17 +4,57 @@ import DialogPreview from "./ww/dialog/DialogPreview.vue";
 ---
 
 <section>
-  <div class="container">
+  <div class="container py-4 rounded-md mt-[80px]">
     <div
-      class="col-span-1 row-span-1 md:col-span-2 md:row-span-2 min-h-[480px]"
+      class="relative rounded-md md:col-span-3 col-span-1 overflow-hidden aspect-[8/5]"
     >
       <DialogPreview client:only="vue" class="h-full" />
+    </div>
+
+    <div class="flex justify-between items-center pt-6">
+      <div>
+        <p class="text=primary mb-1">
+          Designing an AI experience for app building
+        </p>
+        <div class="text-secondary">
+          Layout and UI challenges when integrating AI into a no-code app
+          builder.
+        </div>
+      </div>
+
+      <a href="/posts/test" class="flex items-center gap-2">
+        Read more
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          viewBox="0 0 256 256"
+          ><path
+            d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+          ></path></svg
+        >
+      </a>
     </div>
   </div>
 </section>
 
 <style lang="scss">
   @use "../styles/global.css";
+
+  .container {
+    opacity: 0.7;
+    transition:
+      opacity 0.1s ease-in-out,
+      background 0.1s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  p {
+    color: white;
+  }
 
   .dropdown {
     inset: -2;

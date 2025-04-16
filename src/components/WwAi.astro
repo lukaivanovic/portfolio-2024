@@ -8,25 +8,31 @@ import WwAiContext from "./ww/WwAiContext.vue";
 ---
 
 <section>
-  <div class="container">
+  <div class="container py-4 rounded-md mt-[80px]">
     <div
-      class="bg-[#341D65] relative rounded-md md:col-span-3 col-span-1 overflow-hidden aspect-[8/7]"
+      class="relative rounded-md md:col-span-3 col-span-1 overflow-hidden aspect-[8/5]"
     >
-      <Image
-        src={background}
-        class="absolute top-0 left-0 w-full h-full object-cover z-0"
-        alt=""
-        quality={100}
-      />
-
-      <WwChat client:only="vue" class="z-10 will-change-transform origin-top" />
+      <div id="chat-container" class="z-10">
+        <WwChat
+          client:only="vue"
+          class="z-10 will-change-transform origin-top"
+        />
+      </div>
     </div>
 
-    <div class="flex justify-between items-center py-2">
-      Designing for AI
+    <div class="flex justify-between items-center pt-6">
+      <div>
+        <p class="text=primary mb-1">
+          Designing an AI experience for app building
+        </p>
+        <div class="text-secondary">
+          Layout and UI challenges when integrating AI into a no-code app
+          builder.
+        </div>
+      </div>
 
-      <a href="/" class="flex items-center gap-2">
-        5 min read
+      <a href="/posts/test" class="flex items-center gap-2">
+        Read more
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -41,3 +47,18 @@ import WwAiContext from "./ww/WwAiContext.vue";
     </div>
   </div>
 </section>
+
+<style lang="'scss">
+  .container {
+    opacity: 0.7;
+    transition: opacity 0.1s ease-in-out, background 0.1s ease-in-out;
+    &:hover {
+      
+      opacity: 1;
+    }
+  }
+
+  p {
+    color: white;
+  }
+</style>
