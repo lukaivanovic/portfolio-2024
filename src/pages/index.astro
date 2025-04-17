@@ -13,10 +13,10 @@ import apollon from "../svg/apollon.svg?raw";
 <Layout title="Home">
   <!-- Navigation -->
   <section>
-    <div class="container flex flex-col justify-start gap-4 text-primary mt-6">
+    <div class="container flex flex-col justify-start text-primary mt-6">
       <a href="/" class="text-primary"
         >Luka Ivanovic <br />
-        <span class="text-secondary">Design Engineer</span>
+        <span class="text-secondary">Design × Code</span>
       </a>
     </div>
   </section>
@@ -25,23 +25,30 @@ import apollon from "../svg/apollon.svg?raw";
   <section>
     <div class="container flex flex-col justify-center pt-[140px] pb-[200px]">
       <h1 class="mb-6">
-        Designer who codes with special attention to business and product
-        direction.
+        A designer who codes building beautiful software. Enjoys deep diving
+        into the product and business vision.
       </h1>
 
-      <p class="mb-6">
-        I’ve spent the last three years at weweb as the founding designer
-        working at the intersection of product, design and development.
+      <p class="mb-6 text-neutral-400">
+        Most recently spent three years at weweb as the founding designer
+        working on an app builder.
       </p>
-      <p class="mb-12">
+      <p class="mb-6 text-neutral-400">
         Currently on the lookout for a new opportunity, in the meantime
-        improving my craft and learning new things.
+        improving my craft and learning new things. Reach out to me at
+        <a href="mailto:lluka.ivanovic@gmail.com" class="underline"
+          >lluka.ivanovic@gmail.com</a
+        > or on my <a
+          href="https://x.com/lukaivnvc"
+          target="_blank"
+          class="underline">X profile</a
+        >.
       </p>
 
-      <div class="flex gap-4">
-        <!-- <a
+      <!-- <div class="flex gap-4">
+        <a
           href="mailto:lluka.ivanovic@gmail.com"
-          class="flex items-center gap-1"
+          class="flex items-center gap-0"
         >
           Contact me
           <svg
@@ -54,13 +61,13 @@ import apollon from "../svg/apollon.svg?raw";
               d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
             ></path></svg
           >
-        </a> -->
+        </a>
 
-        <!-- <a
+        <a
           href="https://x.com/lukaivnvc"
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-1"
+          class="flex items-center gap-0"
           >See more on X
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,8 +79,8 @@ import apollon from "../svg/apollon.svg?raw";
               d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
             ></path></svg
           >
-        </a> -->
-      </div>
+        </a>
+      </div> -->
     </div>
   </section>
 
@@ -233,7 +240,7 @@ import apollon from "../svg/apollon.svg?raw";
   </section>
 
   <div
-    class="container relative overflow-hidden flex flex-col items-center justify-end h-[700px]"
+    class="container relative overflow-hidden flex flex-col items-center justify-end mt-[200px]"
   >
     <Fragment set:html={apollon} />
   </div>
