@@ -68,7 +68,7 @@
         <div class="flex flex-col flex-grow">
           <!-- Chat Messages -->
           <div
-            class="chat-messages overflow-y-auto p-3 space-y-2 flex-grow"
+            class="chat-messages overflow-y-auto p-3 space-y-2 flex-grow opacity-0"
             ref="chatContainer"
           >
             <!-- User Message -->
@@ -456,9 +456,8 @@
 </template>
 
 <script setup>
-import { onMounted, ref, useTemplateRef } from "vue";
+import { onMounted, ref, useTemplateRef, nextTick } from "vue";
 import { animate } from "motion";
-import { spring } from "motion";
 import Loader from "./Loader.vue";
 const isHovering = ref(false);
 const userMessage = useTemplateRef("userMessage");
@@ -511,15 +510,8 @@ const artifacts = ref([
 ]);
 
 async function runAnimation() {
-  // Utility
-  animate(
-    userMessage.value,
-    { transform: "translateY(-16px)" },
-    { duration: 0.5 }
-  );
+  await animate(chatContainer.value, { opacity: 1 }, { duration: 0.5 });
   await new Promise((resolve) => setTimeout(resolve, 1000));
-
-  // Stream the first message to the text area and click on the button
   await streamMessageToTextArea(messages.value[0]);
   await new Promise((resolve) => setTimeout(resolve, 300));
   await animate(
@@ -528,31 +520,22 @@ async function runAnimation() {
     { duration: 0.2 }
   );
   currentTextAreaText.value = "";
-
   animate(
     sendButton.value,
     { backgroundColor: "var(--ww-color-bg-brand)" },
     { duration: 0.2 }
   );
   await new Promise((resolve) => setTimeout(resolve, 400));
-
-  // Fade in the chat
   await animate(
     chat.value,
-
     { y: 200 },
     {
       duration: 1,
       ease: "easeInOut",
     }
   );
-
   currentTextAreaText.value = "";
-  await animate(
-    userMessage.value,
-    { opacity: 1, transform: "translateY(0px)" },
-    { duration: 0.5 }
-  );
+  await animate(userMessage.value, { opacity: 1 }, { duration: 0.5 });
   await animate(AiAvatar.value, { opacity: 1 }, { duration: 0.5 });
   await new Promise((resolve) => setTimeout(resolve, 1200));
   isResponseLoading.value = true;
@@ -574,7 +557,6 @@ async function runAnimation() {
   });
   await streamMessage(messages.value[2]);
   await animate(layoutArtifact.value, { opacity: 1 }, { duration: 0.5 });
-
   for (let i = 0; i <= 9; i++) {
     await new Promise((resolve) => {
       setTimeout(() => {
@@ -584,10 +566,8 @@ async function runAnimation() {
     });
   }
   artifacts.value[2].loading = false;
-
   await streamMessage(messages.value[3]);
   await new Promise((resolve) => setTimeout(resolve, 2000));
-
   await resetAnimation();
   await runAnimation();
 }
@@ -607,11 +587,7 @@ async function resetAnimation() {
     artifact.loading = true;
   });
 
-  animate(
-    userMessage.value,
-    { opacity: 0, transform: "translateY(-16px)" },
-    { duration: 0.5 }
-  );
+  animate(userMessage.value, { opacity: 0 }, { duration: 0.5 });
   animate(AiAvatar.value, { opacity: 0 }, { duration: 0.5 });
   animate(variableArtifact.value, { opacity: 0 }, { duration: 0.5 });
   animate(workflowArtifact.value, { opacity: 0 }, { duration: 0.5 });
@@ -638,12 +614,13 @@ onMounted(async () => {
   // Optional: Add resize listener to update dimensions when window is resized
   window.addEventListener("resize", () => {
     const { width, height } = getParentContainerDimensions();
-
-    console.log(width, height);
     parentContainerWidth.value = width;
     parentContainerHeight.value = height;
     scaleFactor.value = parentContainerWidth.value / 1000;
   });
+
+  // Wait for next tick to ensure all refs are available
+  await nextTick();
 
   const observer = new IntersectionObserver(
     (entries) => {

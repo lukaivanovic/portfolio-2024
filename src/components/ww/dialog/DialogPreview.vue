@@ -89,8 +89,6 @@ function handleLayoutChange(newLayout) {
       }, 300);
       break;
   }
-
-  console.log(newLayout);
 }
 
 onMounted(() => {

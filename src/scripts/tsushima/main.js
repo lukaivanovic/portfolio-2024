@@ -36,7 +36,7 @@ getGeometryFromSVG()
 
     mergedGeometry.computeBoundingBox();
     const bbox = mergedGeometry.boundingBox;
-    console.log(bbox);
+
     width = bbox.max.x - bbox.min.x;
     dissolveMaterial.uniforms.min.value = bbox.min.x;
     dissolveMaterial.uniforms.max.value = bbox.max.x;

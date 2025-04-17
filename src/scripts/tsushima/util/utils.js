@@ -162,9 +162,7 @@ export function getGeometryFromSVG() {
 
         resolve({ group, mergedGeometry });
       },
-      function (xhr) {
-        console.log("loading");
-      },
+      function (xhr) {},
       function (error) {
         console.log("An error happened");
       }

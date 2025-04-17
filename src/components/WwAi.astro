@@ -13,17 +13,14 @@ import WwAiContext from "./ww/WwAiContext.vue";
       class="relative rounded-md md:col-span-3 col-span-1 overflow-hidden aspect-[8/5]"
     >
       <div id="chat-container" class="z-10">
-        <WwChat
-          client:only="vue"
-          class="z-10 will-change-transform origin-top"
-        />
+        <WwChat client:load class="z-10 will-change-transform origin-top" />
       </div>
     </div>
 
     <div class="flex justify-between items-center pt-6">
       <div>
         <p class="text=primary mb-1">
-          Designing an AI experience for app building
+          Designing an AI experience on top of our powerful editor
         </p>
         <div class="text-secondary">
           Layout and UI challenges when integrating AI into a no-code app
@@ -31,7 +28,7 @@ import WwAiContext from "./ww/WwAiContext.vue";
         </div>
       </div>
 
-      <a href="/posts/test" class="flex items-center gap-2">
+      <a href="/posts/test" class="flex items-center gap-1">
         Read more
         <svg
           xmlns="http://www.w3.org/2000/svg"

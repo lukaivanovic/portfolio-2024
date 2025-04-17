@@ -118,7 +118,6 @@ function handleOutsideClick() {
 }
 
 function onTriggerClick() {
-  console.log("tests");
   if (!props.content.triggerClickOpens) {
     return;
   }

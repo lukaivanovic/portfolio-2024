@@ -90,7 +90,6 @@ export function useDialogStyle() {
         });
         break;
     }
-    console.log(style);
 
     return style;
   }

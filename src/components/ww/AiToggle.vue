@@ -87,10 +87,6 @@ export default {
       document
         .getElementById("toggle-circle")
         .classList.add("button-circle-animation");
-
-      console.log(document.getElementById("toggle-circle").classList);
-
-      console.log(AIPanelOpened.value);
     };
 
     return {
