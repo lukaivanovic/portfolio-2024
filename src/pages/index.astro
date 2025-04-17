@@ -26,17 +26,24 @@ import AiToggle from "../components/ww/AiToggle.vue";
   <section>
     <div class="container flex flex-col justify-center pt-[140px] pb-[200px]">
       <h1 class="mb-6">
-        A designer who codes building beautiful software. Enjoys deep diving
-        into the product and business vision.
+        Product-driven designer who codes and enjoys building beautiful
+        software.
       </h1>
 
       <h2 class="mb-6 text-neutral-400">
-        Most recently spent three years at weweb as the founding designer
-        working on an app builder.
+        Most recently worked at <a
+          href="https://weweb.io"
+          target="_blank"
+          class="underline">weweb</a
+        > as the founding designer for a AI-powered app builder operating on the
+        intersection of product, design and development. Previous clients include
+        UBS and <a href="https://akkio.com" target="_blank" class="underline"
+          >Akkio</a
+        >.
       </h2>
       <h2 class="mb-6 text-neutral-400">
-        Currently on the lookout for a new opportunity, in the meantime
-        improving my craft and learning new things. Reach out to me at
+        Currently looking for the next chapter while improving my craft and
+        learning new things. You can contact me at
         <a href="mailto:lluka.ivanovic@gmail.com" class="underline"
           >lluka.ivanovic@gmail.com</a
         > or on my <a
@@ -48,13 +55,13 @@ import AiToggle from "../components/ww/AiToggle.vue";
     </div>
   </section>
 
-  <section class="pb-[80px]">
+  <!-- <section class="pb-[80px]">
     <div class="container flex items-center justify-center gap-2">
       <div class="h-[1px] bg-neutral-700 w-full"></div>
     </div>
-  </section>
+  </section> -->
 
-  <div class="container flex flex-row items-center justify-between pb-[40px]">
+  <div class="container flex flex-row items-center justify-between pb-[24px]">
     <div class="rounded-md flex flex-row items-center justify-center gap-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -62,19 +69,19 @@ import AiToggle from "../components/ww/AiToggle.vue";
         height="24"
         fill="none"
         viewBox="0 0 16 16"
-        class="rounded-sm overflow-hidden text-neutral-700"
+        class="rounded-sm overflow-hidden text-neutral-900"
       >
         <path fill="currentColor" d="M0 0h16v16H0z"></path>
         <path
-          fill="white"
+          fill="var(--color-neutral-300)"
           d="M9.746 9.473H6.291a.117.117 0 0 0-.12.115v2.294c0 .063.054.115.12.115h5.707L9.746 9.473Z"
         ></path>
         <path
-          fill="white"
+          fill="var(--color-neutral-300)"
           d="M9.746 6.585v2.89l2.252 2.524V6.585a.117.117 0 0 0-.12-.115H9.867a.117.117 0 0 0-.12.115ZM6.25 9.414v-2.89L3.998 4v5.414c0 .064.054.115.12.115H6.13a.117.117 0 0 0 .119-.115Z"
         ></path>
         <path
-          fill="white"
+          fill="var(--color-neutral-300)"
           d="M6.211 6.632h3.4c.083 0 .15-.054.15-.12V4.12c0-.066-.067-.12-.15-.12H4.003l2.21 2.632Z"
         ></path>
       </svg>
@@ -119,7 +126,7 @@ import AiToggle from "../components/ww/AiToggle.vue";
 
   <section class="pb-[80px] pt-[240px]">
     <div class="container flex items-center justify-center gap-2">
-      <div class="h-[1px] bg-neutral-700 w-full"></div>
+      <div class="h-[1px] bg-neutral-800 w-full"></div>
     </div>
   </section>
 
@@ -127,7 +134,7 @@ import AiToggle from "../components/ww/AiToggle.vue";
     <div class="container">
       <h1 class="mb-2">Playground</h1>
 
-      <p class="mb-6">
+      <p class="mb-[80px]">
         Place where I experiment with new ideas and technologies.
       </p>
 
@@ -153,36 +160,24 @@ import AiToggle from "../components/ww/AiToggle.vue";
             </div>
           </div>
 
-          <!-- <div
-            class="relative aspect-square bg-white border border-neutral-700 rounded-lg overflow-hidden"
+          <div
+            class="aspect-[8/5] rounded-lg overflow-hidden relative text-black"
           >
             <div class="w-full h-full flex items-center justify-center">
               <canvas id="riveCanvas" style="width: 100%; height: 100%;"
               ></canvas>
             </div>
-            <div
-              class="absolute bottom-2 left-2 bg-neutral-200 text-black px-2 py-1 rounded-full"
-            >
-              7-segment display
+
+            <div class="absolute bottom-2 left-2 text-white opacity-50">
+              Display graphics
             </div>
 
             <div
-              class="absolute bottom-2 right-2 bg-neutral-200 text-black px-2 py-1 rounded-full flex items-center gap-2"
+              class="absolute bottom-2 right-2 flex items-center gap-2 text-white opacity-50"
             >
-              <svg
-                role="img"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                ><path
-                  fill="#000"
-                  d="M.38 0a.268.268 0 0 0-.256.332l2.894 11.716a.268.268 0 0 0 .01.04l2.89 11.708a.268.268 0 0 0 .447.128L23.802 7.15a.268.268 0 0 0-.112-.45l-5.784-1.667a.268.268 0 0 0-.123-.035L6.38 1.715a.268.268 0 0 0-.144-.04L.456.01A.268.268 0 0 0 .38 0zm.374.654L5.71 2.08 1.99 5.664zM6.61 2.34l4.864 1.4-3.65 3.515zm-.522.12l1.217 4.926-4.877-1.4zm6.28 1.538l4.878 1.404-3.662 3.53zm-.52.13l1.208 4.9-4.853-1.392zm6.3 1.534l4.947 1.424-3.715 3.574zm-.524.12l1.215 4.926-4.876-1.398zm-15.432.696l4.964 1.424-3.726 3.586zM8.047 8.15l4.877 1.4-3.66 3.527zm-.518.137l1.236 5.017-4.963-1.432zm6.274 1.535l4.965 1.425-3.73 3.586zm-.52.127l1.235 5.012-4.958-1.43zm-9.63 2.438l4.873 1.406-3.656 3.523zm5.854 1.687l4.863 1.403-3.648 3.51zm-.54.04l1.214 4.927-4.875-1.4zm-3.896 4.02l5.037 1.442-3.782 3.638z"
-                ></path></svg
-              >
-              three.js
+              Rive
             </div>
-          </div> -->
+          </div>
 
           <div
             class="aspect-[8/5] bg-neutral-800 rounded-lg overflow-hidden relative text-black"
@@ -203,18 +198,18 @@ import AiToggle from "../components/ww/AiToggle.vue";
           </div>
 
           <div
-            class="aspect-[8/5] bg-neutral-400 rounded-lg overflow-hidden relative"
+            class="aspect-[8/5] bg-neutral-900 rounded-lg overflow-hidden relative"
           >
             <div class="w-full h-full flex items-center justify-center">
               <RadialMenu client:only="react" />
             </div>
 
-            <div class="absolute bottom-2 left-2 text-black opacity-50">
+            <div class="absolute bottom-2 left-2 text-white opacity-50">
               Radial Menu
             </div>
 
             <div
-              class="absolute bottom-2 right-2 flex items-center gap-2 text-black opacity-50"
+              class="absolute bottom-2 right-2 flex items-center gap-2 text-white opacity-50"
             >
               React
             </div>
@@ -232,26 +227,22 @@ import AiToggle from "../components/ww/AiToggle.vue";
   <div class="h-4"></div>
 </Layout>
 
-<!-- <script>
+<script>
   import * as rive from "@rive-app/canvas";
 
   document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("riveCanvas") as HTMLCanvasElement;
     if (!canvas) return;
 
-    const layout = new rive.Layout({
-      fit: rive.Fit.Layout, // Setting to Fit.Layout will auto update the artboard size
-      layoutScaleFactor: 0.5, // 0.5x scale of the layout, when using `Fit.Layout`. This allows you to resize the layout as needed.
-    });
-
     const r = new rive.Rive({
       src: "/test.riv",
       canvas: canvas,
       autoplay: true,
-      layout: layout,
+      // layout: layout,
+      stateMachines: "Main",
       onLoad: () => {
         r.resizeDrawingSurfaceToCanvas();
       },
     });
   });
-</script> -->
+</script>

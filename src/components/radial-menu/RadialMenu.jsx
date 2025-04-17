@@ -120,28 +120,27 @@ const RadialMenu = () => {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isMenuOpen]);
-
   return (
     <div className="radial-menu h-[320px] w-[320px] relative cursor-default scale-150">
       <motion.div
         animate={isMenuOpen ? "active" : "inactive"}
         variants={{
           inactive: {
-            backgroundColor: "var(--color-gray-100)",
-            borderColor: "var(--color-gray-100)",
+            backgroundColor: "var(--color-neutral-800)",
+            borderColor: "var(--color-neutral-700)",
           },
           active: {
-            backgroundColor: "white",
+            backgroundColor: "var(--color-neutral-900)",
             borderColor: "var(--color-blue-500)",
           },
         }}
         whileHover={!isMenuOpen ? { height: 72, width: 72, scale: 1.1 } : {}}
-        className="h-[56px] w-[56px]  text-gray-600 text-[10px] border border-gray-100 rounded-full  flex flex-col items-center justify-center gap-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+        className="h-[56px] w-[56px] text-neutral-300 text-[10px] border border-neutral-700 rounded-full flex flex-col items-center justify-center gap-1 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
       >
         <IconContext.Provider
           value={{
-            color: "black",
+            color: "var(--color-neutral-300)",
             size: 16,
             weight: "regular",
           }}
@@ -171,7 +170,7 @@ const RadialMenu = () => {
                 <div
                   className="absolute w-full h-full rounded-full"
                   style={{
-                    background: `conic-gradient(transparent 0deg, var(--color-blue-200) 0deg 60deg, transparent 60deg)`,
+                    background: `conic-gradient(transparent 0deg, var(--color-blue-700) 0deg 60deg, transparent 60deg)`,
                     maskImage:
                       "radial-gradient(circle, black 0%, transparent 70%)",
                     WebkitMaskImage:
@@ -221,7 +220,7 @@ const RadialMenu = () => {
                     },
                   }}
                   key={tool.index}
-                  className={`absolute w-8 h-8 bg-white rounded-md flex items-center justify-center ${
+                  className={`absolute w-8 h-8 bg-neutral-800 rounded-md flex items-center justify-center ${
                     hoveredIndex === tool.index
                       ? "border-1 border-blue-500"
                       : ""
@@ -234,8 +233,8 @@ const RadialMenu = () => {
                     value={{
                       color:
                         hoveredIndex === tool.index
-                          ? "var(--color-gray-900)"
-                          : "var(--color-gray-400)",
+                          ? "var(--color-neutral-300)"
+                          : "var(--color-neutral-500)",
                       size: 16,
                       weight: "regular",
                     }}
@@ -248,7 +247,7 @@ const RadialMenu = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="absolute bg-gray-100 py-0.5 px-1 text-[8px] text-gray-600 origin-center rounded-full"
+                  className="absolute bg-neutral-800 py-0.5 px-1 text-[8px] text-neutral-300 origin-center rounded-full"
                   style={{
                     left: calculateTooltipPosition(tool.index).x,
                     top: calculateTooltipPosition(tool.index).y,
@@ -257,11 +256,6 @@ const RadialMenu = () => {
                     }rad)`,
                     display: hoveredIndex === tool.index ? "block" : "none",
                   }}
-                  // style={{
-                  //   transform: `translate(${
-                  //     calculateTooltipPosition(tool.index).x
-                  //   }px, ${calculateTooltipPosition(tool.index).y}px)`,
-                  // }}
                 >
                   {tool.name}
                 </motion.div>
