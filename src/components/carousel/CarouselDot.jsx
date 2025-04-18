@@ -9,30 +9,33 @@ const CarouselDot = ({ active, onClick }) => {
       animate(
         "#bg",
         {
-          width: "5rem",
+          x: 32,
         },
-        { duration: 5 }
+        { duration: 2.7, ease: "easeOut" }
       );
       animate(scope.current, {
-        width: "5rem",
+        width: 32,
       });
     } else {
       animate("#bg", {
-        width: "0rem",
+        x: 0,
       });
       animate(scope.current, {
-        width: "1rem",
+        width: 16,
       });
     }
   }, [active]);
 
   return (
     <div
-      className="relative h-1 w-4 rounded-full bg-neutral-600 overflow-hidden cursor-pointer"
+      className="relative h-1 w-4 rounded-full bg-neutral-600 cursor-pointer overflow-hidden"
       ref={scope}
       onClick={onClick}
     >
-      <div id="bg" className="absolute w-0 h-full bg-white"></div>
+      <div
+        id="bg"
+        className="absolute top-0 left-0 w-full translate-x-[-32px] h-full bg-white"
+      ></div>
     </div>
   );
 };

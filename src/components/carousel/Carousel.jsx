@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CarouselDots from "./CarouselDots";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 
 const images = [
   {
@@ -31,25 +31,29 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
+    }, 2500);
 
     return () => clearInterval(interval);
   }, [images.length, activeIndex]);
 
   return (
     <div>
-      <div className="relative main-image-container overflow-hidden rounded-lg mb-2 aspect-[8/5]">
-        <motion.img
-          key={activeIndex}
-          id="mainImage"
-          src={images[activeIndex].src}
-          alt="WeWeb Editor Main View"
-          className="w-full object-cover h-full hover:scale-[1.02] will-change-transform transition-all duration-300"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        />
+      <div className="relative main-image-container overflow-hidden rounded-lg mb-2 aspect-[8/5] flex items-center justify-center">
+        <AnimatePresence initial={false}>
+          <motion.img
+            key={images[activeIndex].src}
+            src={images[activeIndex].src}
+            className="absolute max-w-full object-cover h-full hover:scale-[1.02]"
+            style={{ transform: "none" }}
+            initial={{ x: 400, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -400, opacity: 0 }}
+            transition={{
+              x: { type: "spring", stiffness: 260, damping: 36, mass: 1.5 },
+              opacity: { duration: 0.2 },
+            }}
+          />
+        </AnimatePresence>
       </div>
       <div className=" flex flex-row items-center justify-between w-full  text-secondary">
         <div>{images[activeIndex].alt}</div>
