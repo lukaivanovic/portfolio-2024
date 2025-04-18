@@ -11,7 +11,7 @@ const CarouselDot = ({ active, onClick }) => {
         {
           x: 32,
         },
-        { duration: 2.7, ease: "easeOut" }
+        { duration: 3.7, ease: "easeOut" }
       );
       animate(scope.current, {
         width: 32,
