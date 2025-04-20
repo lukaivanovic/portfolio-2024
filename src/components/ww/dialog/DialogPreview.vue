@@ -170,11 +170,11 @@ function toggleSettings() {
       <div
         @mouseenter="handleMouseEnter"
         @mouseleave="handleMouseLeave"
-        class="absolute left-2 top-2 z-40"
+        class="absolute left-3 top-3 z-40"
       >
         <button
           @click="toggleSettings"
-          class="w-8 h-8 bg-neutral-700 rounded-full flex items-center justify-center hover:bg-neutral-600 transition-colors text-neutral-100"
+          class="pulse w-8 h-8 bg-neutral-700 rounded-full flex items-center justify-center hover:bg-neutral-600 transition-colors text-neutral-100"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -287,6 +287,19 @@ function toggleSettings() {
 
 <style lang="scss" scoped>
 @use "../../../styles/global.css";
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.3);
+  }
+  80% {
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0);
+  }
+}
 
 .overlay {
   inset: -2;

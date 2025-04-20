@@ -528,7 +528,7 @@ async function runAnimation() {
   await new Promise((resolve) => setTimeout(resolve, 400));
   await animate(
     chat.value,
-    { y: 200 },
+    { y: 320 },
     {
       duration: 1,
       ease: "easeInOut",
@@ -609,14 +609,14 @@ onMounted(async () => {
   const { width, height } = getParentContainerDimensions();
   parentContainerWidth.value = width;
   parentContainerHeight.value = height;
-  scaleFactor.value = parentContainerWidth.value / 1000;
+  scaleFactor.value = parentContainerWidth.value / 800;
 
   // Optional: Add resize listener to update dimensions when window is resized
   window.addEventListener("resize", () => {
     const { width, height } = getParentContainerDimensions();
     parentContainerWidth.value = width;
     parentContainerHeight.value = height;
-    scaleFactor.value = parentContainerWidth.value / 1000;
+    scaleFactor.value = parentContainerWidth.value / 800;
   });
 
   // Wait for next tick to ensure all refs are available

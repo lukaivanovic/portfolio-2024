@@ -73,7 +73,19 @@ import AiToggle from "../components/ww/AiToggle.vue";
           >
         </a>
         <button
-          onclick="navigator.clipboard.writeText('lluka.ivanovic@gmail.com')"
+          onclick="(() => {
+            const button = this;
+            if (button.timeoutId) {
+              clearTimeout(button.timeoutId);
+            }
+            navigator.clipboard.writeText('lluka.ivanovic@gmail.com');
+            const originalText = 'Copy email';
+            button.textContent = 'Copied email!';
+            button.timeoutId = setTimeout(() => {
+              button.textContent = originalText;
+              button.timeoutId = null;
+            }, 1500);
+          })()"
           class="rounded-full text-neutral-400 px-3 cursor-pointer hover:bg-neutral-900 hover:text-neutral-300"
         >
           Copy email
@@ -90,7 +102,7 @@ import AiToggle from "../components/ww/AiToggle.vue";
         height="24"
         fill="none"
         viewBox="0 0 16 16"
-        class="rounded-sm overflow-hidden text-neutral-900"
+        class="rounded-sm overflow-hidden text-neutral-800"
       >
         <path fill="currentColor" d="M0 0h16v16H0z"></path>
         <path
@@ -114,32 +126,32 @@ import AiToggle from "../components/ww/AiToggle.vue";
 
   <WwEditor />
 
-  <section class="container flex flex-row gap-4 mt-[80px]">
-    <div
-      class="py-2 flex flex-col gap-2 border border-neutral-800 rounded-lg p-4"
-    >
-      <p>
-        "He’s autonomous, proactive, and knows how to deliver under pressure
-        without compromising quality. If you’re looking for someone who can own
-        a design system, deliver high-quality UI, and collaborate seamlessly
-        with product and engineering teams, he’s the one."
-      </p>
-      <span class="text-neutral-400">
-        — Florian Briou-Rolle, co-founder and CPO</span
-      >
-    </div>
-  </section>
-
-  <section class="container flex flex-row gap-4 mt-[24px]">
-    <div
-      class="py-2 flex flex-col gap-2 border border-neutral-800 rounded-lg p-4"
-    >
-      <p>
-        "I have been playing with WeWeb the last few days very intensely and it
-        is such a great tool. It’s way more superior than anything else out
-        there on the market I have used in the last five years."
-      </p>
-      <span class="text-neutral-400"> — Community member</span>
+  <section class="container flex flex-col gap-4 mt-6">
+    <div class="rounded-lg border border-neutral-800">
+      <div class="flex flex-col gap-2 border-b border-neutral-800 p-5">
+        <p>
+          "He's autonomous, proactive, and knows how to deliver under pressure
+          without compromising quality. If you're looking for someone who can
+          own a design system, deliver high-quality UI, and collaborate
+          seamlessly with product and engineering teams, he's the one."
+        </p>
+        <span class="text-neutral-400">
+          Florian Briou-Rolle, co-founder and CPO</span
+        >
+      </div>
+      <div class="flex flex-col gap-2 border-b border-neutral-800 p-5">
+        <p>
+          "WeWeb is the first tool with which I can really build beautiful and
+          detailed products without code. With all the features, like the design
+          library, the Figma plugin, the possibility to create own components
+          with parameters etc… WOW!"
+        </p>
+        <span class="text-neutral-400"> @andystrb</span>
+      </div>
+      <div class="flex flex-col gap-2 p-5">
+        <p>"Feels a lot like Figma, but with auto-layout always on."</p>
+        <span class="text-neutral-400"> @stevedesignered</span>
+      </div>
     </div>
   </section>
 
