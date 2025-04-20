@@ -14,52 +14,73 @@ import AiToggle from "../components/ww/AiToggle.vue";
 <Layout title="Home">
   <!-- Navigation -->
   <section>
-    <div class="container flex flex-col justify-start text-primary mt-6">
+    <div class="container flex items-start justify-between text-primary mt-6">
       <a href="/" class="text-primary"
         >Luka Ivanovic <br />
-        <span class="text-secondary">Design × Code</span>
+        <span class="text-secondary text-sm">Design Engineer</span>
       </a>
+      <div class="flex gap-4 text-secondary">
+        <a class="default" href="https://www.linkedin.com/in/ivanovicluka0/"
+          >LinkedIn</a
+        >
+        <a class="default" href="https://x.com/lukaivnvc">X</a>
+      </div>
     </div>
   </section>
 
   <!-- Hero -->
   <section>
-    <div class="container flex flex-col justify-center pt-[140px] pb-[200px]">
+    <div class="container flex flex-col justify-center pt-[180px] pb-[240px]">
       <h1 class="mb-6">
         Product-driven designer who codes and enjoys building beautiful
         software.
       </h1>
 
-      <h2 class="mb-6 text-neutral-400">
+      <p class="mb-6 mr-4 text-neutral-400">
         Most recently worked at <a
           href="https://weweb.io"
           target="_blank"
-          class="underline">weweb</a
+          class="default">weweb</a
         > as the founding designer for a AI-powered app builder operating on the
         intersection of product, design and development. Previous clients include
-        UBS and <a href="https://akkio.com" target="_blank" class="underline"
+        UBS and <a href="https://akkio.com" target="_blank" class="default"
           >Akkio</a
         >.
-      </h2>
-      <h2 class="mb-6 text-neutral-400">
-        Currently looking for the next chapter while improving my craft and
-        learning new things. You can contact me at
-        <a href="mailto:lluka.ivanovic@gmail.com" class="underline"
-          >lluka.ivanovic@gmail.com</a
-        > or on my <a
-          href="https://x.com/lukaivnvc"
+      </p>
+      <p class="mb-10 mr-4 text-neutral-400">
+        Currently looking for something new while improving my craft and
+        learning new things.
+      </p>
+
+      <div class="flex gap-2">
+        <a
+          href="https://calendly.com/lluka-ivanovic/new-meeting"
           target="_blank"
-          class="underline">X profile</a
-        >.
-      </h2>
+          rel="noopener noreferrer"
+          class="flex items-center gap-1 bg-neutral-800 text-neutral-300 px-4 py-1 rounded-full hover:bg-neutral-700 hover:text-neutral-300"
+        >
+          Book a call
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+            class="chevron"
+            ><path
+              d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+            ></path></svg
+          >
+        </a>
+        <button
+          onclick="navigator.clipboard.writeText('lluka.ivanovic@gmail.com')"
+          class="rounded-full text-neutral-400 px-3 cursor-pointer hover:bg-neutral-900 hover:text-neutral-300"
+        >
+          Copy email
+        </button>
+      </div>
     </div>
   </section>
-
-  <!-- <section class="pb-[80px]">
-    <div class="container flex items-center justify-center gap-2">
-      <div class="h-[1px] bg-neutral-700 w-full"></div>
-    </div>
-  </section> -->
 
   <div class="container flex flex-row items-center justify-between pb-[24px]">
     <div class="rounded-md flex flex-row items-center justify-center gap-2">
@@ -162,7 +183,7 @@ import AiToggle from "../components/ww/AiToggle.vue";
             </div>
           </div>
 
-          <div
+          <!-- <div
             class="aspect-[8/5] rounded-lg overflow-hidden relative text-black"
           >
             <div class="w-full h-full flex items-center justify-center">
@@ -179,7 +200,7 @@ import AiToggle from "../components/ww/AiToggle.vue";
             >
               Rive
             </div>
-          </div>
+          </div> -->
 
           <div
             class="aspect-[8/5] bg-neutral-800 rounded-lg overflow-hidden relative text-black"
